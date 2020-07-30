@@ -1,4 +1,5 @@
 # Group Plan
+---
 
 # USER STORIES
 - As a user... ROLE
@@ -22,9 +23,10 @@
 -
 
 # ROUTES
-- follow REST:
-  HTTP method | URL pattern   | Use
-  
+##### Following RESTful convention:
+| HTTP METHOD   | URL PATTERN   | USE         |
+| ------------- |:-------------:| -----------:|
+| GET           | /sheets       | cheat sheet |
 
 # STACK CHOICE
 - 
