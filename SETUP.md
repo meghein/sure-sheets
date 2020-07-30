@@ -45,23 +45,32 @@
   - different languages (google translate)
   - build out mobile aspect (through CSS or React-native)
 
-## STACK AND LIBRARY CHOICE
-- Main framework:
-    * Node, React - axios
-- Database:
-    * Postgresql? Sequelize (which is like AR)?
-- Login/Register:
-    * Bcrypt, Cookie-sessions
-- Screenshot Scraper:
-    * Tesseract
-- Customization:
-    * 
-- QR Code:
-    * 
-- Front-end:
-    * Material UI
-    * Sass
-###### Dev Dependencies
+## STACK - LIBRARY, UI, FRONT-END FRAMEWORK
+##### Language:
+  * Node.js
+##### Framework:
+  * Express/Meteor/Sails???
+##### Front-End Framework:
+  * React
+##### Database:
+  * Postgresql/Sequelize/Connects?
+##### UI Framework:
+  * Material UI
+  * Sass
+
+##### Libraries
+ ###### Login/Register:
+  * Bcrypt
+  * Cookie-sessions
+###### Screenshot/Image Scraper:
+  * Tesseract
+  * Cropper
+  * Cloudinary
+###### Customization:
+  * 
+###### 
+
+##### Dev Dependencies
 - babel
 - storybook?
 - cypress
@@ -69,7 +78,7 @@
 - 
 
 ## WIREFRAMES
-
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fk5WviZcWW8gW45dAPUAyUh%2FA-Sheet-in-the-Streets%3Fnode-id%3D0%253A1&chrome=DOCUMENTATION" allowfullscreen></iframe>
 
 ## ERD & DATA NECESSITIES
 
@@ -81,12 +90,8 @@
 | GET           | /sheets       | cheat sheet |
 
 
-## DIVIDING TASKS
-- 
+## STORYBOARD
 
-## COMMUNICATION - TEAMWORK
-- Github Pages:
-- Trello: 
+## DESIGN
 
-## PROJECT WORKFLOW
-- 
+## UI FRAMEWORK
