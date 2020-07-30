@@ -25,7 +25,6 @@
   - onboarding chatbot/process
     * registration/login
     * add images/screenshots - "Do you want to add elements??"
-    * 
   - import resources (ie screenshots/images) => TESSERACT
   - edit and customize
     * add or delete from elements
@@ -46,36 +45,34 @@
   - build out mobile aspect (through CSS or React-native)
 
 ## STACK - LIBRARY, UI, FRONT-END FRAMEWORK
-##### Language:
+- Language:
   * Node.js
-##### Framework:
+- Framework:
   * Express/Meteor/Sails???
-##### Front-End Framework:
+- Front-End Framework:
   * React
-##### Database:
+- Database:
   * Postgresql/Sequelize/Connects?
-##### UI Framework:
+- UI Framework:
   * Material UI
   * Sass
 
-##### Libraries
- ###### Login/Register:
-  * Bcrypt
-  * Cookie-sessions
-###### Screenshot/Image Scraper:
-  * Tesseract
-  * Cropper
-  * Cloudinary
-###### Customization:
-  * 
-###### 
+- Libraries
+  - Login/Register:
+    * Bcrypt
+    * Cookie-sessions
+  - Screenshot/Image Scraper:
+    * Tesseract
+    * Cropper
+    * Cloudinary
+  - Customization:
+    * ??
 
-##### Dev Dependencies
-- babel
-- storybook?
-- cypress
-- jest
-- 
+- Dev Dependencies
+  * babel
+  * storybook?
+  * cypress
+  * jest
 
 ## WIREFRAMES
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fk5WviZcWW8gW45dAPUAyUh%2FA-Sheet-in-the-Streets%3Fnode-id%3D0%253A1&chrome=DOCUMENTATION" allowfullscreen></iframe>
