@@ -2,9 +2,6 @@
 ---
 
 ## USER STORIES
-- As a user... ROLE
-- I want to... GOAL
-- Because... BENEFIT
 #### As a user 
 - I have documents that I want to make in to a cheatsheet(pdf)
 - I don't want to waste time gathering and retyping all this information
@@ -26,6 +23,7 @@
     * registration/login
     * add images/screenshots - "Do you want to add elements??"
   - import resources (ie screenshots/images) => TESSERACT
+  - templates and colour palettes
   - edit and customize
     * add or delete from elements
     * add new elements (including images)
@@ -45,7 +43,7 @@
   - build out mobile aspect (through CSS or React-native)
 
 ## STACK - LIBRARY, UI, FRONT-END FRAMEWORK
-- Language:
+Language:
   * Node.js
 - Framework:
   * Express/Meteor/Sails???
@@ -54,28 +52,36 @@
 - Database:
   * Postgresql/Sequelize/Connects?
 - UI Framework:
-  * Material UI
-  * Sass
+  * [Material UI](https://material-ui.com/)
+  * [Sass](https://sass-lang.com/)
 
-- Libraries
+Libraries:
   - Login/Register:
-    * Bcrypt
-    * Cookie-sessions
+    * [Bcrypt](https://www.npmjs.com/package/bcrypt)
+    * [Cookie-session](https://www.npmjs.com/package/cookie-session)
   - Screenshot/Image Scraper:
-    * Tesseract
-    * Cropper
-    * Cloudinary
+    * [Tesseract](https://tesseract.projectnaptha.com/)
+    * [Cropper](https://fengyuanchen.github.io/cropperjs/)
+    * [Cloudinary](https://cloudinary.com/)
   - Customization:
-    * ??
+    * [Font-picker](https://github.com/samuelmeuli/font-picker-react)
+    * [Fabric.js](http://fabricjs.com/)
+    * [Pickr](https://github.com/Simonwep/pickr)
+    * [Range Slider](https://github.com/agrinko/range-slider)
+  - Animations:
+    * [ThreeJS](https://threejs.org/)
 
 - Dev Dependencies
   * babel
-  * storybook?
+  * storybook
   * cypress
-  * jest
 
 ## WIREFRAMES
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fk5WviZcWW8gW45dAPUAyUh%2FA-Sheet-in-the-Streets%3Fnode-id%3D0%253A1&chrome=DOCUMENTATION" allowfullscreen></iframe>
+![splash page](https://github.com/meghein/finals/blob/master/docs/wireframe/1-splash.png)
+![import view](https://github.com/meghein/finals/blob/master/docs/wireframe/2-import.png)
+![template view](https://github.com/meghein/finals/blob/master/docs/wireframe/3-template.png)
+![customize view](https://github.com/meghein/finals/blob/master/docs/wireframe/4-customize.png)
+![published view](https://github.com/meghein/finals/blob/master/docs/wireframe/5-published.png)
 
 ## ERD & DATA NECESSITIES
 
