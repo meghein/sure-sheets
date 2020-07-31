@@ -67,7 +67,6 @@ Libraries:
     * [Font-picker](https://github.com/samuelmeuli/font-picker-react)
     * [Fabric.js](http://fabricjs.com/)
     * [Pickr](https://github.com/Simonwep/pickr)
-    * [Range Slider](https://github.com/agrinko/range-slider)
   - Animations:
     * [ThreeJS](https://threejs.org/)
 
