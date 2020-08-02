@@ -32,7 +32,7 @@ export default function LeftDrawer(props) {
     <Divider />
     {/* Will eventually conditionally render these components based on on mode. */}
 
-      {/* <Tesseract/> */}
+      {/* <Files/> */}
       {/* <Templates/> */}
       <Tools />
 
