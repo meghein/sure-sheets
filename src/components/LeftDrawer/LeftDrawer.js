@@ -30,7 +30,7 @@ export default function LeftDrawer(props) {
       </IconButton>
     </div>
     <Divider />
-    {/* Will eventually conditionally render these components based on on mode. */}
+    {/* Will eventually conditionally render these components based on mode. */}
 
       {/* <Files/> */}
       {/* <Templates/> */}
