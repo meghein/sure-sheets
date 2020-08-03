@@ -1,8 +1,9 @@
 import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
 import NERv05BotAvatar from "./NERv05BotAvatar";
-
 import NavOptions from "./NavOptions";
+import LinkList from "./LinkList"
+
 
 //Define bot's name:
 const botName = "NERv05";
@@ -51,6 +52,39 @@ const config = {
       widgetName: "navOptions",
       // Function that will be called internally to resolve the widget
       widgetFunc: (props) => <NavOptions {...props} />,
+    },
+    {
+      // this widget controls the endpoints for the links established by the why question:
+      widgetName: "whyLinks",
+      widgetFunc: (props) => <LinkList {...props} />,
+      props: {
+
+        // 
+          // Edit these links once we have appropriate info to show!!
+        // 
+        options: [
+          {
+            text: "Why make a cheatsheet?",
+            url:
+              "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/",
+            id: 1,
+          },
+          {
+            text: "How does this help me study?",
+            url:
+              "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+            id: 2,
+          },
+          {
+            text: "What should I do with this page when I'm done?",
+            url: "https://frontendmasters.com",
+            id: 3,
+          },
+        ],
+      },
+    },
+      
+      
       // // Any props you want the widget to receive on render
       // props: {},
       // // Any piece of state defined in the state object that you want to pass down to this widget
@@ -58,7 +92,7 @@ const config = {
       //   "selectedFlightId",
       //   "selectedFlight",
       // ],
-    },
+    
   ],
 
 
@@ -70,7 +104,5 @@ const config = {
   //   // selectedFlight: null,
   // },
 
-
-  
 };
 export default config
