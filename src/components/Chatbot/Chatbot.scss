@@ -1,0 +1,22 @@
+.react-chatbot-kit-chat-container {
+  position: fixed;
+  bottom: 2vw;
+  right: 2vh;
+  
+}
+
+
+// Button should be display none in order to collapse it
+// button => onClick change the css, then reverse it 
+
+
+//Open button (to bring up)
+//Wrapper of this element
+//Close button that is contained within the element (header ideally)
+
+//On load => button is visible, wrapper is display none
+//On Click for button => wrapper is displayed with height and width, button goes to hidden
+// transform fires on click, target transform block
+//on click for close button, do the opposite: wrapper height and width 0, display none, transform back down
+
+// google transform tag

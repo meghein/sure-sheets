@@ -4,7 +4,6 @@ import NERv05BotAvatar from "./NERv05BotAvatar";
 import NavOptions from "./NavOptions";
 import LinkList from "./LinkList"
 
-
 //Define bot's name:
 const botName = "NERv05";
 

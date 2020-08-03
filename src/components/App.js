@@ -9,6 +9,7 @@ import Chatbot from 'react-chatbot-kit';
 import ActionProvider from './Chatbot/ActionProvider';
 import MessageParser from './Chatbot/MessageParser';
 import config from './Chatbot/config';
+import './Chatbot/Chatbot.scss'
 // import NERv05BotAvatar from './Chatbot/NERv05BotAvatar';
 
 export default function App() {
@@ -20,3 +21,5 @@ export default function App() {
     </div>
   )
 };
+
+// Do JS here for chatbot shrink and expand
