@@ -1,4 +1,6 @@
-import React from 'react';
+// I know this line looks weird, but it's triggering an error when it looks nicer
+// Please leave it as is.
+import React,{useState} from 'react';
 import './App.scss';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import NavBar from './NavBar';
@@ -10,16 +12,24 @@ import ActionProvider from './Chatbot/ActionProvider';
 import MessageParser from './Chatbot/MessageParser';
 import config from './Chatbot/config';
 import './Chatbot/Chatbot.scss'
-// import NERv05BotAvatar from './Chatbot/NERv05BotAvatar';
+import BotButton from './Chatbot/BotButton'
+
+
 
 export default function App() {
+  const [chatOpen, setChatOpen] = useState(false)
+  
+  const chatbotToggle = () => {
+    console.log(`CHAT TOGGLED ${chatOpen}`)
+    chatOpen ? setChatOpen(false) : setChatOpen(true)
+  }
+
   return (
     <div className="App">
       <CssBaseline />
       <NavBar />
-      <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}/>
+      <Chatbot style={{display: "none"}}config={config} actionProvider={ActionProvider} messageParser={MessageParser}/>
+      <BotButton toggle={chatbotToggle}/>
     </div>
   )
 };
-
-// Do JS here for chatbot shrink and expand

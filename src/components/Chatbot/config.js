@@ -17,7 +17,7 @@ const config = {
       
       widget: "navOptions",
     }),
-    // We can insert widgets here
+    
   ],
   
   customComponents: {
