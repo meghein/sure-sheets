@@ -38,6 +38,7 @@ export default function Tools() {
         value={value}
         onChange={setValue}
       />
+      {/* all other components */}
     </div>
   )
 }

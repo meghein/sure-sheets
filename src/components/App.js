@@ -1,13 +1,20 @@
 import React from 'react';
 import './App.scss';
-import CssBaseline from '@material-ui/core/CssBaseline';
+
 import NavBar from './NavBar';
+// import Splash from './Splash';
+import Canvas from './Canvas';
+import Left from './Left';
+import Right from './Right';
 
 export default function App() {
   return (
     <div className="App">
-      <CssBaseline />
       <NavBar />
+      {/* <Splash /> */}
+      <Left />
+      <Canvas />
+      <Right />
     </div>
   )
 };
