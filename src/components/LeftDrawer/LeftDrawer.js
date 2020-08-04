@@ -26,7 +26,6 @@ export default function LeftDrawer(props) {
   
   return (
     <Drawer
-    // ref={props.ref}
     className={classes.leftDrawer}
     variant="persistent"
     anchor="left"

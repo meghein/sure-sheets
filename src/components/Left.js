@@ -1,13 +1,18 @@
 import React from 'react'
-import Tools from './LeftDrawer/Tools'
+
+import Toolbar from './LeftDrawer/Toolbar/Toolbar'
 import './Left.scss'
 
-export default function Left() {
-
+export default function Left(props) {
+  console.log("left props", props)
   return (
     <div className="left">
-      
-      <Tools/>
+      <Toolbar
+         onDragStart={props.onDragStart}
+         onDrop={props.onDrop}
+         onDragOver={props.onDragOver}
+         imgData={props.imgData}
+      />
     </div>
   )
 }

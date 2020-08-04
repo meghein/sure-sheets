@@ -3,9 +3,10 @@
 .canvas {
   text-align: center;
   margin: auto;
-  // margin-left: $sidebar-width;
+  margin-left: $sidebar-width;
   margin-top: 20px;
   width: 600px;
   height: 600px;
   border: 2px solid red;
+  z-index: -1;
 }
