@@ -1,8 +1,15 @@
 @import "../styles/variables.scss";
 
 .App {
-  // display: flex;
-
-  // css-grid
   text-align: center;
+}
+
+.main {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 20fr 60% 20fr;
+    grid-template-rows: 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "left | main | right";
+  }
 }

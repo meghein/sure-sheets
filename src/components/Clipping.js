@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default function Object(props) {
-  console.log("object props", props);
+export default function Clipping(props) {
   return (
       <div>
         <img
-          alt="NERv05"
-          src= {props.imgData[0].image.src}
+          alt="clipping"
+          // hardcode as index 0, we'll need to change this once we start using other clippings
+          src= {props.imagesData[0].image.src}
           draggable="true"
           onDragStart={props.onDragStart}
         />

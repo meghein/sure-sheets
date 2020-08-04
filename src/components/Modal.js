@@ -29,12 +29,12 @@ export default function Modal(props) {
           <div className="modal" id="modal">
             {props.body}
             <Button
-          variant="contained"
-          color="primary"
-          onClick={close}
-        >
-          Close
-        </Button>
+              variant="contained"
+              color="primary"
+              onClick={close}
+            >
+              Close
+            </Button>
           </div>
           
         )}

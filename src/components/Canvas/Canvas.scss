@@ -1,0 +1,10 @@
+@import "../../styles/variables.scss";
+
+.canvas {
+  grid-area: main;
+  align-self: center;
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  border: 2px solid red;
+}
