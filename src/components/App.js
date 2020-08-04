@@ -1,9 +1,5 @@
-// I know this line looks weird, but it's triggering an error when it looks nicer
-// Please leave it as is.
 import React, {useState} from 'react';
 import './App.scss';
-import NavBar from './NavBar';
-import CloudinaryWidget from './Cloudinary Widget/CloudinaryWidget'
 
 import useDragandDrop from '../hooks/useDragAndDrop';
 
@@ -41,7 +37,6 @@ export default function App() {
 
 
   return (
-    <>
     <div className="App">
       <NavBar />
       {chatOpen ? 
@@ -65,9 +60,5 @@ export default function App() {
         <Right />
       </div>
     </div>
-    <div>
-      <CloudinaryWidget />
-    </div>
-    </>
   )
 };
