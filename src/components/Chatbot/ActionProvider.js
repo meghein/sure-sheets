@@ -17,10 +17,13 @@ class ActionProvider {
         widget: "whyLinks",
       }
     );
-
     this.updateChatbotState(message);
   };
 
+  loveMessage() {
+    const message = this.createChatBotMessage("I— um— I really— um thank you?")
+    this.updateChatbotState(message)
+  }
 
   updateChatbotState(message) {
     //spread previous message state to ensure that the conversation isn't lost:

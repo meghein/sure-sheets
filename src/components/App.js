@@ -1,6 +1,6 @@
 // I know this line looks weird, but it's triggering an error when it looks nicer
 // Please leave it as is.
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import './App.scss';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import NavBar from './NavBar';
@@ -28,7 +28,9 @@ export default function App() {
     <div className="App">
       <CssBaseline />
       <NavBar />
-      <Chatbot style={{display: "none"}}config={config} actionProvider={ActionProvider} messageParser={MessageParser}/>
+      {chatOpen ? 
+        <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}/> : null
+      }
       <BotButton toggle={chatbotToggle}/>
     </div>
   )

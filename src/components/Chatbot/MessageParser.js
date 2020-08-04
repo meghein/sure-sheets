@@ -15,7 +15,9 @@ class MessageParser {
       this.actionProvider.handleWhyLinkList()
     }
 
-    
+    if (lowerCaseMessage.includes("love")) {
+      this.actionProvider.loveMessage()
+    }
 
   }
 }
