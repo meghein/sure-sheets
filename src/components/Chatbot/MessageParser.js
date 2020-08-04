@@ -19,6 +19,40 @@ class MessageParser {
       this.actionProvider.loveMessage()
     }
 
+    if (lowerCaseMessage.includes("import")) {
+      this.actionProvider.importMessage()
+    }
+
+    if (lowerCaseMessage.includes("add")) {
+      this.actionProvider.importMessage()
+    }
+
+    if (lowerCaseMessage.includes("upload")) {
+      this.actionProvider.importMessage()
+    }
+
+    if (lowerCaseMessage.includes("screenshots")) {
+      this.actionProvider.importMessage()
+    }
+
+
+
+    if (lowerCaseMessage.includes("export")) {
+      this.actionProvider.exportMessage()
+    }
+
+    if (lowerCaseMessage.includes("save")) {
+      this.actionProvider.exportMessage()
+    }
+
+    if (lowerCaseMessage.includes("favorite")) {
+      this.actionProvider.favoriteMessage()
+    }
+
+    if (lowerCaseMessage.includes("favourite")) {
+      this.actionProvider.favoriteMessage()
+    }
+
   }
 }
 

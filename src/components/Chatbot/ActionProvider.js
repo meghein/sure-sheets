@@ -25,6 +25,21 @@ class ActionProvider {
     this.updateChatbotState(message)
   }
 
+  favoriteMessage() {
+    const message = this.createChatBotMessage("PLACHOLDERTEXT")
+    this.updateChatbotState(message)
+  }
+
+  importMessage() {
+    const message = this.createChatBotMessage("PLACHOLDERTEXT")
+    this.updateChatbotState(message)
+  }
+
+  exportMessage() {
+    const message = this.createChatBotMessage("PLACHOLDERTEXT")
+    this.updateChatbotState(message)
+  }
+
   updateChatbotState(message) {
     //spread previous message state to ensure that the conversation isn't lost:
     this.setState(prevState => ({
