@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+.left {
+  position: fixed;
+  height: 100%;
+  width: $sidebar-width;
+  // z-index: 1;
+  border: 1px solid red;
+}
