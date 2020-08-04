@@ -1,6 +1,6 @@
 import React from 'react';
 import './Canvas.scss';
-import { Stage, Layer, Transformer, Text } from 'react-konva';
+import { Stage, Layer } from 'react-konva';
 import UrlImage from "./UrlImage"
 
 export default function Canvas(props) {
