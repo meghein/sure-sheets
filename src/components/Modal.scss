@@ -1,0 +1,11 @@
+@import "../styles/variables.scss";
+
+.modal {
+  // margin-left: $sidebar-width;
+  position: absolute;
+  margin-top: -32px;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid red;
+  z-index: 2;
+}
