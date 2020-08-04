@@ -2,6 +2,9 @@
 // Please leave it as is.
 import React, {useState} from 'react';
 import './App.scss';
+import NavBar from './NavBar';
+import CloudinaryWidget from './Cloudinary Widget/CloudinaryWidget'
+
 import useDragandDrop from '../hooks/useDragAndDrop';
 
 import NavBar from './Home/NavBar';
@@ -18,8 +21,6 @@ import MessageParser from './Chatbot/MessageParser';
 import config from './Chatbot/config';
 import './Chatbot/Chatbot.scss'
 import BotButton from './Chatbot/BotButton'
-
-
 
 export default function App() {
 
@@ -40,6 +41,7 @@ export default function App() {
 
 
   return (
+    <>
     <div className="App">
       <NavBar />
       {chatOpen ? 
@@ -63,5 +65,9 @@ export default function App() {
         <Right />
       </div>
     </div>
+    <div>
+      <CloudinaryWidget />
+    </div>
+    </>
   )
 };
