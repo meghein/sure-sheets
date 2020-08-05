@@ -1,9 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { createWorker } from 'tesseract.js';
 
 export default function CloudinaryWidget() {
   const [image, setImage] = useState('')
   const [loading, setLoading] = useState(false)
-  
+  //Tess code
+  const worker = createWorker({
+    logger: m => console.log(m.progress),
+  });
+  //end of Tess code
   const uploadImage = async e => {
     const files = e.target.files
     const data = new FormData()
@@ -24,6 +29,19 @@ export default function CloudinaryWidget() {
     setImage(file.secure_url)
     setLoading(false)
   }
+  //Tess code
+  const doOCR = async () => {
+    await worker.load();
+    await worker.loadLanguage('eng');
+    await worker.initialize('eng');
+    const { data: { text } } = await worker.recognize(image);
+    setOcr(text);
+  };
+  const [ocr, setOcr] = useState('Recognizing...');
+  useEffect(() => {
+    doOCR();
+  });
+  //End of tess code
   console.log(image);
   return (
     <div>
@@ -36,7 +54,8 @@ export default function CloudinaryWidget() {
       {loading ? (
         <h3>Loading...</h3>
         ): (
-        <img src={image} style={{width: '300px'}}/>
+        //<img src={image} style={{width: '300px'}}/>
+        <input type="text" value={ocr} />
         )
       }
     </div>
