@@ -5,11 +5,11 @@
 }
 
 .main {
-  .grid-container {
-    display: grid;
-    grid-template-columns: 20fr 60% 20fr;
-    grid-template-rows: 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "left | main | right";
-  }
+    display: flex;
+    justify-content: space-between;
+
+    // grid-template-columns: 20% 60% 20%;
+    // grid-template-rows: 100%;
+    // gap: 1px 1px;
+    // grid-template-areas: "left | canvas | right";
 }

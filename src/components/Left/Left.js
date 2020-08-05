@@ -1,7 +1,7 @@
 import React from 'react'
 import './Left.scss'
 
-// import Files from './Files'
+import Files from './Files'
 import Templates from './Templates'
 import Toolbar from './Toolbar'
 
@@ -9,8 +9,9 @@ export default function Left(props) {
   return (
     <div className="left">
       <Files 
-        clippings={props.clippings}
-        setClippings={props.setClippings}
+        newImport={props.newImport}
+        setNewImport={props.setNewImport}
+        addClipping={props.addClipping}
       />
       <Templates/>
       <Toolbar

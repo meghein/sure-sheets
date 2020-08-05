@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import './App.scss';
 
 import useDragandDrop from '../hooks/useDragAndDrop';
@@ -37,6 +37,22 @@ export default function App() {
 
   const [textValue, setTextValue] = useState('');
   const [clippings, setClippings] = useState([]);
+  const [newImport, setNewImport] = useState('')
+
+  function addClipping(newImport) {
+    const tempClippings = [...clippings];
+    tempClippings.push(newImport);
+    setClippings(tempClippings);
+    // setNewImport('');
+    console.log("add clipping")
+  }
+  
+  useEffect(() => {
+    addClipping(newImport)
+  }, []);
+
+  console.log("clippings", clippings)
+
   
   return (
     <div className="App">
@@ -53,8 +69,9 @@ export default function App() {
           onDragOver={onDragOver}
           textValue={textValue}
           setTextValue={setTextValue}
-          clippings={clippings}
-          setClippings={setClippings}
+          newImport={newImport}
+          setNewImport={setNewImport}
+          addClipping={addClipping}
         />
         {/* <Splash /> */}
         <Canvas
@@ -66,6 +83,8 @@ export default function App() {
         />
         <Right 
           clippings={clippings}
+          textValue={textValue}
+          setTextValue={setTextValue}
         />
       </div>
     </div>

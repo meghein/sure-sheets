@@ -1,10 +1,10 @@
 @import "../../styles/variables.scss";
 
-.left {
-  position: fixed;
-  left: 0;
+.right {
+  // grid-area: right;
+  position: absolute;
+  right: 0;
   height: 100%;
   width: $sidebar-width;
-  // z-index: 1;
   border: 1px solid red;
 }

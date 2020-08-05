@@ -12,7 +12,6 @@ export default function CloudinaryWidget(props) {
   const uploadImage = async e => {
     const files = e.target.files
     const data = new FormData()
-
     data.append('file', files[0])
     data.append('upload_preset', 'flvjwbbo')
     setLoading(true)
@@ -35,14 +34,15 @@ export default function CloudinaryWidget(props) {
     await worker.loadLanguage('eng');
     await worker.initialize('eng');
     const { data: { text } } = await worker.recognize(image);
-    props.setClippings(text);
+    props.addClipping(text);
   };
-  //const [props.clippings, props.setClippings] = useState('Recognizing...');
+
   useEffect(() => {
     doOCR();
-  });
+    console.log("inside widget useEffect")
+  }, [image]);
   //End of tess code
-  console.log(image);
+  console.log("image", image);
   return (
     <div>
       <h1>Upload Image</h1>

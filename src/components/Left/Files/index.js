@@ -5,8 +5,9 @@ export default function Files(props) {
   return (
     <div>
       <CloudinaryWidget 
-        clippings={props.clippings}
-        setClippings={props.setClippings}
+        newImport={props.newImport}
+        setNewImport={props.setNewImport}
+        addClipping={props.addClipping}
       />
     </div>
   )
