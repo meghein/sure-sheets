@@ -35,6 +35,7 @@ export default function App() {
     onDrop,
   } = useDragandDrop();
 
+  const [clippings, setClippings] = useState([]);
 
   return (
     <div className="App">
@@ -49,6 +50,8 @@ export default function App() {
           onDragStart={onDragStart}
           onDrop={onDrop}
           onDragOver={onDragOver}
+          clippings={clippings}
+          setClippings={setClippings}
         />
         {/* <Splash /> */}
         <Canvas
@@ -57,7 +60,9 @@ export default function App() {
           onDrop={onDrop}
           onDragOver={onDragOver}
         />
-        <Right />
+        <Right 
+          clippings={clippings}
+        />
       </div>
     </div>
   )

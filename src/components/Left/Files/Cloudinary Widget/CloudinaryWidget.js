@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { createWorker } from 'tesseract.js';
 
-export default function CloudinaryWidget() {
+export default function CloudinaryWidget(props) {
   const [image, setImage] = useState('')
   const [loading, setLoading] = useState(false)
   //Tess code
@@ -35,9 +35,9 @@ export default function CloudinaryWidget() {
     await worker.loadLanguage('eng');
     await worker.initialize('eng');
     const { data: { text } } = await worker.recognize(image);
-    setOcr(text);
+    props.setClippings(text);
   };
-  const [ocr, setOcr] = useState('Recognizing...');
+  //const [props.clippings, props.setClippings] = useState('Recognizing...');
   useEffect(() => {
     doOCR();
   });
@@ -51,13 +51,14 @@ export default function CloudinaryWidget() {
         placeholder="Upload an image"
         onChange={uploadImage}
       />
-      {loading ? (
+      {/* {loading ? (
         <h3>Loading...</h3>
         ): (
+        <h3>Success!</h3>
         //<img src={image} style={{width: '300px'}}/>
-        <input type="text" value={ocr} />
+        //<input type="text" value={props.clippings} />
         )
-      }
+      } */}
     </div>
   )
 }
