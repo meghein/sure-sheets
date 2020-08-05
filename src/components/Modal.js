@@ -14,8 +14,6 @@ export default function Modal(props) {
     setOpen(false)
   }
 
-  console.log(props)
-
   return (      
     <div>
       <Button

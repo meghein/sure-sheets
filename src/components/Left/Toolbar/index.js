@@ -10,7 +10,12 @@ export default function Toolbar(props) {
     <div>
       <Modal
         buttonName="Textbox"
-        body={<Textbox/>}
+        body={
+          <Textbox
+            textValue={props.textValue}
+            setTextValue={props.setTextValue}
+          />
+        }
       />
       <Modal
         buttonName="NERv05"

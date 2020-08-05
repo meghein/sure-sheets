@@ -1,22 +1,12 @@
 import React, { useState } from 'react';
-import {Editor, EditorState, RichUtils} from 'draft-js';
-import 'draft-js/dist/Draft.css';
+import { Text } from 'react-konva';
+
 
 export default function Text() {
-  const [editorState, setEditorState] = useState(
-    () => EditorState.createEmpty(),
-  );
-
-  //   const handleKeyCommand = (command, editorState) => {
-
-
-  // }
-
+ 
   return (
-    <Editor
-      editorState={editorState}
-      onChange={setEditorState}
-      // handleKeyCommand={handleKeyCommand}
+    <Text
+      
     />
   );
 
