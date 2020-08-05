@@ -1,14 +1,28 @@
-import React from 'react';
-import CloudinaryWidget from './Cloudinary Widget/CloudinaryWidget';
+import React, { useState } from 'react';
+import CloudinaryWidget from './CloudinaryWidget';
+import Tesseract from './Tesseract';
 
 export default function Files(props) {
+  const [imageURL, setImageURL] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [loadTess, setLoadTess] = useState(false)
+
   return (
     <div>
       <CloudinaryWidget 
-        newImport={props.newImport}
-        setNewImport={props.setNewImport}
-        addClipping={props.addClipping}
+        // addClipping={props.addClipping}
+        imageURL={imageURL}
+        setImageURL={setImageURL}
+        loading={loading}
+        setLoading={setLoading}
+        setLoadTess={setLoadTess}
+
       />
+      {loadTess && 
+      <Tesseract
+        imageURL={imageURL}
+        addClipping={props.addClipping}
+      />}
     </div>
   )
 }
