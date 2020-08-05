@@ -8,7 +8,10 @@ import Toolbar from './Toolbar'
 export default function Left(props) {
   return (
     <div className="left">
-      {/* <Files/> */}
+      <Files 
+        clippings={props.clippings}
+        setClippings={props.setClippings}
+      />
       <Templates/>
       <Toolbar
         imagesData={props.imagesData}

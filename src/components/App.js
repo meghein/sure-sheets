@@ -36,8 +36,8 @@ export default function App() {
   } = useDragandDrop();
 
   const [textValue, setTextValue] = useState('');
-
-
+  const [clippings, setClippings] = useState([]);
+  
   return (
     <div className="App">
       <NavBar />
@@ -53,6 +53,8 @@ export default function App() {
           onDragOver={onDragOver}
           textValue={textValue}
           setTextValue={setTextValue}
+          clippings={clippings}
+          setClippings={setClippings}
         />
         {/* <Splash /> */}
         <Canvas
@@ -62,7 +64,9 @@ export default function App() {
           onDragOver={onDragOver}
           textValue={textValue}
         />
-        <Right />
+        <Right 
+          clippings={clippings}
+        />
       </div>
     </div>
   )
