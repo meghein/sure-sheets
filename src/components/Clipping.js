@@ -7,7 +7,6 @@ export default function Clipping(props) {
           alt="clipping"
           // hardcode as index 0, we'll need to change this once we start using other clippings
           src= {props.imagesData[0].image.src}
-          draggable="true"
           onDragStart={props.onDragStart}
         />
         <div

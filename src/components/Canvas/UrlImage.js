@@ -12,7 +12,8 @@ export default function UrlImage(props) {
       offsetX={img ? img.width / 2 : 0}
       offsetY={img ? img.height / 2 : 0}
       draggable
-      resizeEnabled
+      width={200}
+      height={200}
     />
   )
 };

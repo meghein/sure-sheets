@@ -35,6 +35,8 @@ export default function App() {
     onDrop,
   } = useDragandDrop();
 
+  const [textValue, setTextValue] = useState('');
+
 
   return (
     <div className="App">
@@ -49,6 +51,8 @@ export default function App() {
           onDragStart={onDragStart}
           onDrop={onDrop}
           onDragOver={onDragOver}
+          textValue={textValue}
+          setTextValue={setTextValue}
         />
         {/* <Splash /> */}
         <Canvas
@@ -56,6 +60,7 @@ export default function App() {
           imagesData={images}
           onDrop={onDrop}
           onDragOver={onDragOver}
+          textValue={textValue}
         />
         <Right />
       </div>
