@@ -9,6 +9,10 @@ import Canvas from './Canvas/Canvas';
 import Left from './Left/Left';
 import Right from './Right/Right';
 
+// import Konva from 'konva';
+// import NewText from './Right/NewText';
+
+
 
 // Chatbot feature imports
 import Chatbot from 'react-chatbot-kit';
@@ -21,8 +25,9 @@ import BotButton from './Chatbot/BotButton'
 export default function App() {
   const [chatOpen, setChatOpen] = useState(false);
   const [textValue, setTextValue] = useState('');
-  const [clippings, setClippings] = useState([]);
+  const [clippings, setClippings] = useState(['This is a test text that is a bit longer for testing purposes']);
   const [newImport, setNewImport] = useState('');
+  const [selected, setSelected] = useState('');
   const [fontSize, setFontSize] = useState(24);
   const [fill, setFill] = useState('black');
   
@@ -79,6 +84,7 @@ export default function App() {
           textValue={textValue}
           fontSize={fontSize}
           fill={fill}
+          selected={selected}
         />
         <Right 
           clippings={clippings}
@@ -89,6 +95,8 @@ export default function App() {
           setFontSize={setFontSize}
           fill={fill}
           setFill={setFill}
+          selected={selected}
+          setSelected={setSelected}
         />
       </div>
     </div>
