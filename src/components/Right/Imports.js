@@ -1,9 +1,5 @@
 import React from 'react'
 import './Imports.scss'
-import { Button } from '@material-ui/core';
-// import Typography from '@material-ui/core/Typography';
-// import { Image } from 'react-konva';
-// import useImage from 'use-image';
 
 export default function Imports(props) {
   function buildTesseractClippings(clippings) {
@@ -37,6 +33,7 @@ export default function Imports(props) {
     <div className="imports">
       {tesseractClippings.map((clipping, index) => (
           <button
+            class="clipping-text"
             key={`text${index}`}
             onClick={selectTargetText}
             value={clipping.text}
@@ -48,18 +45,7 @@ export default function Imports(props) {
 
       {imageClippings.map((image, index) => (
         
-        <Button key={index} onClick={moveImage(image, index)}>{image}</Button>
-        
-          // <Image
-          //   image={clipping}
-          //   x={clipping.x}
-          //   y={clipping.y}
-          //   offsetX={clipping ? clipping.width / 2 : 0}
-          //   offsetY={clipping ? clipping.height / 2 : 0}
-          //   draggable
-          //   width={200}
-          //   height={200}
-          // />
+        <button class="clipping-image" key={index} onClick={moveImage(image, index)}>{image}</button>
         
       ))}
     </div>
