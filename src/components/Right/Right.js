@@ -9,11 +9,15 @@ export default function Right(props) {
   return (
     <div className="right">
       <Modal
-        buttonName="Textbox"
+        buttonName="Add your own Text!"
         body={
           <Textbox
             textValue={props.textValue}
             setTextValue={props.setTextValue}
+            fontSize={props.fontSize}
+            fill={props.fill}
+            setFontSize={props.setFontSize}
+            setFill={props.setFill}
           />
         }
       />

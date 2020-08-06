@@ -1,11 +1,20 @@
 @import "../styles/variables.scss";
 
+
+
 .modal {
-  // margin-left: $sidebar-width;
-  position: absolute;
-  margin-top: -32px;
-  width: 100%;
-  background-color: #ffffff;
-  border: 1px solid red;
-  z-index: 2;
+  width: 80%;
+  margin: auto;
+  border-radius: 5px;
+  border: 2px solid Black;
+  overflow: visible;
+  box-shadow: 5px 5px 2px #888888;
+  position: relative;
+  .close {
+      position: absolute;
+      background: inherit;
+      color: red;
+      top: -30px;
+      right: -30px;
+  }
 }

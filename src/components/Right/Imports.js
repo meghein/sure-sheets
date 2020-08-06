@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactQuill from 'react-quill';
 
 // usestyles goes here
 
@@ -9,10 +10,13 @@ export default function Imports(props) {
   function importsLoop(clippings) {
     const loops = clippings.map((clipping, index) => {
       console.log(typeof(clipping))
+      if(clipping === '') {
+        return null
+      }
       if(typeof(clipping) === 'object') {
-        return <img src={(clippings[index].image.src)} alt={index}/>
+        return <img src={(clippings[index].image.src)} alt={index} key={index}/>
       } else {
-        return <div>{clipping}</div>
+        return <div key={index}>{clipping}</div>
       }
     })
     return loops
@@ -21,6 +25,11 @@ export default function Imports(props) {
 
   return (
     <div>
+      {/* <ReactQuill
+        id="quill"
+        theme="bubble"
+        value={}
+      /> */}
       {importsLoop(props.clippings)}
     </div>
   )

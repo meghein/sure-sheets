@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
@@ -19,7 +19,7 @@ function CircularProgressWithLabel(props) {
         justifyContent="center"
       >
         <Typography variant="caption" component="div" color="textSecondary">{`${Math.round(
-          props.loading,
+          props.loading
         )}%`}</Typography>
       </Box>
     </Box>
@@ -34,17 +34,23 @@ CircularProgressWithLabel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-export default function CircularStatic() {
-  const [progress, setProgress] = React.useState(10);
+export default function CircularStatic(props) {
+  const [progress, setProgress] = useState(10);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
-    }, 800);
+    }, 500);
     return () => {
       clearInterval(timer);
     };
   }, []);
 
-  return <CircularProgressWithLabel value={progress} />;
+  console.log("typeof", typeof(props.loading))
+
+  return (
+  <>
+    {!props.loading && <CircularProgressWithLabel value={progress} />}
+  </>
+  );
 }
