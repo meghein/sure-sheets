@@ -1,11 +1,12 @@
 @import "../../styles/variables.scss";
 
 .canvas {
-  grid-area: main;
+  // grid-area: canvas;
+  justify-content: center;
   align-self: center;
-  margin: auto;
+  margin-left: $sidebar-width;
   width: 850px;
   height: 1100px;
   border: 2px solid red;
-  z-index: -10;
+  // z-index: -10;
 }
