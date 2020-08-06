@@ -23,6 +23,8 @@ export default function Right(props) {
       />
       <Imports 
         clippings = {props.clippings}
+        selected={props.selected}
+        setSelected={props.setSelected}
 
       />
     </div>

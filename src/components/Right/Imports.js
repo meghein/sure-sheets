@@ -1,156 +1,66 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Typography from '@material-ui/core/Typography';
-
-// usestyles goes here
-const useStyles = makeStyles((theme) => ({
-  imports: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    // minWidth: 300,
-    width: '100%',
-  },
-  image: {
-    position: 'relative',
-    height: 200,
-    [theme.breakpoints.down('xs')]: {
-      width: '100% !important', // Overrides inline-style
-      height: 100,
-    },
-    '&:hover, &$focusVisible': {
-      zIndex: 1,
-      '& $imageBackdrop': {
-        opacity: 0.15,
-      },
-      '& $imageMarked': {
-        opacity: 0,
-      },
-      // '& $imageTitle': {
-      //   border: '4px solid currentColor',
-      // },
-    },
-  },
-  focusVisible: {},
-  imageButton: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    // color: theme.palette.common.white,
-  },
-  imageSrc: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center 40%',
-  },
-  imageBackdrop: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    backgroundColor: theme.palette.common.black,
-    opacity: 0.4,
-    transition: theme.transitions.create('opacity'),
-  },
-  imageTitle: {
-    position: 'relative',
-    size: 14,
-    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
-  },
-  imageMarked: {
-    height: 3,
-    width: 18,
-    backgroundColor: theme.palette.common.white,
-    position: 'absolute',
-    bottom: -2,
-    left: 'calc(50% - 9px)',
-    transition: theme.transitions.create('opacity'),
-  },
-}));
+import './Imports.scss'
+import { Button } from '@material-ui/core';
+// import Typography from '@material-ui/core/Typography';
+// import { Image } from 'react-konva';
+// import useImage from 'use-image';
 
 export default function Imports(props) {
-  const classes = useStyles();
-  
-  function importsLoop(clippings) {
-    const tempArr = [];
-    function iterate(clipping, index) {
-      if(clipping === '') {
-        return null
-      }
-      if(typeof(clipping) === 'object') {
+  function buildTesseractClippings(clippings) {
+    const tempArr = []
+    clippings.forEach((clipping) => {
+      if((typeof(clipping) !== 'object') && (clipping !== '')) {
         tempArr.push({
-            url: clippings[index].image.src,
-            title: null,
-            width: '100%' 
+          title: `${clipping.slice(0, 18)}...`,
+          text: clipping,
         })
-        // return <img src={(clippings[index].image.src)} alt={index} key={index}/>
-      } else {
-        tempArr.push({
-          url: null,
-          title: clipping,
-          width: '100%'
-        })
-        // return <div key={index}>{clipping}</div>
       }
-    }
-    clippings.forEach(iterate)
+    })
     return tempArr
-  };
+  }
+  const tesseractClippings = buildTesseractClippings(props.clippings);
+  const filteredClippings = props.clippings.filter(clipping => typeof(clipping) === 'object' );
+  const imageClippings = filteredClippings.map((clipping, index) => {
+    return <img src={(filteredClippings[index].image.src)} alt={index} key={index}/>
+  })
+  console.log("tessClips", tesseractClippings)
 
-  const importedClippings = importsLoop(props.clippings);
+  function moveImage(image, index) {
 
-  function selected(clipping) {
-    if (clipping.url) {
-      // image goes to canvas
-    }
-    if (clipping.title) {
-      // text goes to quill
-    }
+  }
+ 
+  function selectTargetText(e) {
+    props.setSelected(e.target.value)
   }
 
-
   return (
-    <div className={classes.imports}>
-      {importedClippings.map((clipping, index) => (
-        <ButtonBase
-          focusRipple
-          key={index}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          // style={{
-          //   width: clipping.width,
-          // }}
-          onClick={selected(clipping)}
-        >
-          <span
-            className={classes.imageSrc}
-            style={{
-              backgroundImage: `url(${clipping.url})` || null,
-            }}
-          />
-          <span className={classes.imageBackdrop} />
-          <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classes.imageTitle}
-            >
-              {clipping.title || null}
-              <span className={classes.imageMarked} />
-            </Typography>
-          </span>
-        </ButtonBase>
+    <div className="imports">
+      {tesseractClippings.map((clipping, index) => (
+          <button
+            key={`text${index}`}
+            onClick={selectTargetText}
+            value={clipping.text}
+          >
+            {clipping.title}
+          </button>
+
+      ))}
+
+      {imageClippings.map((image, index) => (
+        
+        <Button key={index} onClick={moveImage(image, index)}>{image}</Button>
+        
+          // <Image
+          //   image={clipping}
+          //   x={clipping.x}
+          //   y={clipping.y}
+          //   offsetX={clipping ? clipping.width / 2 : 0}
+          //   offsetY={clipping ? clipping.height / 2 : 0}
+          //   draggable
+          //   width={200}
+          //   height={200}
+          // />
+        
       ))}
     </div>
   )
