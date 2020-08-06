@@ -28,14 +28,15 @@ export default function Templates() {
   };
   const handleClose = (e) => {
     setAnchorEl(null)
-    // This is the info that will be passed up so it can become the chosen template:
+    // This is the info that will be passed up so it can become the chosen template for the canvas:
     console.log(`Here's the id: ${e.currentTarget.dataset.id}`)
   }
 
   return (
     <div className={classes.root}>
       <div>
-        <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
+        <h4 class="left-tools">Choose your template:</h4>
+        <Button variant="contained" color="primary" aria-controls="MuiButton-label" aria-haspopup="true" onClick={handleClick}>
           Templates
         </Button>
         <Menu
@@ -54,3 +55,7 @@ export default function Templates() {
     </div>
   );
 }
+
+
+
+//  class="MuiButton-label" class="MuiTouchRipple-root"

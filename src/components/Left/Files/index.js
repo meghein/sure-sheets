@@ -7,10 +7,12 @@ export default function Files(props) {
   const [imageURL, setImageURL] = useState('')
   const [loading, setLoading] = useState(false)
   const [loadTess, setLoadTess] = useState(false)
+  // we may need this functionality soon:
   const [showTemplates, setShowTemplates] = useState(false)
 
   return (
-    <div>
+    <div>     
+      <Templates />
       <CloudinaryWidget 
         addClipping={props.addClipping}
         imageURL={imageURL}
@@ -19,7 +21,6 @@ export default function Files(props) {
         setLoading={setLoading}
         setLoadTess={setLoadTess}
       />
-      <Templates />
       {loadTess && 
       <Tesseract
         imageURL={imageURL}
