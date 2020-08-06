@@ -39,7 +39,7 @@ export default function CloudinaryWidget(props) {
 
   return (
     <div>
-      <h1>Upload Image</h1>
+      <h4>Upload Text or Images:</h4>
       <label htmlFor="icon-button-file">
       <input
         className="input"
@@ -57,7 +57,7 @@ export default function CloudinaryWidget(props) {
       {props.loading && <CircularProgress />}
       {props.imageURL && (
         <div>
-        <img src={props.imageURL} alt="clipping"/>
+        <img src={props.imageURL} width="190" alt="clipping"/>
         <Button variant="contained" color="primary" onClick={setTess}>
           This is text
         </Button>
