@@ -25,7 +25,6 @@ export default function Right(props) {
         clippings = {props.clippings}
         selected={props.selected}
         setSelected={props.setSelected}
-
       />
     </div>
   )

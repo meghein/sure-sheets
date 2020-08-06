@@ -2,14 +2,14 @@
 
 .react-chatbot-kit-chat-container {
   position: fixed;
-  bottom: 7vw;
+  bottom: 3vw;
   right: 2vh;
-  // display: none;
+  z-index: 9999;
 }
 
 .BotButton {
   position: fixed;
   bottom: 0.01vw;
   right: 2vh;
-  z-index: 9999;
+  z-index: 9998;
 }
