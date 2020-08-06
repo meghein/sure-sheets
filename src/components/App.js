@@ -19,8 +19,12 @@ import './Chatbot/Chatbot.scss'
 import BotButton from './Chatbot/BotButton'
 
 export default function App() {
-
-  const [chatOpen, setChatOpen] = useState(false)
+  const [chatOpen, setChatOpen] = useState(false);
+  const [textValue, setTextValue] = useState('');
+  const [clippings, setClippings] = useState([]);
+  const [newImport, setNewImport] = useState('');
+  const [fontSize, setFontSize] = useState(24);
+  const [fill, setFill] = useState('black');
   
   const chatbotToggle = () => {
     console.log(`CHAT TOGGLED ${chatOpen}`)
@@ -36,14 +40,6 @@ export default function App() {
   } = useDragandDrop();
 
 
-  const newImage = new window.Image()
-  newImage.src = "/images/NERv05SMALLColor.png" // => eventually this will be a clipping url
-
-  // const [images, setImages] = useState([{image: newImage}])
-  const [textValue, setTextValue] = useState('');
-  const [clippings, setClippings] = useState([]);
-  const [newImport, setNewImport] = useState('')
-
   function addClipping(newImport) {
     const tempClippings = [...clippings];
     tempClippings.push(newImport);
@@ -54,9 +50,6 @@ export default function App() {
   useEffect(() => {
     addClipping(newImport)
   }, [newImport]);
-
-  console.log("clippings", clippings)
-
   
   return (
     <div className="App">
@@ -84,12 +77,18 @@ export default function App() {
           onDrop={onDrop}
           onDragOver={onDragOver}
           textValue={textValue}
+          fontSize={fontSize}
+          fill={fill}
         />
         <Right 
           clippings={clippings}
           addClipping={addClipping}
           textValue={textValue}
           setTextValue={setTextValue}
+          fontSize={fontSize}
+          setFontSize={setFontSize}
+          fill={fill}
+          setFill={setFill}
         />
       </div>
     </div>

@@ -27,8 +27,8 @@ export default function Tesseract(props) {
   }, [props.imageURL]);
 
   return (
-      <TesseractLoader
-        loading={loading}
-      />
+    <TesseractLoader
+      loading={loading}
+    />
   )
 }

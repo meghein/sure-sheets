@@ -26,8 +26,8 @@ export default function Canvas(props) {
             })}
           <Text
             text={stripHtml(props.textValue)}
-            fontSize={24}
-            fill={"red"}
+            fontSize={props.fontSize}
+            fill={props.fill}
             // fontStyle={styleChooser}
             x={300}
             y={300}

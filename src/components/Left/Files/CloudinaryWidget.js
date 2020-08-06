@@ -1,6 +1,8 @@
 import React from 'react';
+import './CloudinaryWidget.scss'
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { Button } from '@material-ui/core';
+import { Button, IconButton } from '@material-ui/core';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
 
 
 export default function CloudinaryWidget(props) {
@@ -24,7 +26,7 @@ export default function CloudinaryWidget(props) {
     props.setLoading(false)
   }
 
-  function setTess() {
+  function setTess()  {
     props.setLoadTess(true)
   }
 
@@ -38,11 +40,20 @@ export default function CloudinaryWidget(props) {
   return (
     <div>
       <h1>Upload Image</h1>
-      <input type="file"
+      <label htmlFor="icon-button-file">
+      <input
+        className="input"
+        accept="image/*"
+        id="icon-button-file"
+        type="file"
         name="file"
         placeholder="Upload an image"
         onChange={uploadImage}
       />
+        <IconButton color="primary" aria-label="upload picture" component="span">
+          <PhotoCamera />
+        </IconButton>
+      </label>
       {props.loading && <CircularProgress />}
       {props.imageURL && (
         <div>

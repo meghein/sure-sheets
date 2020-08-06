@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button } from '@material-ui/core';
+import { Button, IconButton } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 
 import './Modal.scss'
 
@@ -25,14 +26,10 @@ export default function Modal(props) {
       </Button>
         {open && (
           <div className="modal" id="modal">
+            <IconButton aria-label="delete" className="close">
+              <CloseIcon fontSize="large" onClick={close}/>
+            </IconButton>
             {props.body}
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={close}
-            >
-              Close
-            </Button>
           </div>
           
         )}
