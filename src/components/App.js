@@ -35,6 +35,11 @@ export default function App() {
     onDrop,
   } = useDragandDrop();
 
+
+  const newImage = new window.Image()
+  newImage.src = "/images/NERv05SMALLColor.png" // => eventually this will be a clipping url
+
+  // const [images, setImages] = useState([{image: newImage}])
   const [textValue, setTextValue] = useState('');
   const [clippings, setClippings] = useState([]);
   const [newImport, setNewImport] = useState('')
@@ -43,13 +48,12 @@ export default function App() {
     const tempClippings = [...clippings];
     tempClippings.push(newImport);
     setClippings(tempClippings);
-    // setNewImport('');
     console.log("add clipping")
-  }
-  
+  }  
+
   useEffect(() => {
     addClipping(newImport)
-  }, []);
+  }, [newImport]);
 
   console.log("clippings", clippings)
 
@@ -83,6 +87,7 @@ export default function App() {
         />
         <Right 
           clippings={clippings}
+          addClipping={addClipping}
           textValue={textValue}
           setTextValue={setTextValue}
         />

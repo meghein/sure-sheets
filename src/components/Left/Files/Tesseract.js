@@ -9,7 +9,7 @@ export default function Tesseract(props) {
   const worker = createWorker({
     logger: m => {
       console.log(m.progress)
-      setLoading(m.progress)
+      setLoading(parseInt(m.progress))
     }
   });
 

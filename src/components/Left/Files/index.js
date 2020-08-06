@@ -10,7 +10,7 @@ export default function Files(props) {
   return (
     <div>
       <CloudinaryWidget 
-        // addClipping={props.addClipping}
+        addClipping={props.addClipping}
         imageURL={imageURL}
         setImageURL={setImageURL}
         loading={loading}

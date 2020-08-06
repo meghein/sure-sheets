@@ -28,6 +28,13 @@ export default function CloudinaryWidget(props) {
     props.setLoadTess(true)
   }
 
+  function imageClipping() {
+    const importedClipping = new window.Image()
+    importedClipping.src = props.imageURL
+    console.log(importedClipping)
+    props.addClipping({image: importedClipping})
+  }
+
   return (
     <div>
       <h1>Upload Image</h1>
@@ -43,7 +50,7 @@ export default function CloudinaryWidget(props) {
         <Button variant="contained" color="primary" onClick={setTess}>
           This is text
         </Button>
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" onClick={imageClipping}>
           This is an image
         </Button>
         </div>

@@ -19,6 +19,7 @@ export default function Right(props) {
       />
       <Imports 
         clippings = {props.clippings}
+
       />
     </div>
   )
