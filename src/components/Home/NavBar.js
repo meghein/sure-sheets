@@ -20,8 +20,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
+
+
+
 export default function ButtonAppBar() {
   const classes = useStyles();
+  // For Login Modal
+  const [open, setOpen] = React.useState(false);
+    const handleClickLoginOpen = () => {
+    setOpen(true);
+  };
+    const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div className={classes.root}>
@@ -33,7 +46,8 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             RoboGraphics
           </Typography>
-          <Button onClick="">Sign in MAYBE WHO KNOWS</Button>
+          <SignIn open={open} handleClose={handleClose} handleClickLoginOpen={handleClickLoginOpen} />
+          <Button onClick={handleClickLoginOpen}>Sign in MAYBE WHO KNOWS</Button>
         </Toolbar>
       </AppBar>
     </div>

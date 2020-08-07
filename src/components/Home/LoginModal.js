@@ -29,10 +29,12 @@ function Copyright() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    position: 'absolute',
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3)
   },
   avatar: {
     margin: theme.spacing(1),
@@ -47,32 +49,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-  
+export default function SignIn(props) {
   const classes = useStyles();
-
+  const {open, handleClickLoginOpen, handleClose} = props;
   return (
     <>
-      {/* <Button variant="outlined" color="danger" onClick={handleClickOpen}>Login/Register</Button> */}
+      
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="login-registration"
         aria-describedby="open-login-registration-modal"
         >
-        
-            <Container component="main" maxWidth="xs" backgroundColor="red">
-              <CssBaseline />
-              <div className={classes.paper}>
+        <Container component="main" maxWidth="xs">
+          <Container component="main" maxWidth="xs">
+            <CssBaseline />
+            <div className={classes.paper}>
               <Avatar className={classes.avatar}>
                 <LockOutlinedIcon />
               </Avatar>
@@ -135,6 +127,7 @@ export default function SignIn() {
             </Box>
           </Container>
 
+        </Container>
       </Modal>
     </>
   );
