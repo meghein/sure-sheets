@@ -1,10 +1,11 @@
 import React from 'react'
-import { Image } from 'react-konva';
+import { Image, Transformer } from 'react-konva';
 import useImage from 'use-image';
 
 export default function UrlImage(props) {
   const [img] = useImage(props.image.src);
   return (
+  
     <Image
       image={img}
       x={props.image.x}
@@ -15,5 +16,7 @@ export default function UrlImage(props) {
       width={200}
       height={200}
     />
+    
+    
   )
 };

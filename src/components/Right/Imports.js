@@ -25,8 +25,11 @@ export default function Imports(props) {
   })
   console.log("tessClips", tesseractClippings)
 
-  function moveImage(image, index) {
-
+  function selectTarget(e) {
+    props.setSelected(e.target.value)
+    props.addImage()
+    console.log("selected", props.selected)
+    console.log(props.clippings)
   }
  
   function selectTargetText(e) {
@@ -48,7 +51,13 @@ export default function Imports(props) {
 
       {imageClippings.map((image, index) => (
         
-        <Button key={index} onClick={moveImage(image, index)}>{image}</Button>
+        <button
+          key={`image${index}`}
+          onClick={selectTarget}
+          value={(filteredClippings[index].image.src)}
+        >
+          {image}
+        </button>
         
           // <Image
           //   image={clipping}

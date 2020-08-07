@@ -51,7 +51,6 @@ export default function Textbox(props) {
     if(event.currentTarget.dataset.id === "font-body") {
       props.setFontSize(16)
     }
-    
   }
 
   const handleColorChange = ({ hex }) => props.setFill(hex)
@@ -60,7 +59,7 @@ export default function Textbox(props) {
   }
 
   const saveText = (event) => {
-
+    console.log(props.textValue)
   }
 
   return (      

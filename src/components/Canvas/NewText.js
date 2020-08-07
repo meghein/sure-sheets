@@ -1,31 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Text } from 'react-konva';
 
 export default function NewText(props) {
-  const [newText, setNewText] = useState('')
-  
-  function selectedText() {
-    console.log(props.selected)
-    if (props.selected) {
-      return <Text
-      text={props.selected}
-      fontSize={props.fontSize}
-      fill={props.fill}
-      x={300}
-      y={300}
-      draggable
-    />
-    }  
+
+  function stripHtml(value){
+    let tempElement = document.createElement("div");
+    tempElement.innerHTML = value;
+    return tempElement.textContent || tempElement.innerText || "";
   }
 
-  useEffect(() => {
-    setNewText(selectedText())
-  }, [props.selected]);
-
-  console.log("after use effect", newText)
   return (
-    <>
-    {newText ? newText : null}
-    </>
+    < Text
+      text={stripHtml(props.textValue)}
+      fontSize={props.fontSize}
+      fill={props.fill}
+      width={300}
+      x={100}
+      y={100}
+      draggable
+    />
   )
 }

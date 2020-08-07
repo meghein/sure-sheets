@@ -22,8 +22,10 @@ export default function App() {
   const [textValue, setTextValue] = useState('');
   const [clippings, setClippings] = useState(['This is a test text that is a bit longer for testing purposes']);
   const [newImport, setNewImport] = useState('');
+
+  const [canvasClippings, setCanvasClippings] = useState([])
   const [selected, setSelected] = useState('');
-  const [fontSize, setFontSize] = useState(24);
+  const [fontSize, setFontSize] = useState(16);
   const [fill, setFill] = useState('black');
   
   const chatbotToggle = () => {
@@ -45,12 +47,24 @@ export default function App() {
     tempClippings.push(newImport);
     setClippings(tempClippings);
     console.log("add clipping")
-  }  
+  }
 
   useEffect(() => {
     addClipping(newImport)
   }, [newImport]);
 
+
+  const addImage = () => {
+    const newImage = {
+      // x: getRandomInt(100),
+      // y: getRandomInt(100),
+      src: selected,
+      id: `image${canvasClippings.length + 1}`,
+    };
+    const tempClippings = [...canvasClippings];
+    tempClippings.push(newImage);
+    setCanvasClippings(tempClippings);
+  };
   
   useEffect(() => {
     setTextValue(selected)
@@ -97,6 +111,7 @@ export default function App() {
           setFill={setFill}
           selected={selected}
           setSelected={setSelected}
+          addImage={addImage}
         />
       </div>
     </div>
