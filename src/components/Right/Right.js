@@ -5,6 +5,16 @@ import Imports from './Imports'
 import Modal from '../Modal'
 import Textbox from './Textbox';
 
+/*
+<div>
+  <button onClick={loadTemplate}>template</button>
+  <button onClick={addImage}>image</button>
+  <button onClick={addText}>text</button>
+  <button onClick={handleUndo}>undo</button>
+</div>
+
+*/ 
+
 export default function Right(props) {
 
   return (

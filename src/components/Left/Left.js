@@ -13,7 +13,9 @@ export default function Left(props) {
         setNewImport={props.setNewImport}
         addClipping={props.addClipping}
       />
-      <Templates/>
+      <Templates
+        setCurrentStage={props.setCurrentStage}
+      />
       <Toolbar
         imagesData={props.imagesData}
         onDragStart={props.onDragStart}

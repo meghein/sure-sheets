@@ -2,6 +2,7 @@ import React, {useState, useEffect } from 'react';
 import './App.scss';
 
 import useDragandDrop from '../hooks/useDragAndDrop';
+import stageLoader from '../helpers/stageLoader'
 
 import NavBar from './Home/NavBar';
 // import Splash from './Home/Splash';
@@ -22,11 +23,12 @@ export default function App() {
   const [textValue, setTextValue] = useState('');
   const [clippings, setClippings] = useState(['This is a test text that is a bit longer for testing purposes']);
   const [newImport, setNewImport] = useState('');
-
-  const [canvasClippings, setCanvasClippings] = useState([])
   const [selected, setSelected] = useState('');
   const [fontSize, setFontSize] = useState(16);
   const [fill, setFill] = useState('black');
+
+  const [clippingHistory, setClippingHistory] = useState([]);
+  const [currentStage, setCurrentStage] = useState([]);
   
   const chatbotToggle = () => {
     console.log(`CHAT TOGGLED ${chatOpen}`)
@@ -41,6 +43,18 @@ export default function App() {
     onDrop,
   } = useDragandDrop();
 
+  const {
+    historyStep,
+    loadTemplate,
+    createImage,
+    createText,
+    create,
+    update,
+    addImage,
+    addText,
+    handleUndo,
+  } = stageLoader(clippingHistory, setClippingHistory)
+
 
   function addClipping(newImport) {
     const tempClippings = [...clippings];
@@ -53,19 +67,6 @@ export default function App() {
     addClipping(newImport)
   }, [newImport]);
 
-
-  const addImage = () => {
-    const newImage = {
-      // x: getRandomInt(100),
-      // y: getRandomInt(100),
-      src: selected,
-      id: `image${canvasClippings.length + 1}`,
-    };
-    const tempClippings = [...canvasClippings];
-    tempClippings.push(newImage);
-    setCanvasClippings(tempClippings);
-  };
-  
   useEffect(() => {
     setTextValue(selected)
   }, [selected]);
@@ -88,17 +89,26 @@ export default function App() {
           newImport={newImport}
           setNewImport={setNewImport}
           addClipping={addClipping}
+          loadTemplate={loadTemplate}
+          setCurrentStage={setCurrentStage}
         />
         {/* <Splash /> */}
         <Canvas
-          stageRef={stageRef}
-          imagesData={images}
-          onDrop={onDrop}
-          onDragOver={onDragOver}
-          textValue={textValue}
-          fontSize={fontSize}
-          fill={fill}
-          selected={selected}
+          // stageRef={stageRef}
+          // imagesData={images}
+          // onDrop={onDrop}
+          // onDragOver={onDragOver}
+          // textValue={textValue}
+          // fontSize={fontSize}
+          // fill={fill}
+          // selected={selected}
+          currentStage={currentStage}
+          loadTemplate={loadTemplate}
+          addImage={addImage}
+          addText={addText}
+          handleUndo={handleUndo}
+          clippingHistory={clippingHistory}
+          setClippingHistory={setClippingHistory}
         />
         <Right 
           clippings={clippings}
@@ -112,6 +122,8 @@ export default function App() {
           selected={selected}
           setSelected={setSelected}
           addImage={addImage}
+          addText={addText}
+          handleUndo={handleUndo}
         />
       </div>
     </div>
