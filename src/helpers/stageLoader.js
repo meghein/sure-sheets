@@ -1,6 +1,6 @@
 import Konva from 'konva'
 
-export default function StageLoader(clippingHistory, setClippingHistory) {
+export default function StageLoader() {
   let historyStep = 1;
   const width = window.innerWidth;
   const height = window.innerHeight;
@@ -13,25 +13,15 @@ export default function StageLoader(clippingHistory, setClippingHistory) {
   }
 
   function createObject(attrs) {
-    return Object.assign({}, attrs, {
-      text: '',
-      src: '',
-      x: 0,
-      y: 0,
-
-    });
+    return Object.assign({}, attrs);
   }
 
-  function createImage(attrs, source) {
-    return Object.assign(createObject(attrs), {
-      src: source,
-    });
+  function createImage(attrs) {
+    return Object.assign(createObject(attrs));
   }
 
-  function createText(attrs, text) {
-    return Object.assign(createObject(attrs), {
-      text: text,
-    });
+  function createText(attrs) {
+    return Object.assign(createObject(attrs));
   }
 
   function create() {
@@ -95,25 +85,25 @@ export default function StageLoader(clippingHistory, setClippingHistory) {
 
   create(clippingHistory);
 
-  function addImage() {
+  function addImage(source) {
     const tempState = [...clippingHistory];
-    tempState.push(
-      createImage({
+    tempState.push({
         x: width * Math.random(),
         y: height * Math.random(),
-      })
-    );
+        src: source
+      });
     setClippingHistory(tempState)
-    // recreate canvas
-    create(clippingHistory);
+    // create(clippingHistory);
   };
 
-  function addText() {
+
+  function addText(text) {
     const tempState = [...clippingHistory];
     tempState.push(
       createText({
         x: width * Math.random(),
         y: height * Math.random(),
+        text: text
       })
     );
     setClippingHistory(tempState)

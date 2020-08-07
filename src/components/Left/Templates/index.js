@@ -13,7 +13,9 @@ const templates = [
                         "className":"Layer",
                         "children":[{
                           "attrs":{"x":100,"y":100,"sides":6,"radius":70,"fill":"red","stroke":"black","strokeWidth":4},
-                          "className":"RegularPolygon"}]}]
+                          "className":"RegularPolygon"}, {
+                            "attrs":{"x":200,"y":200,"sides":6,"radius":70,"fill":"red","stroke":"black","strokeWidth":4},
+                            "className":"RegularPolygon"}]},]
         },
         
         {"attrs":{"width":850,"height":1100},"className":"Stage","children":[{"attrs":{},"className":"Layer","children":[{"attrs":{"x":200,"y":100,"sides":6,"radius":70,"fill":"white","stroke":"black","strokeWidth":4},"className":"RegularPolygon"}]}]},
@@ -32,7 +34,6 @@ export default function Templates(props) {
   };
   const handleClose = (e) => {
     setAnchorEl(null)
-    console.log(`Here's the id: ${JSON.stringify(templates[e.currentTarget.dataset.id])}`)
     props.setCurrentStage(templates[e.currentTarget.dataset.id])
   }
 
