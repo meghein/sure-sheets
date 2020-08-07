@@ -12,6 +12,11 @@ import Canvas from './Canvas/Canvas';
 import Left from './Left/Left';
 import Right from './Right/Right';
 
+
+// import Konva from 'konva';
+// import NewText from './Right/NewText';
+
+
 // Chatbot feature imports
 import Chatbot from 'react-chatbot-kit';
 import ActionProvider from './Chatbot/ActionProvider';
