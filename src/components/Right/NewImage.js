@@ -1,19 +1,43 @@
-import React from 'react'
-import { Image } from 'react-konva';
-import useImage from 'use-image';
+import React, { useEffect, useRef } from "react";
+import { Image, Transformer } from "react-konva";
+import useImage from "use-image";
 
 export default function NewImage(props) {
-  const [img] = useImage(props.image.src);
+  const shapeRef = useRef();
+  const trRef = useRef();
+  const [image] = useImage(props.selected);
+  useEffect(() => {
+    if (props.selected) {
+      trRef.current.setNode(shapeRef.current);
+      trRef.current.getLayer().batchDraw();
+    }
+  }, [props.selected]);
   return (
-    <Image
-      image={img}
-      x={props.image.x}
-      y={props.image.y}
-      offsetX={img ? img.width / 2 : 0}
-      offsetY={img ? img.height / 2 : 0}
-      draggable
-      width={200}
-      height={200}
-    />
-  )
+    <React.Fragment>
+      <Image
+        onClick={props.setSelected}
+        image={image}
+        ref={shapeRef}
+        draggable
+        onDragEnd={e => {
+          onChange({
+            x: e.target.x(),
+            y: e.target.y(),
+          });
+        }}
+        onTransformEnd={e => {
+          const node = shapeRef.current;
+          const scaleX = node.scaleX();
+          const scaleY = node.scaleY();
+          onChange({
+            x: node.x(),
+            y: node.y(),
+            width: node.width() * scaleX,
+            height: node.height() * scaleY,
+          });
+        }}
+      />
+      {props.selected && <Transformer ref={trRef} />}
+    </React.Fragment>
+  );
 };

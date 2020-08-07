@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactQuill from 'react-quill';
-import Button from '@material-ui/core/Button';
+import { Button, IconButton } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
@@ -15,27 +16,41 @@ import 'react-quill/dist/quill.bubble.css';
 export default function Textbox(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [pickerVisable, setpickerVisable] = useState(false)
-  const open = Boolean(anchorEl);
+  const [open, setOpen] = useState(false);
+  const isOpen = Boolean(anchorEl);
+
+  useEffect(() => {
+    if(props.textValue) {
+      setOpen(true)
+    }
+  }, [props.textValue])
+
+  const toggleOpen = () => {
+    open ? setOpen(false) : setOpen(true)
+  }
+
+  const close = () => {
+    setOpen(false)
+  }
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = (e) => {
+  const handleClose = (event) => {
     setAnchorEl(null)
-    if(e.currentTarget.dataset.id === "font-title") {
+    if(event.currentTarget.dataset.id === "font-title") {
       props.setFontSize(36)
     }
-    if(e.currentTarget.dataset.id === "font-heading") {
+    if(event.currentTarget.dataset.id === "font-heading") {
       props.setFontSize(28)
     }
-    if(e.currentTarget.dataset.id === "font-subheading") {
+    if(event.currentTarget.dataset.id === "font-subheading") {
       props.setFontSize(22)
     }
-    if(e.currentTarget.dataset.id === "font-body") {
+    if(event.currentTarget.dataset.id === "font-body") {
       props.setFontSize(16)
     }
-    
   }
 
   const handleColorChange = ({ hex }) => props.setFill(hex)
@@ -43,8 +58,25 @@ export default function Textbox(props) {
     pickerVisable ? setpickerVisable(false) : setpickerVisable(true)
   }
 
-  return (
+  const saveText = (event) => {
+    console.log(props.textValue)
+  }
+
+  return (      
     <div>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={toggleOpen}
+      >
+        Edit or Add Text
+      </Button>
+        {open && (
+          <div className="modal" id="modal">
+            <IconButton aria-label="delete" className="close">
+              <CloseIcon fontSize="large" onClick={close}/>
+            </IconButton>
+            <div>
       <ReactQuill
         id="quill"
         theme="bubble"
@@ -52,6 +84,7 @@ export default function Textbox(props) {
         onChange={props.setTextValue}
       />
       <div>
+        <Button onClick={saveText}>Click to save</Button>
         <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
           Font Size
         </Button>
@@ -59,7 +92,7 @@ export default function Textbox(props) {
           id="fade-menu"
           anchorEl={anchorEl}
           keepMounted
-          open={open}
+          open={isOpen}
           onClose={handleClose}
           TransitionComponent={Fade}
         >
@@ -85,5 +118,11 @@ export default function Textbox(props) {
       </div>
 
     </div>
-  )
+          </div>
+          
+        )}
+        
+    </div>  
+  );
+
 }
