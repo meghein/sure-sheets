@@ -4,7 +4,7 @@ import { Text } from 'react-konva';
 export default function NewText(props) {
   const [newText, setNewText] = useState('')
   
-  function selectedText(e) {
+  function selectedText() {
     console.log(props.selected)
     if (props.selected) {
       return <Text

@@ -13,6 +13,8 @@ export default function Canvas(props) {
     return tempElement.textContent || tempElement.innerText || "";
   }
 
+  const [newText, setNewText] = useState('')
+  const [canvasClippings, setCanvasClippings] = useState([])
   function selectedText() {
     console.log(props.selected)
     if (props.selected) {
@@ -26,11 +28,17 @@ export default function Canvas(props) {
     />
     }  
   }
-  const [newText, setNewText] = useState('')
 
-  useEffect(() => {
-    setNewText(selectedText())
-  }, [props.selected]);
+  function addCanvasClipping(newText) {
+    const tempClippings = [...canvasClippings];
+    tempClippings.push(newText);
+    setCanvasClippings(tempClippings);
+    console.log("add canvas clipping")
+  } 
+
+  // useEffect(() => {
+  //   setNewText(selectedText())
+  // }, [props.selected]);
 
   console.log("after use effect", newText)
 
@@ -50,6 +58,7 @@ export default function Canvas(props) {
             text={stripHtml(props.textValue)}
             fontSize={props.fontSize}
             fill={props.fill}
+            width={300}
             x={300}
             y={300}
             draggable
