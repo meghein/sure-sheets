@@ -39,65 +39,57 @@ export default function Register(props) {
           Register
         </Typography>
         <form className={props.classes.form} noValidate>
-          
-            
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="username"
-                label="Username"
-                name="username"
-                autoComplete="username"
-                autoFocus
-              />
-          
-          
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-          
-          
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-          
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-          
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={props.classes.submit}
-          >
-            Sign Up
-          </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Link onClick={() => props.toggleReg()} variant="body2">
-                Already have an account? Sign in
-              </Link>
-            </Grid>
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          id="username"
+          label="Username"
+          name="username"
+          autoComplete="username"
+          autoFocus
+        />
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          id="email"
+          label="Email Address"
+          name="email"
+          autoComplete="email"
+        />
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          name="password"
+          label="Password"
+          type="password"
+          id="password"
+          autoComplete="current-password"
+        />
+        <FormControlLabel
+          control={<Checkbox value="allowExtraEmails" color="primary" />}
+          label="I want to receive inspiration, marketing promotions and updates via email."
+        />
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="primary"
+          className={props.classes.submit}
+        >
+          Sign Up
+        </Button>
+        <Grid container justify="flex-end">
+          <Grid item>
+            <Link onClick={() => props.toggleReg()} variant="body2">
+              Already have an account? Sign in
+            </Link>
+          </Grid>
           </Grid>
         </form>
       </div>

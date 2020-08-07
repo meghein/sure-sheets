@@ -37,7 +37,7 @@ export default function Login(props) {
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
-                  </Typography>
+          </Typography>
           <form className={props.classes.form} noValidate>
             <TextField
               variant="outlined"
@@ -73,7 +73,7 @@ export default function Login(props) {
               className={props.classes.submit}
             >
               Sign In
-                    </Button>
+            </Button>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
