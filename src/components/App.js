@@ -35,7 +35,7 @@ export default function App() {
   const [fill, setFill] = useState('black');
 
   const [clippingHistory, setClippingHistory] = useState([]);
-  const [currentStage, setCurrentStage] = useState([]);
+  const [currentStage, setCurrentStage] = useState('');
   
   const chatbotToggle = () => {
     console.log(`CHAT TOGGLED ${chatOpen}`)

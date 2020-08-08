@@ -39,7 +39,7 @@ export default function CloudinaryWidget(props) {
 
   return (
     <div>
-      <h4>Upload Text or Images:</h4>
+      {/* <h4>Upload Text or Images:</h4> */}
       <label htmlFor="icon-button-file">
       <input
         className="input"
