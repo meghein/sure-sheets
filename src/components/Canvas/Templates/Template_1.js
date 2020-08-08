@@ -14,14 +14,85 @@ export default function Template_1(props) {
       onTouchStart={props.checkDeselect}
     >
       <Layer>
+        {/* EDIT HERE CHARLIE */}
         <Rect
           width={200}
-          height={200}
+          height={600}
           x={100}
           y={400}
-          fill={'red'}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+          // draggable={true}
         />
-        
+        {/* YOU WORKIN' HERE */}
+        <Rect
+          width={200}
+          height={600}
+          x={100}
+          y={400}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+        <Rect
+          width={200}
+          height={600}
+          x={100}
+          y={400}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+        <Rect
+          width={200}
+          height={600}
+          x={100}
+          y={400}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+        <Rect
+          width={200}
+          height={600}
+          x={100}
+          y={400}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <Clippings
           clippingHistory={props.clippingHistory}
           setClippingHistory={props.setClippingHistory}

@@ -36,6 +36,8 @@ export default function Canvas(props) {
             selectShape={selectShape}
           />
         }
+
+        {/* IF WE CREATE MORE TEMPLATES, ALSO CREATE MORE OF THESE */}
         {(props.currentStage === "Template 2") &&
           <Template_2
           ref={props.StageRef}
