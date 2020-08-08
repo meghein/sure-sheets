@@ -4,7 +4,7 @@ import './App.scss';
 import Konva from 'konva'
 
 import useDragandDrop from '../hooks/useDragAndDrop';
-// import stageLoader from '../helpers/stageLoader'
+import stageLoader from '../helpers/stageLoader'
 
 import NavBar from './Home/NavBar';
 // import Splash from './Home/Splash';
@@ -50,45 +50,18 @@ export default function App() {
     onDrop,
   } = useDragandDrop();
 
-  // const {
-  //   // historyStep,
-  //   loadTemplate,
-  //   // createImage,
-  //   // createText,
-  //   // create,
-  //   // update,
-  //   // addImage,
-  //   addText,
-  //   handleUndo,
-  // } = stageLoader()
-
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-  const layer = new Konva.Layer();
-
-  function loadTemplate(template) {
-    const newStage = Konva.Node.create(template, 'canvas');
-    newStage.add(layer);;
-    return newStage
-  }
-
-  function addImage(source) {
-    const tempState = [...clippingHistory];
-    tempState.push({
-        x: width * Math.random(),
-        y: height * Math.random(),
-        src: source
-      });
-    setClippingHistory(tempState)
-    // create(clippingHistory);
-  };
+  const {
+    loadTemplate,
+    addImage,
+    addText,
+    handleUndo,
+  } = stageLoader(clippingHistory, setClippingHistory, currentStage, setCurrentStage)
 
 
   function addClipping(newImport) {
     const tempClippings = [...clippings];
     tempClippings.push(newImport);
     setClippings(tempClippings);
-    console.log("add clipping")
   }
 
   useEffect(() => {
@@ -108,10 +81,10 @@ export default function App() {
       <BotButton toggle={chatbotToggle}/>
       <div className="main">
         <Left
-          imagesData={images}
-          onDragStart={onDragStart}
-          onDrop={onDrop}
-          onDragOver={onDragOver}
+          // imagesData={images}
+          // onDragStart={onDragStart}
+          // onDrop={onDrop}
+          // onDragOver={onDragOver}
           textValue={textValue}
           setTextValue={setTextValue}
           newImport={newImport}
@@ -126,9 +99,9 @@ export default function App() {
           // imagesData={images}
           // onDrop={onDrop}
           // onDragOver={onDragOver}
-          // textValue={textValue}
-          // fontSize={fontSize}
-          // fill={fill}
+          textValue={textValue}
+          fontSize={fontSize}
+          fill={fill}
           // selected={selected}
           currentStage={currentStage}
           loadTemplate={loadTemplate}
@@ -150,7 +123,10 @@ export default function App() {
           selected={selected}
           setSelected={setSelected}
           addImage={addImage}
-          // addText={addText}
+          addText={addText}
+          onDragStart={onDragStart}
+          onDrop={onDrop}
+          onDragOver={onDragOver}
           // handleUndo={handleUndo}
         />
       </div>

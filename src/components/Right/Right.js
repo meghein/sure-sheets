@@ -31,9 +31,13 @@ export default function Right(props) {
         
       <Imports 
         clippings = {props.clippings}
-        selected={props.selected}
         setSelected={props.setSelected}
         addImage={props.addImage}
+        addText={props.addText}
+
+        onDragStart={props.onDragStart}
+        onDrop={props.onDrop}
+        onDragOver={props.onDragOver}
       />
     </div>
   )

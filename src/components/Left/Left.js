@@ -3,7 +3,7 @@ import './Left.scss'
 
 import Files from './Files'
 import Templates from './Templates'
-import Toolbar from './Toolbar'
+// import Toolbar from './Toolbar'
 
 export default function Left(props) {
   return (
@@ -16,14 +16,14 @@ export default function Left(props) {
       <Templates
         setCurrentStage={props.setCurrentStage}
       />
-      <Toolbar
+      {/* <Toolbar
         imagesData={props.imagesData}
         onDragStart={props.onDragStart}
         onDrop={props.onDrop}
         onDragOver={props.onDragOver}
         textValue={props.textValue}
         setTextValue={props.setTextValue}
-      />
+      /> */}
     </div>
   )
 }
