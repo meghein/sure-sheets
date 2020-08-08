@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -27,6 +27,22 @@ function Copyright() {
 }
 
 
+const [state, setState] = useState({
+  email: "",
+  password: ""
+});
+//const [email, setEmail] = useState(props.email || "");
+//const [password, setPassword] = useState(props.password || "");
+
+function handleChange(e) {
+  const value = e.target.value;
+  setState({
+    [e.taget.credentials]: value
+  });
+}
+
+const [error, setError] = useState("");
+
 export default function Login(props) {
   return (
     <Container component="main" maxWidth="xs">
@@ -49,6 +65,7 @@ export default function Login(props) {
               name="email"
               autoComplete="email"
               autoFocus
+              value={state.email}
             />
             <TextField
               variant="outlined"
@@ -59,6 +76,7 @@ export default function Login(props) {
               label="Password"
               type="password"
               id="password"
+              value={state.password}
               autoComplete="current-password"
             />
             <FormControlLabel
@@ -71,6 +89,7 @@ export default function Login(props) {
               variant="contained"
               color="primary"
               className={props.classes.submit}
+              onChange={handleChange}
             >
               Sign In
             </Button>
