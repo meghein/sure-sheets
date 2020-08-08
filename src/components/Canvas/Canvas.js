@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './Canvas.scss';
 
-import Template_1 from './Templates/Template_1'
-import Template_2 from './Templates/Template_2'
+import Template_1 from './Templates/Template_2'
+import Template_2 from './Templates/Template_1'
 import Template_3 from './Templates/Template_3'
 
 export default function Canvas(props) {
