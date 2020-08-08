@@ -4,7 +4,7 @@ import "./NavOptions.css";
 
 const NavOptions = (props) => {
   const options = [
-    { text: "How do I import my screenshots?", handler: () => { }, id: 1 },
+    { text: "How do I import my screenshots?", handler: props.actionProvider.loveMessage(), id: 1 },
     { text: "How do I edit my sheet?", handler: () => { }, id: 2 },
     { text: "How do I export my cheatsheet?", handler: () => { }, id: 3 },
     { text: "Can you teach me how to love?", handler: () => { }, id: 4 },

@@ -12,7 +12,7 @@ class ActionProvider {
 
   handleWhyLinkList = () => {
     const message = this.createChatBotMessage(
-      "Well... um that's a totally... logical question um— d-do these help?",
+      "Well... um that's a totally... logical question um— d-do these links help?",
       {
         widget: "whyLinks",
       }

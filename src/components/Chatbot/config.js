@@ -63,22 +63,23 @@ const config = {
         // 
         options: [
           {
-            text: "Why make a cheatsheet?",
-            url:
-              "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/",
+            text: "Why should I make a cheat sheet?",
+            url: "https://www.youtube.com/watch?v=AJ9Zk4-qKco",
             id: 1,
           },
           {
-            text: "How does this help me study?",
+            text: "How do I decide what should go on my sheet?",
             url:
-              "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+              "https://www.fastweb.com/student-life/articles/creating-the-perfect-teacher-permitted-exam-cheat-sheet",
             id: 2,
           },
           {
-            text: "What should I do with this page when I'm done?",
-            url: "https://frontendmasters.com",
+            text: "What kind of info should go on a cheatsheet?",
+            url:
+              "https://www.wikihow.com/Create-a-%22Cheat-Sheet%22-(Allowed-Reference-Sheet)",
             id: 3,
-          },
+          }
+        
         ],
       },
     },
