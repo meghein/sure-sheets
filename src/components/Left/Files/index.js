@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import CloudinaryWidget from './CloudinaryWidget';
 import Tesseract from './Tesseract';
-import Templates from './Templates'
+import Templates from './Templates';
+import UploadModal from './UploadModal';
 
 export default function Files(props) {
   const [imageURL, setImageURL] = useState('')
@@ -12,7 +13,18 @@ export default function Files(props) {
 
   return (
     <div>     
-      <Templates />
+      {/* <Templates /> */}
+      <UploadModal 
+        addClipping={props.addClipping}
+        imageURL={imageURL}
+        setImageURL={setImageURL}
+        loading={loading}
+        setLoading={setLoading}
+        setLoadTess={setLoadTess}
+        loadTess={loadTess}
+        imageURL={imageURL}
+        addClipping={props.addClipping}
+      />
       <CloudinaryWidget 
         addClipping={props.addClipping}
         imageURL={imageURL}
