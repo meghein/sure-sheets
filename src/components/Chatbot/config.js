@@ -12,9 +12,8 @@ const config = {
   botName: botName,
   // Defines an array of initial messages that will be displayed on first render
   initialMessages: [
-    createChatBotMessage(`Hi I'm ${botName}. I'm here to help as best I can.`),
+    createChatBotMessage(`Have we met? I'm ${botName}, and I'm also a little forgetful... sorry about that. I'm here to help as best I can.`),
     createChatBotMessage(`Do any of these options help?`, {
-      
       widget: "navOptions",
     }),
     
@@ -47,9 +46,11 @@ const config = {
   // Defines an array of widgets that you want to render with a chatbot message
   widgets: [
     {
-      // defines the name you will use to reference to this widget in "createChatBotMessage".
       widgetName: "navOptions",
-      // Function that will be called internally to resolve the widget
+      widgetFunc: (props) => <NavOptions {...props} />,
+    },
+    {
+      widgetName: "howLinks",
       widgetFunc: (props) => <NavOptions {...props} />,
     },
     {

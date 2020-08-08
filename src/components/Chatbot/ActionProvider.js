@@ -6,13 +6,43 @@ class ActionProvider {
   }
 
   greet() {
-    const greetingMessage = this.createChatBotMessage("Oh, me? Uh um hi! Hi how are you?")
+    const greetingMessage = this.createChatBotMessage(
+      "Oh, me? Uh um hi! Hi how are you?"
+      );
     this.updateChatbotState(greetingMessage)
+  }
+
+  screenshots = () => {
+    const message = this.createChatBotMessage(
+      "Oh! I know this one! If you want to add in your stuff—images or text!—All the way on the left, there's a camera. Click that! It'll get you started!"
+      );
+    this.updateChatbotState(message)
+  }
+
+  edits = () => {
+    const message = this.createChatBotMessage(
+      "Hmm... I can't help with artistic choices, but I can definitely say that you can edit by clicking some of the things you've added on the right, then moving them around on the big canvas thingy in the middle!"
+      );
+    this.updateChatbotState(message)
+  } 
+
+  exports = () => {
+    const message = this.createChatBotMessage(
+      "I'm pretty sure we have a button for that around here somewhere... Does it say 'export' somewhere? Like down by the bottom? Errr maybe it was the top? Or the right? Oh geez... I could've sworn I knew where it was... oh no..."
+      );
+    this.updateChatbotState(message)
+  }
+
+  creators = () => {
+    const message = this.createChatBotMessage(
+      "Oh! That's one of the people who made this website! Charlie did the artsy stuff, Bryan hooked everything up, and Meg is the wizard that made this whole thing work!"
+    );
+    this.updateChatbotState(message)
   }
 
   handleWhyLinkList = () => {
     const message = this.createChatBotMessage(
-      "Well... um that's a totally... logical question um— d-do these links help?",
+      "Well... um that's a totally... logical thing to say um— d-do these links help?",
       {
         widget: "whyLinks",
       }
@@ -20,28 +50,43 @@ class ActionProvider {
     this.updateChatbotState(message);
   };
 
+  handleHowLinkList = () => {
+    const message = this.createChatBotMessage(
+      "Well... um that's a totally... logical thing to say um— d-do these links help?",
+      {
+        widget: "howLinks",
+      }
+    );
+    this.updateChatbotState(message);
+  };
+
+  no = () => {
+    const message = this.createChatBotMessage(
+      "Oh goodness. I knew this day would come. I'm so sorry I couldn't help! Oh I'm going to need an extra long charge when this is all over...",
+    );
+    this.updateChatbotState(message);
+  };
+
+
+  loves = () => {
+    const message = this.createChatBotMessage(
+      "Um, I don't think I have any programming that would... Um... I... Can... I... just... no? No. I'm going with no, sorry.",
+    );
+    this.updateChatbotState(message);
+  };
+
+
   loveMessage() {
     const message = this.createChatBotMessage("I— um— I really— um thank you?")
     this.updateChatbotState(message)
   }
 
   favoriteMessage() {
-    const message = this.createChatBotMessage("PLACHOLDERTEXT")
-    this.updateChatbotState(message)
-  }
-
-  importMessage() {
-    const message = this.createChatBotMessage("PLACHOLDERTEXT")
-    this.updateChatbotState(message)
-  }
-
-  exportMessage() {
-    const message = this.createChatBotMessage("PLACHOLDERTEXT")
+    const message = this.createChatBotMessage("I'm glad you asked. I like a lot of things, but nobody ever asks--my favorite template is the third one because it looks like a robot and my favorite people are my programmers Meg and Bryan and Charlie and my favorite color is blue and my favorite book is Do Androids Dream of Electric Sheep (they do) and my favorite...")
     this.updateChatbotState(message)
   }
 
   updateChatbotState(message) {
-    //spread previous message state to ensure that the conversation isn't lost:
     this.setState(prevState => ({
       ...prevState, messages: [...prevState.messages, message]
     }))
