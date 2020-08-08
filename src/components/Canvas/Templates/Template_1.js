@@ -5,6 +5,24 @@ import Clippings from '../Clippings'
 
 export default function Template_1(props) {
 
+  const leftCol = 30;
+  const rightCol = 620;
+  const horizontalCenter = 275;
+  const verticalCenter = 550;
+  const fullWidth = 800;
+  const thirdWidth = 300;
+  const thinWidth = 150;
+  const fullHeight = 1050;
+  const shortHeight = 125;
+  const headersHeight = 100;
+  const tallHeight = 500;
+  const tightToTop = 15;
+  const topRowBox = 150;
+
+
+
+
+
   return (
     <Stage
       width={850}
@@ -14,12 +32,11 @@ export default function Template_1(props) {
       onTouchStart={props.checkDeselect}
     >
       <Layer>
-        {/* EDIT HERE CHARLIE */}
         <Rect
+          x={30}
+          y={35}
           width={200}
-          height={600}
-          x={100}
-          y={400}
+          height={100}
           fill={'white'}
           shadowColor={'gray'}
           stroke={'black'}
@@ -27,48 +44,26 @@ export default function Template_1(props) {
           cornerRadius={10}
           // draggable={true}
         />
-        {/* YOU WORKIN' HERE */}
+        
         <Rect
+          x={620}
+          y={35}
           width={200}
-          height={600}
-          x={100}
-          y={400}
+          height={100}
           fill={'white'}
           shadowColor={'gray'}
           stroke={'black'}
           strokeWidth={4}
           cornerRadius={10}
-        // draggable={true}
-        />
+          // draggable={true}
+          />
+
+          {/* YOU WORKIN' HERE */}
         <Rect
-          width={200}
-          height={600}
-          x={100}
-          y={400}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
-        />
-        <Rect
-          width={200}
-          height={600}
-          x={100}
-          y={400}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
-        />
-        <Rect
-          width={200}
-          height={600}
-          x={100}
-          y={400}
+          x={275}
+          y={35}
+          width={300}
+          height={100}
           fill={'white'}
           shadowColor={'gray'}
           stroke={'black'}
@@ -77,19 +72,121 @@ export default function Template_1(props) {
         // draggable={true}
         />
 
+        <Rect
+          x={275}
+          y={170}
+          width={550}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
 
+        <Rect
+          x={275}
+          y={630}
+          width={550}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
 
+        <Rect
+          x={30}
+          y={170}
+          width={200}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
 
+        <Rect
+          x={30}
+          y={630}
+          width={200}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
 
+        <Rect
+          x={30}
+          y={400}
+          width={550}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
 
+        <Rect
+          x={30}
+          y={860}
+          width={550}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
 
+        <Rect
+          x={30}
+          y={860}
+          width={550}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+        <Rect
+          x={620}
+          y={400}
+          width={200}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
 
-
-
-
-
-
-
+        <Rect
+          x={620}
+          y={860}
+          width={200}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
 
 
 
