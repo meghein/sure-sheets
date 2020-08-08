@@ -1,28 +1,8 @@
 import React from 'react'
-import {Stage, Layer, Rect, Text} from 'react-konva'
+import {Stage, Layer, Rect} from 'react-konva'
 import Clippings from '../Clippings'
 
-
-export default function Template_1(props) {
-
-  const leftCol = 30;
-  const rightCol = 620;
-  const horizontalCenter = 275;
-  const verticalCenter = 550;
-  const fullWidth = 800;
-  const thirdWidth = 300;
-  const thinWidth = 150;
-  const fullHeight = 1050;
-  const shortHeight = 125;
-  const headersHeight = 100;
-  const tallHeight = 500;
-  const tightToTop = 15;
-  const topRowBox = 150;
-
-
-
-
-
+export default function Template_2(props) {
   return (
     <Stage
       width={850}
@@ -42,9 +22,9 @@ export default function Template_1(props) {
           stroke={'black'}
           strokeWidth={4}
           cornerRadius={10}
-          // draggable={true}
+        // draggable={true}
         />
-        
+
         <Rect
           x={620}
           y={35}
@@ -55,10 +35,10 @@ export default function Template_1(props) {
           stroke={'black'}
           strokeWidth={4}
           cornerRadius={10}
-          // draggable={true}
-          />
+        // draggable={true}
+        />
 
-          {/* YOU WORKIN' HERE */}
+        
         <Rect
           x={275}
           y={35}
@@ -187,9 +167,7 @@ export default function Template_1(props) {
           cornerRadius={10}
         // draggable={true}
         />
-
-
-
+        
         <Clippings
           clippingHistory={props.clippingHistory}
           setClippingHistory={props.setClippingHistory}
