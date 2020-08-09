@@ -1,15 +1,13 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 
 export default function useDragAndDrop(clippingHistory, setClippingHistory) {
   const dragItem = useRef();
   const stageRef = useRef();
 
-  const newImage = new window.Image()
-  newImage.src = "/images/NERv05SMALLColor.png" // => eventually this will be a clipping url
+  // const newImage = new window.Image()
+  // newImage.src = "/images/NERv05SMALLColor.png" // => eventually this will be a clipping url
 
-  const [images, setImages] = useState([{image: newImage}]); // => this will be set to an empty array
-
-  // // e.target is <img alt="clipping" src=url />
+  // const [images, setImages] = useState([{image: newImage}]); // => this will be set to an empty array
 
   function onDragStart(e) {
     if(e.target.src) {
@@ -40,7 +38,6 @@ export default function useDragAndDrop(clippingHistory, setClippingHistory) {
 
   return {
     stageRef,
-    images,
     onDragStart,
     onDragOver,
     onDrop,

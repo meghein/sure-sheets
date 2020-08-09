@@ -1,7 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import './App.scss';
 
-import Konva from 'konva'
 
 import useDragandDrop from '../hooks/useDragAndDrop';
 import stageLoader from '../helpers/stageLoader'
@@ -11,11 +10,6 @@ import NavBar from './Home/NavBar';
 import Canvas from './Canvas/Canvas';
 import Left from './Left/Left';
 import Right from './Right/Right';
-
-
-// import Konva from 'konva';
-// import NewText from './Right/NewText';
-
 
 // Chatbot feature imports
 import Chatbot from 'react-chatbot-kit';
@@ -40,8 +34,6 @@ export default function App() {
 
   const [authenticated, setAuthenticated] = useState(false)
 
-  const [currentStage, setCurrentStage] = useState('');
-
   const chatbotToggle = () => {
     console.log(`CHAT TOGGLED ${chatOpen}`)
     chatOpen ? setChatOpen(false) : setChatOpen(true)
@@ -49,7 +41,6 @@ export default function App() {
 
   const {
     stageRef,
-    images,
     onDragStart,
     onDragOver,
     onDrop,
@@ -59,7 +50,7 @@ export default function App() {
     loadTemplate,
     addImage,
     addText,
-    handleUndo,
+    // handleUndo,
   } = stageLoader(clippingHistory, setClippingHistory, currentStage, setCurrentStage)
 
 
