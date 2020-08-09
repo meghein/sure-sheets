@@ -3,6 +3,7 @@ import './Canvas.scss';
 
 import Template1 from './Templates/Template_1'
 import Template2 from './Templates/Template_2'
+import Template4 from './Templates/Template_4'
 
 export default function Canvas(props) {
   const [selectedId, selectShape] = useState(null);
@@ -13,9 +14,6 @@ export default function Canvas(props) {
       selectShape(null);
     }
   };
-
-  
-
  
   return (
     <>
@@ -25,11 +23,11 @@ export default function Canvas(props) {
         id='canvas'
         onDrop={props.onDrop}
         onDragOver={props.onDragOver}
+
       >
-      {/* <button onClick={handlePdf}>publish</button> */}
         {(props.currentStage === "Template 1") &&
           <Template1
-            ref={props.StageRef}
+            ref={props.stageRef}
             checkDeselect={checkDeselect}
             clippingHistory={props.clippingHistory}
             setClippingHistory={props.setClippingHistory}
@@ -37,11 +35,13 @@ export default function Canvas(props) {
             fill={props.fill}
             selectId={selectedId}
             selectShape={selectShape}
+            onDrop={props.onDrop}
+            onDragOver={props.onDragOver}
           />
         }
         {(props.currentStage === "Template 2") &&
           <Template2
-          ref={props.StageRef}
+          ref={props.stageRef}
           checkDeselect={checkDeselect}
           clippingHistory={props.clippingHistory}
           setClippingHistory={props.setClippingHistory}
@@ -49,6 +49,22 @@ export default function Canvas(props) {
           fill={props.fill}
           selectId={selectedId}
           selectShape={selectShape}
+          onDrop={props.onDrop}
+          onDragOver={props.onDragOver}
+          />
+        }
+        {(props.currentStage === "Template 4") &&
+          <Template4
+            ref={props.stageRef}
+            checkDeselect={checkDeselect}
+            clippingHistory={props.clippingHistory}
+            setClippingHistory={props.setClippingHistory}
+            fontSize={props.fontSize}
+            fill={props.fill}
+            selectId={selectedId}
+            selectShape={selectShape}
+            onDrop={props.onDrop}
+            onDragOver={props.onDragOver}
           />
         }
 

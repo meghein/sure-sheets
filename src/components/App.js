@@ -48,7 +48,7 @@ export default function App() {
     onDragStart,
     onDragOver,
     onDrop,
-  } = useDragandDrop();
+  } = useDragandDrop(clippingHistory, setClippingHistory);
 
   const {
     loadTemplate,
@@ -85,8 +85,8 @@ export default function App() {
           // onDragStart={onDragStart}
           // onDrop={onDrop}
           // onDragOver={onDragOver}
-          textValue={textValue}
-          setTextValue={setTextValue}
+          // textValue={textValue}
+          // setTextValue={setTextValue}
           newImport={newImport}
           setNewImport={setNewImport}
           addClipping={addClipping}
@@ -95,10 +95,10 @@ export default function App() {
         />
         {/* <Splash /> */}
         <Canvas
-          // stageRef={stageRef}
+          stageRef={stageRef}
           // imagesData={images}
-          // onDrop={onDrop}
-          // onDragOver={onDragOver}
+          onDrop={onDrop}
+          onDragOver={onDragOver}
           textValue={textValue}
           fontSize={fontSize}
           fill={fill}

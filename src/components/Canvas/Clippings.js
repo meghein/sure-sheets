@@ -10,7 +10,7 @@ export default function Clippings(props) {
         if(item.src) {
           return <NewImage
           key={`image-${index}`}
-          src={item.src}
+          item={item}
           shapeProps={item}
           isSelected={item.id === props.selectedId}
           onSelect={() => {

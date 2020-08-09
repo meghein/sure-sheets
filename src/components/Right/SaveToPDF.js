@@ -26,10 +26,15 @@ export default function FullScreenDialog() {
 
   const handleClickOpen = async () => {
     const input = document.getElementById('canvas');
-    const canvas = await html2canvas(input)
-    const imgData = canvas.toDataURL('image/png');
     
-    const data = new FormData()
+    const canvas = await html2canvas(input, {
+        useCORS: true,
+        taintTest: true,
+        allowTaint: true
+      });
+      
+      const imgData = canvas.toDataURL('image/png');
+      const data = new FormData()
     data.append('file', imgData)
     data.append('upload_preset', 'flvjwbbo')
 
