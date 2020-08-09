@@ -15,8 +15,7 @@ export default function NewText(props) {
       fontSize={props.fontSize}
       fill={props.fill}
       width={300}
-      x={100}
-      y={100}
+
       draggable
     />
   )

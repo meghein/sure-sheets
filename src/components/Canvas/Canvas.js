@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 import './Canvas.scss';
 
-import Template_1 from './Templates/Template_1'
-import Template_2 from './Templates/Template_2'
+
+
+import Template1 from './Templates/Template_2'
+import Template2 from './Templates/Template_1'
+import Template3 from './Templates/Template_3'
+import Template4 from './Templates/Template_4'
+
 
 export default function Canvas(props) {
   const [selectedId, selectShape] = useState(null);
@@ -13,9 +18,6 @@ export default function Canvas(props) {
       selectShape(null);
     }
   };
-
-  console.log("current stage", props.currentStage)
- 
   return (
     <>
       <div
@@ -23,9 +25,52 @@ export default function Canvas(props) {
         id='canvas'
         onDrop={props.onDrop}
         onDragOver={props.onDragOver}
+
       >
         {(props.currentStage === "Template 1") &&
-          <Template_1
+          <Template1
+            ref={props.stageRef}
+            checkDeselect={checkDeselect}
+            clippingHistory={props.clippingHistory}
+            setClippingHistory={props.setClippingHistory}
+            fontSize={props.fontSize}
+            fill={props.fill}
+            selectId={selectedId}
+            selectShape={selectShape}
+            onDrop={props.onDrop}
+            onDragOver={props.onDragOver}
+          />
+        }
+        {(props.currentStage === "Template 2") &&
+          <Template2
+          ref={props.stageRef}
+          checkDeselect={checkDeselect}
+          clippingHistory={props.clippingHistory}
+          setClippingHistory={props.setClippingHistory}
+          fontSize={props.fontSize}
+          fill={props.fill}
+          selectId={selectedId}
+          selectShape={selectShape}
+          onDrop={props.onDrop}
+          onDragOver={props.onDragOver}
+          />
+        }
+        {(props.currentStage === "Template 4") &&
+          <Template4
+            ref={props.stageRef}
+            checkDeselect={checkDeselect}
+            clippingHistory={props.clippingHistory}
+            setClippingHistory={props.setClippingHistory}
+            fontSize={props.fontSize}
+            fill={props.fill}
+            selectId={selectedId}
+            selectShape={selectShape}
+            onDrop={props.onDrop}
+            onDragOver={props.onDragOver}
+          />
+        }
+        {(props.currentStage === "Template 3") &&
+          <Template3
             ref={props.StageRef}
             checkDeselect={checkDeselect}
             clippingHistory={props.clippingHistory}
@@ -36,20 +81,6 @@ export default function Canvas(props) {
             selectShape={selectShape}
           />
         }
-        {(props.currentStage === "Template 2") &&
-          <Template_2
-          ref={props.StageRef}
-          checkDeselect={checkDeselect}
-          clippingHistory={props.clippingHistory}
-          setClippingHistory={props.setClippingHistory}
-          fontSize={props.fontSize}
-          fill={props.fill}
-          selectId={selectedId}
-          selectShape={selectShape}
-          />
-        }
-
-        {/* <button onClick={saveDraft}>save</button> */}
       </div>
     </>
   )

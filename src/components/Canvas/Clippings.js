@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import NewText from './NewText'
 import NewImage from './NewImage'
 
 export default function Clippings(props) {
   return (
-    <>
+    <Fragment>
       {props.clippingHistory.map((item, index) => {
         if(item.src) {
           return <NewImage
           key={`image-${index}`}
-          src={item.src}
+          item={item}
           shapeProps={item}
           isSelected={item.id === props.selectedId}
           onSelect={() => {
@@ -28,6 +28,6 @@ export default function Clippings(props) {
           fill={props.fill}/>
         }
       })}
-    </>
+    </Fragment>
   )
 };

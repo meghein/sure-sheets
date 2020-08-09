@@ -45,29 +45,14 @@ export default function Imports(props) {
       ))}
 
       {imageClippings.map((image, index) => (
-        // <div
-        //   key={`image_${index + 1}`}
-        //   onClick={handleImageClick}
-        //   value={image}
-        //   onDragStart={props.onDragStart}            
-        // >
-        //   {image}
-        //   <div
-        //     onDrop={props.onDrop}
-        //     onDragOver={props.onDragOver}
-        //   />
-        // </div>
         <div key={`image_${index}`}>
         <img
           alt={`image-${index}`}
           onClick={handleImageClick}
           src= {image}
+          draggable="true"
           onDragStart={props.onDragStart}
-        />
-        <div
-          onDrop={props.onDrop}
-          onDragOver={props.onDragOver}
-        />
+          />
       </div>
       ))}
     </div>

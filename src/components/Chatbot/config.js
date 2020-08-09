@@ -12,9 +12,8 @@ const config = {
   botName: botName,
   // Defines an array of initial messages that will be displayed on first render
   initialMessages: [
-    createChatBotMessage(`Hi I'm ${botName}. I'm here to help as best I can.`),
+    createChatBotMessage(`Have we met? I'm ${botName}, and I'm also a little forgetful... sorry about that. I'm here to help as best I can.`),
     createChatBotMessage(`Do any of these options help?`, {
-      
       widget: "navOptions",
     }),
     
@@ -47,9 +46,11 @@ const config = {
   // Defines an array of widgets that you want to render with a chatbot message
   widgets: [
     {
-      // defines the name you will use to reference to this widget in "createChatBotMessage".
       widgetName: "navOptions",
-      // Function that will be called internally to resolve the widget
+      widgetFunc: (props) => <NavOptions {...props} />,
+    },
+    {
+      widgetName: "howLinks",
       widgetFunc: (props) => <NavOptions {...props} />,
     },
     {
@@ -63,22 +64,23 @@ const config = {
         // 
         options: [
           {
-            text: "Why make a cheatsheet?",
-            url:
-              "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/",
+            text: "Why should I make a cheat sheet?",
+            url: "https://www.youtube.com/watch?v=AJ9Zk4-qKco",
             id: 1,
           },
           {
-            text: "How does this help me study?",
+            text: "How do I decide what should go on my sheet?",
             url:
-              "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+              "https://www.fastweb.com/student-life/articles/creating-the-perfect-teacher-permitted-exam-cheat-sheet",
             id: 2,
           },
           {
-            text: "What should I do with this page when I'm done?",
-            url: "https://frontendmasters.com",
+            text: "What kind of info should go on a cheatsheet?",
+            url:
+              "https://www.wikihow.com/Create-a-%22Cheat-Sheet%22-(Allowed-Reference-Sheet)",
             id: 3,
-          },
+          }
+        
         ],
       },
     },
