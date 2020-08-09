@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./LinkList.css";
+import "./LinkList.scss";
 
 const LinkList = (props) => {
   const linkMarkup = props.options.map((link) => (

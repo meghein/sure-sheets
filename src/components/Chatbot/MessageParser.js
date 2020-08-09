@@ -1,13 +1,14 @@
-// MessageParser starter code
 class MessageParser {
   constructor(actionProvider) {
     this.actionProvider = actionProvider;
   }
-//This is where we set his reactivity to input speech from the user:
+
   parse(message) {
     const lowerCaseMessage = message.toLowerCase()
 
-    if (lowerCaseMessage.includes("hello")) {
+    if (lowerCaseMessage.includes("hello") ||
+      lowerCaseMessage.includes("hi")
+    ) {
       this.actionProvider.greet()
     }
 
@@ -15,41 +16,47 @@ class MessageParser {
       this.actionProvider.handleWhyLinkList()
     }
 
+    if (lowerCaseMessage.includes("not") ||
+      lowerCaseMessage.includes("no ") ||
+      lowerCaseMessage.includes("no.") ||
+      lowerCaseMessage.includes("no!")
+    ) {
+      this.actionProvider.no()
+    }
+
+    if (lowerCaseMessage.includes("how") ||
+      lowerCaseMessage.includes("can't")) {
+      this.actionProvider.handleHowLinkList()
+    }
+
     if (lowerCaseMessage.includes("love")) {
       this.actionProvider.loveMessage()
     }
 
-    if (lowerCaseMessage.includes("import")) {
-      this.actionProvider.importMessage()
+    if (lowerCaseMessage.includes("upload") || 
+      lowerCaseMessage.includes("add") || 
+      lowerCaseMessage.includes("import") ||
+      lowerCaseMessage.includes("screenshots") 
+    ) {
+      this.actionProvider.screenshots()
     }
 
-    if (lowerCaseMessage.includes("add")) {
-      this.actionProvider.importMessage()
+    if (lowerCaseMessage.includes("bryan gomes") ||
+      lowerCaseMessage.includes("charlie hayes") ||
+      lowerCaseMessage.includes("meghan hein")
+    ) {
+      this.actionProvider.creators()
     }
 
-    if (lowerCaseMessage.includes("upload")) {
-      this.actionProvider.importMessage()
+    if (lowerCaseMessage.includes("export") ||
+      lowerCaseMessage.includes("save")
+    ) {
+      this.actionProvider.exports()
     }
 
-    if (lowerCaseMessage.includes("screenshots")) {
-      this.actionProvider.importMessage()
-    }
-
-
-
-    if (lowerCaseMessage.includes("export")) {
-      this.actionProvider.exportMessage()
-    }
-
-    if (lowerCaseMessage.includes("save")) {
-      this.actionProvider.exportMessage()
-    }
-
-    if (lowerCaseMessage.includes("favorite")) {
-      this.actionProvider.favoriteMessage()
-    }
-
-    if (lowerCaseMessage.includes("favourite")) {
+    if (lowerCaseMessage.includes("favorite") ||
+      lowerCaseMessage.includes("favourite")
+    ) {
       this.actionProvider.favoriteMessage()
     }
 
