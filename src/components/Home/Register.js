@@ -1,21 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container} from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import axios from "axios";
+
 
 export default function Register(props) {
+  function Copyright() {
+    return (
+      <Typography variant="body2" color="textSecondary" align="center">
+        {'Copyright © '}
+        <Link color="inherit" href="https://material-ui.com/">
+          Your Website
+        </Link>{' '}
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+    );
+  }
+  
+  const [register, setRegister] = useState({
+    name: "",
+    email: "",
+    password: ""
+  });
+  
+  function handleChange(e) {
+    console.log(e.target.value)
+    setRegister(
+     {...register, [e.target.id]: e.target.value}
+    );
+  }
+
+  
+  function onSubmitForm(e) {
+    e.preventDefault();
+    console.log("register", JSON.stringify(register))
+    
+    fetch("http://localhost:8001/user/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(register)
+    })
+      .then(response => {
+        console.log("response", response.json())
+      })
+      .catch(err => console.log("err", err))
+  }
+
+  
+  
+    // function test(e) {
+    //   e.preventDefault()
+    //   console.log("id", e.target.id)
+    //   console.log("id", e.target.id)
+    //   console.log("register",register)
+    // }
+
+    
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -32,11 +74,12 @@ export default function Register(props) {
           margin="normal"
           required
           fullWidth
-          id="username"
+          id="name"
           label="Username"
           name="username"
           autoComplete="username"
           autoFocus
+          onChange={handleChange}
         />
         <TextField
           variant="outlined"
@@ -47,6 +90,7 @@ export default function Register(props) {
           label="Email Address"
           name="email"
           autoComplete="email"
+          onChange={handleChange}
         />
         <TextField
           variant="outlined"
@@ -58,6 +102,7 @@ export default function Register(props) {
           type="password"
           id="password"
           autoComplete="current-password"
+          onChange={handleChange}
         />
         <FormControlLabel
           control={<Checkbox value="allowExtraEmails" color="primary" />}
@@ -69,6 +114,8 @@ export default function Register(props) {
           variant="contained"
           color="primary"
           className={props.classes.submit}
+          // onChange={e => setState(e.target.value)}
+          onClick={onSubmitForm}
         >
           Sign Up
         </Button>

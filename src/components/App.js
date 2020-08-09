@@ -35,8 +35,13 @@ export default function App() {
   const [fill, setFill] = useState('black');
 
   const [clippingHistory, setClippingHistory] = useState([]);
+
+  const [currentStage, setCurrentStage] = useState([]);
+
+  const [authenticated, setAuthenticated] = useState(false)
+
   const [currentStage, setCurrentStage] = useState('');
-  
+
   const chatbotToggle = () => {
     console.log(`CHAT TOGGLED ${chatOpen}`)
     chatOpen ? setChatOpen(false) : setChatOpen(true)
@@ -74,7 +79,10 @@ export default function App() {
   
   return (
     <div className="App">
-      <NavBar />
+      <NavBar 
+        authenticated={authenticated}
+        setAuthenticated={setAuthenticated}
+      />
       {chatOpen ? 
         <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}/> : null
       }

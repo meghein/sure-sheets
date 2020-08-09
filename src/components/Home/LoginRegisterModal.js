@@ -47,9 +47,9 @@ export default function LoginRegisterModal(props) {
         aria-describedby="open-login-registration-modal"
         >
         {!openReg ?
-          <Login classes={classes} toggleReg={toggleReg}/>
+          <Login setAuthenticated={props.setAuthenticated} classes={classes} toggleReg={toggleReg}/>
         :
-          <Register classes={classes} toggleReg={toggleReg}/>
+          <Register setAuthenticated={props.setAuthenticated} classes={classes} toggleReg={toggleReg}/>
         }
   
       </Modal>
