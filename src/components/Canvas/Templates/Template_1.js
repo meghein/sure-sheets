@@ -3,14 +3,7 @@ import {Stage, Layer, Rect} from 'react-konva'
 import Clippings from '../Clippings'
 // import Konva from 'konva'
 
-
-export default forwardRef(function Template1(props, stageRef) {
-
-  function stageref(e) {
-    console.log("this is where I'm clicking:", stageRef.current.getPointersPositions(e))
-  }
-
-
+export default function Template_2(props) {
   return (
     <Stage
       width={794}
@@ -156,8 +149,27 @@ export default forwardRef(function Template1(props, stageRef) {
         <Rect
           x={620}
           y={400}
-          fill={'red'}
-          // ref={stage}
+          width={200}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+        <Rect
+          x={620}
+          y={860}
+          width={200}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
         />
         
         <Clippings
@@ -172,4 +184,4 @@ export default forwardRef(function Template1(props, stageRef) {
       </Layer>
     </Stage>
   )
-})
+}

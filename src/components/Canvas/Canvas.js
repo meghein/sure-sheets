@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
 import './Canvas.scss';
 
-import Template1 from './Templates/Template_1'
-import Template2 from './Templates/Template_2'
+
+
+import Template1 from './Templates/Template_2'
+import Template2 from './Templates/Template_1'
+import Template3 from './Templates/Template_3'
 import Template4 from './Templates/Template_4'
+
 
 export default function Canvas(props) {
   const [selectedId, selectShape] = useState(null);
@@ -14,10 +18,8 @@ export default function Canvas(props) {
       selectShape(null);
     }
   };
- 
   return (
     <>
-
       <div
         className='canvas' 
         id='canvas'
@@ -67,7 +69,18 @@ export default function Canvas(props) {
             onDragOver={props.onDragOver}
           />
         }
-
+        {(props.currentStage === "Template 3") &&
+          <Template3
+            ref={props.StageRef}
+            checkDeselect={checkDeselect}
+            clippingHistory={props.clippingHistory}
+            setClippingHistory={props.setClippingHistory}
+            fontSize={props.fontSize}
+            fill={props.fill}
+            selectId={selectedId}
+            selectShape={selectShape}
+          />
+        }
       </div>
     </>
   )
