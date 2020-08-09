@@ -94,7 +94,7 @@ export default function StageLoader(clippingHistory, setClippingHistory) {
         src: source
       });
     setClippingHistory(tempState)
-    // create(clippingHistory);
+    console.log(clippingHistory)
   };
 
 
