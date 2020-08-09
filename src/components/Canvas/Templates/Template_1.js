@@ -2,9 +2,7 @@ import React from 'react'
 import {Stage, Layer, Rect} from 'react-konva'
 import Clippings from '../Clippings'
 
-
-export default function Template1(props) {
-
+export default function Template_2(props) {
   return (
     <Stage
       width={794}
@@ -15,11 +13,159 @@ export default function Template1(props) {
     >
       <Layer>
         <Rect
+          x={30}
+          y={35}
+          width={200}
+          height={100}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+        <Rect
+          x={620}
+          y={35}
+          width={200}
+          height={100}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+        
+        <Rect
+          x={275}
+          y={35}
+          width={300}
+          height={100}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+        <Rect
+          x={275}
+          y={170}
+          width={550}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+        <Rect
+          x={275}
+          y={630}
+          width={550}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+        <Rect
+          x={30}
+          y={170}
           width={200}
           height={200}
-          x={100}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+        <Rect
+          x={30}
+          y={630}
+          width={200}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+        <Rect
+          x={30}
           y={400}
-          fill={'red'}
+          width={550}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+        <Rect
+          x={30}
+          y={860}
+          width={550}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+        <Rect
+          x={30}
+          y={860}
+          width={550}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+        <Rect
+          x={620}
+          y={400}
+          width={200}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
+        />
+
+        <Rect
+          x={620}
+          y={860}
+          width={200}
+          height={200}
+          fill={'white'}
+          shadowColor={'gray'}
+          stroke={'black'}
+          strokeWidth={4}
+          cornerRadius={10}
+        // draggable={true}
         />
         
         <Clippings
