@@ -34,7 +34,9 @@ export default function ButtonAppBar(props) {
     const handleClose = () => {
     setOpen(false);
   };
-  
+  const handleLogout = () => {
+    props.setAuthenticated(false);
+  };
 
   return (
     <div className={classes.root}>
@@ -48,7 +50,7 @@ export default function ButtonAppBar(props) {
           </Typography>
           <LoginRegisterModal setAuthenticated={props.setAuthenticated} open={open} handleClose={handleClose} handleClickLoginOpen={handleClickLoginOpen} />
           {!props.authenticated && (<Button color="inherit" onClick={handleClickLoginOpen}>Sign In or Register</Button>)}
-          {/* {props.authenticated && ( another component with props.username...)} */}
+          {props.authenticated && (<Button color="inherit" onClick={handleLogout}>Logged In</Button>)}
         </Toolbar>
       </AppBar>
     </div>
