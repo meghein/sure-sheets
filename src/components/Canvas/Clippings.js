@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import NewText from './NewText'
 import NewImage from './NewImage'
 
 export default function Clippings(props) {
   return (
-    <>
+    <Fragment>
       {props.clippingHistory.map((item, index) => {
         if(item.src) {
           return <NewImage
@@ -28,6 +28,6 @@ export default function Clippings(props) {
           fill={props.fill}/>
         }
       })}
-    </>
+    </Fragment>
   )
 };

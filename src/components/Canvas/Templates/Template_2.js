@@ -2,7 +2,6 @@ import React from 'react'
 import {Stage, Layer, Rect, Text} from 'react-konva'
 import Clippings from '../Clippings'
 
-
 export default function Template_1(props) {
 
   const leftCol = 30;
@@ -18,9 +17,6 @@ export default function Template_1(props) {
   const tallHeight = 500;
   const tightToTop = 15;
   const topRowBox = 150;
-
-
-
 
 
   return (

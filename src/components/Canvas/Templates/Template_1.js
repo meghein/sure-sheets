@@ -5,8 +5,8 @@ import Clippings from '../Clippings'
 export default function Template_2(props) {
   return (
     <Stage
-      width={850}
-      height={1100}
+      width={794}
+      height={1123}
       ref={props.stageRef}
       onMouseDown={props.checkDeselect}
       onTouchStart={props.checkDeselect}
