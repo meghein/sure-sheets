@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container} from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
-import axios from "axios";
-
-
 export default function Register(props) {
   function Copyright() {
     return (

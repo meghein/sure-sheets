@@ -3,7 +3,7 @@ import {Stage, Layer, Rect} from 'react-konva'
 import Clippings from '../Clippings'
 // import Konva from 'konva'
 
-export default function Template_2(props) {
+export default forwardRef(function Template_2(props, stageRef) {
   return (
     <Stage
       width={794}
@@ -13,7 +13,7 @@ export default function Template_2(props) {
       onTouchStart={props.checkDeselect}
       onDrop={props.onDrop}
       onDragOver={props.onDragOver}
-      onClick={stageref}
+      // onClick={stageref}
     >
       <Layer>
         <Rect
@@ -184,4 +184,4 @@ export default function Template_2(props) {
       </Layer>
     </Stage>
   )
-}
+})
