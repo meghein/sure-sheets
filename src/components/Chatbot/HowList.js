@@ -2,24 +2,28 @@ import React from "react";
 
 import "./NavOptions.scss";
 
-const NavOptions = (props) => {
+const HowList = (props) => {
   const options = [
-    { 
-      text: "How do I import my screenshots?", 
+    {
+      text: "How do I import my screenshots?",
       handler: props.actionProvider.screenshots,
-      id: 1},
-    { 
-      text: "How do I edit my sheet?", 
+      id: 1
+    },
+    {
+      text: "How do I edit my sheet?",
       handler: props.actionProvider.edits,
-      id: 2 },
-    { 
-      text: "How do I export my cheatsheet?", 
+      id: 2
+    },
+    {
+      text: "How do I export my cheatsheet?",
       handler: props.actionProvider.exports,
-      id: 3 },
-    { 
-      text: "Can you teach me how to love?", 
+      id: 3
+    },
+    {
+      text: "Can you teach me how to love?",
       handler: props.actionProvider.loves,
-      id: 4 },
+      id: 4
+    },
     {
       text: "Why should I make a cheatsheet?",
       handler: props.actionProvider.handleWhyLinkList,
@@ -40,4 +44,4 @@ const NavOptions = (props) => {
   return <div className="nav-options-container">{optionsMarkup}</div>;
 };
 
-export default NavOptions;
+export default HowList;

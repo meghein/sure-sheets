@@ -15,42 +15,21 @@ export default function Imports(props) {
     return tempArr
   }
   const tesseractClippings = buildTesseractClippings(props.clippings);
-
-  const filteredClippings = props.clippings.filter(clipping => typeof(clipping) === 'object' );
-  const imageClippings = filteredClippings.map((clipping, index) => {
-    return <img src={(filteredClippings[index].image.src)} alt={index} key={index}/>
-  })
-
-  function createObject(attrs) {
-    return Object.assign({}, attrs, {
-      text: '',
-      src: '',
-      x: 0,
-      y: 0,
-
-    });
-  }
-
-  function createImage(attrs, source) {
-    return Object.assign(createObject(attrs), {
-      src: source,
-    });
-  }
-
-  function createText(attrs, text) {
-    return Object.assign(createObject(attrs), {
-      text: text,
-    });
-  }
+  
+  const imageClippings = props.clippings
+    .filter(clipping => typeof(clipping) === 'object' )
+    .map((clipping, index) => { return (clipping.image.src)})
+    // .map((clipping, index) => { return <img src={(clipping.image.src)} alt={index} key={index}/>})
+    
 
   function handleImageClick(e) {
     console.log("src", e.target.src)
-
     props.addImage(e.target.src)
   }
  
-  function selectTargetText(e) {
+  function handleTextClick(e) {
     props.setSelected(e.target.value)
+    props.addText(e.target.value)
   }
 
   return (
@@ -58,25 +37,23 @@ export default function Imports(props) {
       {tesseractClippings.map((clipping, index) => (
           <button
             key={`text_${index + 1}`}
-            onClick={selectTargetText}
+            onClick={handleTextClick}
             value={clipping.text}
           >
             {clipping.title}
           </button>
-
       ))}
 
       {imageClippings.map((image, index) => (
-        
-        <button
-          key={`image_${index + 1}`}
+        <div key={`image_${index}`}>
+        <img
+          alt={`clipping-${index}`}
           onClick={handleImageClick}
-          value={image}
-        >
-          {image}
-        </button>
-      
-        
+          src= {image}
+          draggable="true"
+          onDragStart={props.onDragStart}
+          />
+      </div>
       ))}
     </div>
   )

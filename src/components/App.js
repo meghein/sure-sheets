@@ -1,21 +1,15 @@
 import React, {useState, useEffect } from 'react';
 import './App.scss';
 
-import Konva from 'konva'
 
 import useDragandDrop from '../hooks/useDragAndDrop';
-// import stageLoader from '../helpers/stageLoader'
+import stageLoader from '../helpers/stageLoader'
 
 import NavBar from './Home/NavBar';
 // import Splash from './Home/Splash';
 import Canvas from './Canvas/Canvas';
 import Left from './Left/Left';
 import Right from './Right/Right';
-
-
-// import Konva from 'konva';
-// import NewText from './Right/NewText';
-
 
 // Chatbot feature imports
 import Chatbot from 'react-chatbot-kit';
@@ -35,10 +29,11 @@ export default function App() {
   const [fill, setFill] = useState('black');
 
   const [clippingHistory, setClippingHistory] = useState([]);
+
   const [currentStage, setCurrentStage] = useState([]);
 
   const [authenticated, setAuthenticated] = useState(false)
-  
+
   const chatbotToggle = () => {
     console.log(`CHAT TOGGLED ${chatOpen}`)
     chatOpen ? setChatOpen(false) : setChatOpen(true)
@@ -46,51 +41,23 @@ export default function App() {
 
   const {
     stageRef,
-    images,
     onDragStart,
     onDragOver,
     onDrop,
-  } = useDragandDrop();
+  } = useDragandDrop(clippingHistory, setClippingHistory);
 
-  // const {
-  //   // historyStep,
-  //   loadTemplate,
-  //   // createImage,
-  //   // createText,
-  //   // create,
-  //   // update,
-  //   // addImage,
-  //   addText,
-  //   handleUndo,
-  // } = stageLoader()
-
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-  const layer = new Konva.Layer();
-
-  function loadTemplate(template) {
-    const newStage = Konva.Node.create(template, 'canvas');
-    newStage.add(layer);;
-    return newStage
-  }
-
-  function addImage(source) {
-    const tempState = [...clippingHistory];
-    tempState.push({
-        x: width * Math.random(),
-        y: height * Math.random(),
-        src: source
-      });
-    setClippingHistory(tempState)
-    // create(clippingHistory);
-  };
+  const {
+    loadTemplate,
+    addImage,
+    addText,
+    // handleUndo,
+  } = stageLoader(clippingHistory, setClippingHistory, currentStage, setCurrentStage)
 
 
   function addClipping(newImport) {
     const tempClippings = [...clippings];
     tempClippings.push(newImport);
     setClippings(tempClippings);
-    console.log("add clipping")
   }
 
   useEffect(() => {
@@ -113,12 +80,12 @@ export default function App() {
       <BotButton toggle={chatbotToggle}/>
       <div className="main">
         <Left
-          imagesData={images}
-          onDragStart={onDragStart}
-          onDrop={onDrop}
-          onDragOver={onDragOver}
-          textValue={textValue}
-          setTextValue={setTextValue}
+          // imagesData={images}
+          // onDragStart={onDragStart}
+          // onDrop={onDrop}
+          // onDragOver={onDragOver}
+          // textValue={textValue}
+          // setTextValue={setTextValue}
           newImport={newImport}
           setNewImport={setNewImport}
           addClipping={addClipping}
@@ -127,13 +94,13 @@ export default function App() {
         />
         {/* <Splash /> */}
         <Canvas
-          // stageRef={stageRef}
+          stageRef={stageRef}
           // imagesData={images}
-          // onDrop={onDrop}
-          // onDragOver={onDragOver}
-          // textValue={textValue}
-          // fontSize={fontSize}
-          // fill={fill}
+          onDrop={onDrop}
+          onDragOver={onDragOver}
+          textValue={textValue}
+          fontSize={fontSize}
+          fill={fill}
           // selected={selected}
           currentStage={currentStage}
           loadTemplate={loadTemplate}
@@ -155,7 +122,10 @@ export default function App() {
           selected={selected}
           setSelected={setSelected}
           addImage={addImage}
-          // addText={addText}
+          addText={addText}
+          onDragStart={onDragStart}
+          onDrop={onDrop}
+          onDragOver={onDragOver}
           // handleUndo={handleUndo}
         />
       </div>

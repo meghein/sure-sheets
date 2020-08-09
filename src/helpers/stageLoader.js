@@ -1,14 +1,15 @@
 import Konva from 'konva'
 
-export default function StageLoader() {
+export default function StageLoader(clippingHistory, setClippingHistory) {
   let historyStep = 1;
   const width = window.innerWidth;
   const height = window.innerHeight;
-  const layer = new Konva.Layer();
+  // const layer = new Konva.Layer();
 
-  function loadTemplate(template) {
+  function loadTemplate(template, layer) {
     const newStage = Konva.Node.create(template, 'canvas');
-    newStage.add(layer);;
+    newStage.add(layer);
+    console.log("current", newStage)
     return newStage
   }
 
@@ -24,53 +25,53 @@ export default function StageLoader() {
     return Object.assign(createObject(attrs));
   }
 
-  function create() {
-    layer.destroyChildren();
-    clippingHistory.forEach((item, index) => {
-      let node = '';
-      if (item.src) {
-        node = new Konva.Image({
-          draggable: true,
-          name: 'item-' + index,
-        });
-      } else if (item.text) {
-        node = new Konva.Text({
-          text: item.text,
-          draggable: true,
-          name: 'item-' + index,
-        });
-      }
+  // function create() {
+  //   // layer.destroyChildren();
+  //   clippingHistory.forEach((item, index) => {
+  //     let node = '';
+  //     if (item.src) {
+  //       node = new Konva.Image({
+  //         draggable: true,
+  //         name: 'item-' + index,
+  //       });
+  //     } else if (item.text) {
+  //       node = new Konva.Text({
+  //         text: item.text,
+  //         draggable: true,
+  //         name: 'item-' + index,
+  //       });
+  //     }
       
-      layer.add(node);
-      node.on('dragend', () => {
-        const tempState = [...clippingHistory];
-        tempState[index] = Object.assign({}, tempState[index], {
-          x: node.x(),
-          y: node.y(),
-        });
-        // save it into history
-        setClippingHistory(tempState);
+  //     layer.add(node);
+  //     node.on('dragend', () => {
+  //       const tempState = [...clippingHistory];
+  //       tempState[index] = Object.assign({}, tempState[index], {
+  //         x: node.x(),
+  //         y: node.y(),
+  //       });
+  //       // save it into history
+  //       setClippingHistory(tempState);
 
-      });
+  //     });
 
-      node.on('click', () => {
-        const tempState = [...clippingHistory];
-        tempState[index] = Object.assign({}, tempState[index]);
-        setClippingHistory(tempState);
-        // update canvas from clippingHistory
-        update(clippingHistory);
-      });
+  //     node.on('click', () => {
+  //       const tempState = [...clippingHistory];
+  //       tempState[index] = Object.assign({}, tempState[index]);
+  //       setClippingHistory(tempState);
+  //       // update canvas from clippingHistory
+  //       update(clippingHistory);
+  //     });
 
-      let img = new window.Image();
-      img.onload = function () {
-        node.image(img);
-        update(clippingHistory);
-        layer.batchDraw();
-      };
-      img.src = item.src;
-    });
-    update(clippingHistory);
-  }
+  //     let img = new window.Image();
+  //     img.onload = function () {
+  //       node.image(img);
+  //       update(clippingHistory);
+  //       layer.batchDraw();
+  //     };
+  //     img.src = item.src;
+  //   });
+  //   update(clippingHistory);
+  // }
 
   function update() {
     clippingHistory.forEach(function (item, index) {
@@ -80,10 +81,10 @@ export default function StageLoader() {
         y: item.y,
       });
     });
-    layer.batchDraw();
+    // layer.batchDraw();
   }
 
-  create(clippingHistory);
+  // create(clippingHistory);
 
   function addImage(source) {
     const tempState = [...clippingHistory];
@@ -93,7 +94,7 @@ export default function StageLoader() {
         src: source
       });
     setClippingHistory(tempState)
-    // create(clippingHistory);
+    console.log(clippingHistory)
   };
 
 
@@ -107,19 +108,23 @@ export default function StageLoader() {
       })
     );
     setClippingHistory(tempState)
-    create(clippingHistory);
+    console.log(clippingHistory)
+   
+
+    // create(clippingHistory);
   };
 
   function handleUndo() {
     if (historyStep === 0) {
-      layer.destroyChildren();;
+      // layer.destroyChildren();;
+      return
     }
     historyStep -= 1;
     const tempState = [...clippingHistory];
     tempState.pop()
     setClippingHistory(tempState)
     // create everything from scratch
-    create(clippingHistory);
+    // create(clippingHistory);
   };
     
   return {
@@ -127,7 +132,7 @@ export default function StageLoader() {
     loadTemplate,
     createImage,
     createText,
-    create,
+    // create,
     update,
     addImage,
     addText,

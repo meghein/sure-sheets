@@ -2,18 +2,9 @@ import React from 'react'
 import './Right.scss'
 
 import Imports from './Imports'
-import Modal from '../Modal'
 import Textbox from './Textbox';
+import SaveToPDF from './SaveToPDF'
 
-/*
-<div>
-  <button onClick={loadTemplate}>template</button>
-  <button onClick={addImage}>image</button>
-  <button onClick={addText}>text</button>
-  <button onClick={handleUndo}>undo</button>
-</div>
-
-*/ 
 
 export default function Right(props) {
 
@@ -31,10 +22,16 @@ export default function Right(props) {
         
       <Imports 
         clippings = {props.clippings}
-        selected={props.selected}
         setSelected={props.setSelected}
         addImage={props.addImage}
+        addText={props.addText}
+
+        onDragStart={props.onDragStart}
+        onDrop={props.onDrop}
+        onDragOver={props.onDragOver}
       />
+
+      <SaveToPDF/>
     </div>
   )
 }
