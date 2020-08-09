@@ -36,6 +36,8 @@ export default function App() {
 
   const [clippingHistory, setClippingHistory] = useState([]);
   const [currentStage, setCurrentStage] = useState([]);
+
+  const [authenticated, setAuthenticated] = useState(false)
   
   const chatbotToggle = () => {
     console.log(`CHAT TOGGLED ${chatOpen}`)
@@ -101,7 +103,10 @@ export default function App() {
   
   return (
     <div className="App">
-      <NavBar />
+      <NavBar 
+        authenticated={authenticated}
+        setAuthenticated={setAuthenticated}
+      />
       {chatOpen ? 
         <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}/> : null
       }

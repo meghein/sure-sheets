@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   const classes = useStyles();
   // For Login Modal
   const [open, setOpen] = React.useState(false);
@@ -46,8 +46,9 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             Sure Sheets
           </Typography>
-          <LoginRegisterModal open={open} handleClose={handleClose} handleClickLoginOpen={handleClickLoginOpen} />
-          <Button color="inherit" onClick={handleClickLoginOpen}>Sign In or Register</Button>
+          <LoginRegisterModal setAuthenticated={props.setAuthenticated} open={open} handleClose={handleClose} handleClickLoginOpen={handleClickLoginOpen} />
+          {!props.authenticated && (<Button color="inherit" onClick={handleClickLoginOpen}>Sign In or Register</Button>)}
+          {/* {props.authenticated && ( another component with props.username...)} */}
         </Toolbar>
       </AppBar>
     </div>
