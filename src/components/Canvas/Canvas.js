@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './Canvas.scss';
 
-import Template_1 from './Templates/Template_1'
-import Template_2 from './Templates/Template_2'
+import Template1 from './Templates/Template_1'
+import Template2 from './Templates/Template_2'
 
 export default function Canvas(props) {
   const [selectedId, selectShape] = useState(null);
@@ -14,18 +14,21 @@ export default function Canvas(props) {
     }
   };
 
-  console.log("current stage", props.currentStage)
+  
+
  
   return (
     <>
+
       <div
         className='canvas' 
         id='canvas'
         onDrop={props.onDrop}
         onDragOver={props.onDragOver}
       >
+      {/* <button onClick={handlePdf}>publish</button> */}
         {(props.currentStage === "Template 1") &&
-          <Template_1
+          <Template1
             ref={props.StageRef}
             checkDeselect={checkDeselect}
             clippingHistory={props.clippingHistory}
@@ -37,7 +40,7 @@ export default function Canvas(props) {
           />
         }
         {(props.currentStage === "Template 2") &&
-          <Template_2
+          <Template2
           ref={props.StageRef}
           checkDeselect={checkDeselect}
           clippingHistory={props.clippingHistory}
@@ -49,7 +52,6 @@ export default function Canvas(props) {
           />
         }
 
-        {/* <button onClick={saveDraft}>save</button> */}
       </div>
     </>
   )

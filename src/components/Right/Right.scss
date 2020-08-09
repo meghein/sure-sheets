@@ -17,3 +17,16 @@
 .ql-tooltip {
   display: none
 }
+
+iframe {
+  height: 100vh !important;
+  
+}
+
+.pdf-appBar{
+  display: flex;
+  justify-content: end !important;
+  .MuiAppBar-positionFixed {
+    position: relative;
+  }
+}

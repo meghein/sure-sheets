@@ -1,14 +1,14 @@
 import React from 'react'
-import {Stage, Layer, Rect, Text} from 'react-konva'
+import {Stage, Layer, Rect} from 'react-konva'
 import Clippings from '../Clippings'
 
 
-export default function Template_1(props) {
+export default function Template1(props) {
 
   return (
     <Stage
-      width={850}
-      height={1100}
+      width={794}
+      height={1123}
       ref={props.stageRef}
       onMouseDown={props.checkDeselect}
       onTouchStart={props.checkDeselect}

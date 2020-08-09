@@ -2,7 +2,7 @@ import React from 'react'
 import {Stage, Layer, Rect} from 'react-konva'
 import Clippings from '../Clippings'
 
-export default function Template_2(props) {
+export default function Template2(props) {
   return (
     <Stage
       width={850}
