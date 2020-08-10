@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import ReactQuill from 'react-quill';
-import { Button, IconButton } from '@material-ui/core';
+import { Button, IconButton, Menu, MenuItem, Fade } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import Fade from '@material-ui/core/Fade';
 import { SwatchesPicker } from 'react-color';
 import FontPicker from "font-picker-react";
 import './Right.scss'
 import useTextSettings from '../../hooks/useTextSettings'
 // import useStageLoader from '../../hooks/useStageLoader'
 
-import 'react-quill/dist/quill.bubble.css';
-
-
 export default function Textbox(props) {
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [fontSizeEl, setFontSizeEl] = useState(null);
+  const [alignEl, setAlignEl] = useState(null);
   const [pickerVisable, setpickerVisable] = useState(false)
-  const isOpen = Boolean(anchorEl);
+  const sizeIsOpen = Boolean(fontSizeEl);
+  const alignIsOpen = Boolean(alignEl)
 
   const {
     textboxState, setTextboxState,
@@ -42,24 +37,33 @@ export default function Textbox(props) {
     setTextboxState(false)
   }
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleSizeClick = (event) => {
+    setFontSizeEl(event.currentTarget);
   };
 
-  const handleClose = (event) => {
-    setAnchorEl(null)
-    if(event.currentTarget.dataset.id === "font-title") {
-      setFontSize(36)
+  const fontSizes =['Title', 'Heading', 'Subheading', 'Body']
+  
+  const handleFontSize = (event) => {
+    setFontSizeEl(null)
+    const sizes = {Title: 36, Heading: 28, Subheading: 22, Body: 16}
+
+    for (const size in sizes) {
+      console.log("size", size, "sizes[size]:", sizes[size])
+      if(event.currentTarget.dataset.id === size) {
+        setFontSize(sizes[size])
+      }
     }
-    if(event.currentTarget.dataset.id === "font-heading") {
-      setFontSize(28)
-    }
-    if(event.currentTarget.dataset.id === "font-subheading") {
-      setFontSize(22)
-    }
-    if(event.currentTarget.dataset.id === "font-body") {
-      setFontSize(16)
-    }
+  }
+
+  const handleAlignClick = (event) => {
+    setAlignEl(event.currentTarget);
+  };
+
+  const textAlign =['left', 'center', 'right']
+  
+  const handleTextAlign = (event) => {
+    setAlignEl(null)
+    setAlign(event.currentTarget.dataset.id)
   }
 
   const handleColorChange = ({ hex }) => setColour(hex)
@@ -67,25 +71,20 @@ export default function Textbox(props) {
     pickerVisable ? setpickerVisable(false) : setpickerVisable(true)
   }
 
-  const saveText = (e) => {
-    console.log(e.target.value, fontSize, colour, activeFontFamily, align)
-    props.addText(e.target.value, fontSize, colour, activeFontFamily, align)
-    setTextboxState(false)
-    props.setTextValue('')
+  const handleFontFamily = (e) => {
+    setActiveFontFamily(e.family)
   }
 
   const handleTextChange = (e) => {
     props.setTextValue(e.target.value)
   }
 
-  const changeFont = (e) => {
-    // console.log(e.family)
-    setActiveFontFamily(e.family)
+  const saveText = (e) => {
+    props.addText(e.target.value, fontSize, colour, activeFontFamily, align)
+    setTextboxState(false)
+    props.setTextValue('')
   }
 
-
-
-  // const 
 
   return (      
     <div>
@@ -98,51 +97,66 @@ export default function Textbox(props) {
       </Button>
         {textboxState && (
       <div className="text-container">
-          <div className="modal" id="modal">
-            <IconButton aria-label="delete" className="close">
-              <CloseIcon fontSize="large" onClick={close}/>
-            </IconButton>
-            <textarea className='textbox apply-font' fontFamily={activeFontFamily} value={props.textValue} onChange={handleTextChange}/>
-            <button value={props.textValue} onClick={saveText}>save text</button>
-        {/* <Button onClick={saveText} dataset-id={props.textValue}>Click to save</Button> */}
-        <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
-          Font Size
-        </Button>
-        <Menu
-          id="fade-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={isOpen}
-          onClose={handleClose}
-          TransitionComponent={Fade}
-        >
-          <MenuItem onClick={handleClose} data-id="font-title">Title</MenuItem>
-          <MenuItem onClick={handleClose} data-id="font-heading">Heading</MenuItem>
-          <MenuItem onClick={handleClose} data-id="font-subheading">Subheading</MenuItem>
-          <MenuItem onClick={handleClose} data-id="font-body">Body</MenuItem>
-        </Menu>
-        <div>
-        <Button onClick={ onTogglePicker }>
-          Font Colour
-        </Button>
-
-        { pickerVisable && (
-          <div style={{ position: 'absolute' }}>
-            <SwatchesPicker
-              onChangeComplete={ handleColorChange }
-            />
+        <div className="modal" id="modal">
+          <IconButton aria-label="delete" className="close">
+            <CloseIcon fontSize="large" onClick={close}/>
+          </IconButton>
+          <textarea
+            className='textbox apply-font'
+            fontFamily={activeFontFamily}
+            style={{fontSize: fontSize, color: colour, textAlign: align}}
+            value={props.textValue}
+            onChange={handleTextChange}
+          />
+          <button value={props.textValue} onClick={saveText}>save text</button>
+          <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleSizeClick}>
+            Font Size
+          </Button>
+          <Menu
+            id="fade-menu"
+            anchorEl={fontSizeEl}
+            keepMounted
+            open={sizeIsOpen}
+            onClose={handleFontSize}
+            TransitionComponent={Fade}
+          >
+          {fontSizes.map((name) => {
+            return <MenuItem onClick={handleFontSize} data-id={name}>{name}</MenuItem>
+          })}
+          </Menu>
+          <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleAlignClick}>
+            Text Alignment
+          </Button>
+          <Menu
+            id="fade-menu"
+            anchorEl={alignEl}
+            keepMounted
+            open={alignIsOpen}
+            onClose={handleTextAlign}
+            TransitionComponent={Fade}
+          >
+          {textAlign.map((name) => {
+            return <MenuItem onClick={handleTextAlign} data-id={name}>{name}</MenuItem>
+          })}
+          </Menu>
+          <div>
+          <Button onClick={ onTogglePicker }>
+            Font Colour
+          </Button>
+          { pickerVisable && (
+            <div style={{ position: 'absolute' }}>
+              <SwatchesPicker onChangeComplete={ handleColorChange }/>
+            </div>
+          )}
+          <FontPicker
+            apiKey="AIzaSyAJpDBzWJ44P71AnWYpqQYahsZCjY8-5MQ"
+            activeFontFamily={activeFontFamily}
+            onChange={handleFontFamily}
+          />
           </div>
-        ) }
-        <FontPicker
-          apiKey="AIzaSyAJpDBzWJ44P71AnWYpqQYahsZCjY8-5MQ"
-          activeFontFamily={activeFontFamily}
-          onChange={changeFont}
-      />
+        </div>          
       </div>
-
-      </div>          
-        </div>
-        )}
+      )}
     </div>  
   );
 

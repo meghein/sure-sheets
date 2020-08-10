@@ -8,9 +8,6 @@ export default function useTextSettings() {
   const [colour, setColour] = useState('black')
   const [activeFontFamily, setActiveFontFamily] = useState('Arial')
   const [align, setAlign] = useState('left')
- 
-  
-  // const setFont
 
   return{
     textboxState, setTextboxState,
