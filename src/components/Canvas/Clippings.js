@@ -1,32 +1,36 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import NewText from './NewText'
 import NewImage from './NewImage'
 
 
 export default function Clippings(props) {
+  // const [selected, setSelected] = useState(false)
+
   return (
     <Fragment>
       {props.canvasItems.map((item, index) => {
         if(item.src) {
-          return <NewImage
-          key={`image-${index}`}
-          item={item}
-          shapeProps={item}
-          isSelected={item.id === props.selectedId}
-          onSelect={() => {
-            return props.selectShape(item.id);
-          }}
-          onChange={newAttrs => {
-            const temp = [...props.canvasItems]
-            temp[index] = newAttrs;
-            props.setCanvasItems(temp);
-          }}
-          />
-        }
+          return (
+            <NewImage
+            key={index}
+            item={item}
+            shapeProps={item}
+            isSelected={index === props.targetShape}
+            onSelect={(e) => {
+              props.setTargetShape(index);
+            }}
+            onChange={newAttrs => {
+              const temp = [...props.canvasItems]
+              temp[index] = newAttrs;
+              props.setCanvasItems(temp);
+            }}
+            setTargetShape={props.setTargetShape}
+            />
+          )}
         if(item.text) {
           return (
           <NewText
-            key={`text-${index}`}
+            id={`text-${index}`}
             setTextboxState={props.setTextboxState}
             text={item.text}
             fontSize={item.fontSize}

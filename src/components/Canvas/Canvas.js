@@ -12,12 +12,14 @@ import Template4 from './Templates/Template_4'
 
 
 export default forwardRef(function Canvas(props, stageRef) {
-  const [selectedId, selectShape] = useState(null);
+  const [targetShape, setTargetShape] = useState(null);
 
   const checkDeselect = e => {
+    console.log(e.target);
+    // deselect when clicked on empty area
     const clickedOnEmpty = e.target === e.target.getStage();
     if (clickedOnEmpty) {
-      selectShape(null);
+      setTargetShape(null);
     }
   };
   return (
@@ -38,6 +40,7 @@ export default forwardRef(function Canvas(props, stageRef) {
            onTouchStart={props.checkDeselect}
            onDrop={props.onDrop}
            onDragOver={props.onDragOver}
+           checkDeselect={checkDeselect}
            // onClick={stageref}
          >
            <Layer></Layer>
@@ -49,13 +52,11 @@ export default forwardRef(function Canvas(props, stageRef) {
             checkDeselect={checkDeselect}
             canvasItems={props.canvasItems}
             setCanvasItems={props.setCanvasItems}
-            fontSize={props.fontSize}
-            fill={props.fill}
-            selectId={selectedId}
-            selectShape={selectShape}
+            targetShape={targetShape}
+            setTargetShape={setTargetShape}
             onDrop={props.onDrop}
             onDragOver={props.onDragOver}
-            setTextboxState={props.setTextboxState}
+            // setTextboxState={props.setTextboxState}
           />
         }
         {(props.currentStage === "Template 2") &&
@@ -66,8 +67,8 @@ export default forwardRef(function Canvas(props, stageRef) {
           setCanvasItems={props.setCanvasItems}
           fontSize={props.fontSize}
           fill={props.fill}
-          selectId={selectedId}
-          selectShape={selectShape}
+          targetShape={targetShape}
+          setTargetShape={setTargetShape}
           onDrop={props.onDrop}
           onDragOver={props.onDragOver}
           />
@@ -80,8 +81,8 @@ export default forwardRef(function Canvas(props, stageRef) {
             setCanvasItems={props.setCanvasItems}
             fontSize={props.fontSize}
             fill={props.fill}
-            selectId={selectedId}
-            selectShape={selectShape}
+            targetShape={targetShape}
+            setTargetShape={setTargetShape}
             onDrop={props.onDrop}
             onDragOver={props.onDragOver}
           />
@@ -94,8 +95,8 @@ export default forwardRef(function Canvas(props, stageRef) {
             setCanvasItems={props.setCanvasItems}
             fontSize={props.fontSize}
             fill={props.fill}
-            selectId={selectedId}
-            selectShape={selectShape}
+            targetShape={targetShape}
+            setTargetShape={setTargetShape}
           />
         }
       </div>

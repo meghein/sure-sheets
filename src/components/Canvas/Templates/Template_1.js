@@ -7,7 +7,10 @@ import Clippings from '../Clippings'
 export default forwardRef(function Template1(props, stageRef) {
   function stageref(e) {
     console.log("this is where I'm clicking:", stageRef.current.getPointersPositions(e))
+    // props.checkDeselect(e)
   }
+
+
 
   return (
     <Stage
@@ -180,10 +183,10 @@ export default forwardRef(function Template1(props, stageRef) {
         <Clippings
           canvasItems={props.canvasItems}
           setCanvasItems={props.setCanvasItems}
-          fontSize={props.fontSize}
-          fill={props.fill}
-          selectId={props.selectedId}
-          selectShape={props.selectShape}
+          // fontSize={props.fontSize}
+          // fill={props.fill}
+          targetShape={props.targetShape}
+          setTargetShape={props.setTargetShape}
           // setTextboxState={props.setTextboxState}
 
           

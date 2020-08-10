@@ -276,8 +276,8 @@ export default forwardRef(function Template1(props, stageRef) {
           setCanvasItems={props.setCanvasItems}
           fontSize={props.fontSize}
           fill={props.fill}
-          selectId={props.selectedId}
-          selectShape={props.selectShape}
+          targetShape={props.targetShape}
+          setTargetShape={props.setTargetShape}
           
         />
       </Layer>
