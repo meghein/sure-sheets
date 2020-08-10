@@ -20,15 +20,15 @@ export default function useStageLoader(canvasItems, setCanvasItems) {
     setCanvasItems(tempState)
   };
 
-  function addText(text, fontSize, Colour, fontFamily,  align) {
+  function addText(text, fontSize, colour, activeFontFamily,  align) {
     const tempState = [...canvasItems];
     tempState.push({
         // x: window.innerWidth * Math.random(),
         // y: window.innerHeight * Math.random(),
         text,
         fontSize,
-        Colour,
-        fontFamily,
+        colour,
+        activeFontFamily,
         align,
       });
     setCanvasItems(tempState)

@@ -23,7 +23,6 @@ export default function Tesseract(props) {
 
   useEffect(() => {
     doOCR();
-    console.log("inside widget useEffect")
   }, [props.imageURL]);
 
   return (
