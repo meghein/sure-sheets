@@ -1,20 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Text } from 'react-konva';
 import useTextSettings from '../../hooks/useTextSettings'
 
 export default function NewText(props) {
-  // const [hide, setHide] = useState(false)
-
-  const {
-    textboxState,
-    setTextboxState,
-  } = useTextSettings()
-
-  // function stripHtml(value){
-  //   let tempElement = document.createElement("div");
-  //   tempElement.innerHTML = value;
-  //   return tempElement.textContent || tempElement.innerText || "";
-  // }
+  const { setTextboxState } = useTextSettings()
 
   function openTextArea(e) {
     e.target.hide()

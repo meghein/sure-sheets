@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Right.scss'
 
 import Imports from './Imports'
@@ -7,33 +7,23 @@ import SaveToPDF from './SaveToPDF'
 
 
 export default function Right(props) {
+  const [textValue, setTextValue] = useState('')
 
   return (
     <div className="right">
       
       <Textbox
-        textValue={props.textValue}
-        setTextValue={props.setTextValue}
-        fontSize={props.fontSize}
-        fill={props.fill}
-        setFontSize={props.setFontSize}
-        setFill={props.setFill}
-        textboxState={props.textboxState}
-        setTextboxState={props.setTextboxState}
+        textValue={textValue}
+        setTextValue={setTextValue}
         addText={props.addText}
       />
         
       <Imports 
         clippings = {props.clippings}
-        setSelected={props.setSelected}
         addImage={props.addImage}
         addText={props.addText}
-        textValue={props.textValue}
-        setTextValue={props.setTextValue}
-
+        setTextValue={setTextValue}
         onDragStart={props.onDragStart}
-        onDrop={props.onDrop}
-        onDragOver={props.onDragOver}
       />
 
       <SaveToPDF/>

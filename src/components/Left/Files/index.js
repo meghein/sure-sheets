@@ -8,13 +8,18 @@ export default function Files(props) {
   const [imageURL, setImageURL] = useState('')
   const [loading, setLoading] = useState(false)
   const [loadTess, setLoadTess] = useState(false)
-  // we may need this functionality soon:
-  // const [showTemplates, setShowTemplates] = useState(false)
+
+  const addClipping = (newImport) => {
+    const tempClippings = [...props.clippings];
+    tempClippings.push(newImport);
+    props.setClippings(tempClippings);
+    console.log(props.clippings)
+  }
 
   return (
     <div>     
       <UploadModal 
-        addClipping={props.addClipping}
+        addClipping={addClipping}
         imageURL={imageURL}
         setImageURL={setImageURL}
         loading={loading}

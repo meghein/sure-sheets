@@ -21,14 +21,8 @@ import BotButton from './Chatbot/BotButton'
 
 export default function App() {
   const [chatOpen, setChatOpen] = useState(false);
-  const [textValue, setTextValue] = useState('');
   const [clippings, setClippings] = useState(['This is a test text that is a bit longer for testing purposes']);
   const [newImport, setNewImport] = useState('');
-  const [selected, setSelected] = useState('');
-  const [fontSize, setFontSize] = useState(16);
-  const [fill, setFill] = useState('black');
-
-  const [textboxState, setTextboxState] = useState(false)
 
   const [canvasItems, setCanvasItems] = useState([]); // leave this one
 
@@ -56,20 +50,12 @@ export default function App() {
     addText,
   } = useStageLoader(canvasItems, setCanvasItems)
 
-
-  function addClipping(newImport) {
+  useEffect(() => {
     const tempClippings = [...clippings];
     tempClippings.push(newImport);
     setClippings(tempClippings);
-  }
-
-  useEffect(() => {
-    addClipping(newImport)
   }, [newImport]);
 
-  useEffect(() => {
-    setTextValue(selected)
-  }, [selected]);
   
   return (
     <div className="App">
@@ -87,50 +73,27 @@ export default function App() {
         <Left
           newImport={newImport}
           setNewImport={setNewImport}
-          addClipping={addClipping}
+          clippings={clippings}
           loadTemplate={loadTemplate}
           setCurrentStage={setCurrentStage}
+          setClippings={setClippings}
         />
         {/* <Splash /> */}
         <Canvas
           stageRef={stageRef}
           onDrop={onDrop}
           onDragOver={onDragOver}
-          textValue={textValue}
-          fontSize={fontSize}
-          fill={fill}
-          // selected={selected}
           currentStage={currentStage}
           loadTemplate={loadTemplate}
           addImage={addImage}
-          // addText={addText}
-          // handleUndo={handleUndo}
           canvasItems={canvasItems}
           setCanvasItems={setCanvasItems}
-
-          setTextboxState={setTextboxState}
         />
         <Right 
           clippings={clippings}
-          addClipping={addClipping}
-          textValue={textValue}
-          setTextValue={setTextValue}
-          fontSize={fontSize}
-          setFontSize={setFontSize}
-          fill={fill}
-          setFill={setFill}
-          selected={selected}
-          setSelected={setSelected}
           addImage={addImage}
           addText={addText}
           onDragStart={onDragStart}
-          onDrop={onDrop}
-          onDragOver={onDragOver}
-          textboxState={textboxState}
-          setTextboxState={setTextboxState}
-          canvasItems={canvasItems}
-          setCanvasItems={setCanvasItems}
-          // handleUndo={handleUndo}
         />
       </div>
     </div>
