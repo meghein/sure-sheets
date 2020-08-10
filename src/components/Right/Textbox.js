@@ -7,8 +7,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
 import { SwatchesPicker } from 'react-color';
 import './Right.scss'
-
-
+import useTextSettings from '../../hooks/useTextSettings'
+// import useStageLoader from '../../hooks/useStageLoader'
 
 import 'react-quill/dist/quill.bubble.css';
 
@@ -16,21 +16,30 @@ import 'react-quill/dist/quill.bubble.css';
 export default function Textbox(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [pickerVisable, setpickerVisable] = useState(false)
-  const [open, setOpen] = useState(false);
   const isOpen = Boolean(anchorEl);
+
+  const {
+    textboxState,
+    setTextboxState,
+    textValue,
+    setTextValue,
+  } = useTextSettings()
+
+  // const { addImage, addText } = useStageLoader()
+
 
   useEffect(() => {
     if(props.textValue) {
-      setOpen(true)
+      setTextboxState(true)
     }
   }, [props.textValue])
 
   const toggleOpen = () => {
-    open ? setOpen(false) : setOpen(true)
+    textboxState ? setTextboxState(false) : setTextboxState(true)
   }
 
   const close = () => {
-    setOpen(false)
+    setTextboxState(false)
   }
 
   const handleClick = (event) => {
@@ -59,7 +68,13 @@ export default function Textbox(props) {
   }
 
   const saveText = (event) => {
-    console.log(props.textValue)
+    props.addText(event.target.value)
+    setTextboxState(false)
+    props.setTextValue('')
+  }
+
+  const handleTextChange = (e) => {
+    props.setTextValue(e.target.value)
   }
 
   return (      
@@ -71,20 +86,22 @@ export default function Textbox(props) {
       >
         Edit or Add Text
       </Button>
-        {open && (
+        {textboxState && (
           <div className="modal" id="modal">
             <IconButton aria-label="delete" className="close">
               <CloseIcon fontSize="large" onClick={close}/>
             </IconButton>
             <div>
-      <ReactQuill
+      {/* <ReactQuill
         id="quill"
         theme="bubble"
         value={props.textValue}
         onChange={props.setTextValue}
-      />
+      /> */}
+      <textarea id='textbox' value={props.textValue} onChange={handleTextChange}/>
       <div>
-        <Button onClick={saveText}>Click to save</Button>
+        <button value={props.textValue} onClick={saveText}>save text</button>
+        {/* <Button onClick={saveText} dataset-id={props.textValue}>Click to save</Button> */}
         <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
           Font Size
         </Button>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Stage, Layer, Rect } from 'react-konva'
 import Clippings from '../Clippings'
 
-export default function Template_1(props) {
+export default function Template_2(props) {
 
   // const leftCol = 30;
   // const rightCol = 620;
@@ -280,8 +280,8 @@ export default function Template_1(props) {
 
 
         <Clippings
-          clippingHistory={props.clippingHistory}
-          setClippingHistory={props.setClippingHistory}
+          canvasItems={props.canvasItems}
+          setCanvasItems={props.setCanvasItems}
           fontSize={props.fontSize}
           fill={props.fill}
           selectId={props.selectedId}

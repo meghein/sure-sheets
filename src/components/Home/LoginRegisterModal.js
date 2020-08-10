@@ -39,7 +39,6 @@ export default function LoginRegisterModal(props) {
     openReg ? setOpenReg(false) : setOpenReg(true);
   };
   return (
-    <>
       <Modal
         open={open}
         onClose={handleClose}
@@ -51,8 +50,6 @@ export default function LoginRegisterModal(props) {
         :
           <Register setAuthenticated={props.setAuthenticated} setCurrentUser={props.setCurrentUser} handleClose={props.handleClose} classes={classes} toggleReg={toggleReg}/>
         }
-  
       </Modal>
-    </>
   );
 }

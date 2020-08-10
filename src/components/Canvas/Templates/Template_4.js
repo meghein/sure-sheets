@@ -161,8 +161,8 @@ export default forwardRef(function Template1(props, stageRef) {
         />
         
         <Clippings
-          clippingHistory={props.clippingHistory}
-          setClippingHistory={props.setClippingHistory}
+          canvasItems={props.canvasItems}
+          setCanvasItems={props.setCanvasItems}
           fontSize={props.fontSize}
           fill={props.fill}
           selectId={props.selectedId}

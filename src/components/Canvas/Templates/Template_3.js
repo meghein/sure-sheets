@@ -189,8 +189,8 @@ export default function Template_1(props) {
 
 
         <Clippings
-          clippingHistory={props.clippingHistory}
-          setClippingHistory={props.setClippingHistory}
+          canvasItems={props.canvasItems}
+          setCanvasItems={props.setCanvasItems}
           fontSize={props.fontSize}
           fill={props.fill}
           selectId={props.selectedId}
