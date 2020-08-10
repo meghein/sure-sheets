@@ -7,7 +7,10 @@ import Clippings from '../Clippings'
 export default forwardRef(function Template1(props, stageRef) {
   function stageref(e) {
     console.log("this is where I'm clicking:", stageRef.current.getPointersPositions(e))
+    props.checkDeselect(e)
   }
+
+
 
   return (
     <Stage

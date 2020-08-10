@@ -15,10 +15,16 @@ export default forwardRef(function Canvas(props, stageRef) {
   const [selectedId, selectShape] = useState(null);
 
   const checkDeselect = e => {
-    const clickedOnEmpty = e.target === e.target.getStage();
+    const clickedOnEmpty = e.target === e.target.getStage()
+    console.log("1 stage", e.target.getStage())
+    console.log("2 selected id", selectedId)
     if (clickedOnEmpty) {
       selectShape(null);
+      console.log("3 selected id", selectedId)
+    } else {
+      console.log("4 something selected?")
     }
+    // selectShape(null);
   };
   return (
     <>
@@ -38,6 +44,7 @@ export default forwardRef(function Canvas(props, stageRef) {
            onTouchStart={props.checkDeselect}
            onDrop={props.onDrop}
            onDragOver={props.onDragOver}
+           checkDeselect={checkDeselect}
            // onClick={stageref}
          >
            <Layer></Layer>
