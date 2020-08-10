@@ -10,25 +10,23 @@ export default function Clippings(props) {
     <Fragment>
       {props.canvasItems.map((item, index) => {
         if(item.src) {
-          return <NewImage
-          id={`image-${index}`}
-          item={item}
-          shapeProps={item}
-          isSelected={item.id === props.selectedId}
-          onSelect={() => {
-            props.selectShape(item.id);
-          }}
-          onChange={newAttrs => {
-            const temp = [...props.canvasItems]
-            temp[index] = newAttrs;
-            props.setCanvasItems(temp);
-          }}
-          
-          canvasItems={props.canvasItems}
-          setCanvasItems={props.setCanvasItems}
-          index={index}
-          />
-        }
+          return (
+            <NewImage
+            key={index}
+            item={item}
+            shapeProps={item}
+            isSelected={index === props.targetShape}
+            onSelect={(e) => {
+              props.setTargetShape(index);
+            }}
+            onChange={newAttrs => {
+              const temp = [...props.canvasItems]
+              temp[index] = newAttrs;
+              props.setCanvasItems(temp);
+            }}
+            setTargetShape={props.setTargetShape}
+            />
+          )}
         if(item.text) {
           return (
           <NewText

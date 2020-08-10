@@ -11,11 +11,6 @@ export default function UrlImage(props) {
     if (props.isSelected) {
       trRef.current.setNode(shapeRef.current);
       trRef.current.getLayer().batchDraw();
-      console.log('selected')
-    } else {
-      trRef.current.setNode(null);
-      trRef.current.getLayer().batchDraw();
-      console.log('not selected')
     }
   }, [props.isSelected]);
 
@@ -24,9 +19,7 @@ export default function UrlImage(props) {
   return (
     <Fragment>
       <Image
-        id={props.item.id}
         image={img}
-        // isSelected={image.id === props.selectedId}
         x={props.item.x}
         y={props.item.y}
         offsetX={img ? img.width / 2 : 0}
