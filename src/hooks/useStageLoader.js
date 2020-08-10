@@ -28,6 +28,7 @@ export default function useStageLoader(canvasItems, setCanvasItems) {
         text: text
       });
     setCanvasItems(tempState)
+    // add if textbox state is true, set to false
     console.log(canvasItems)
   };
 

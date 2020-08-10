@@ -22,17 +22,17 @@ export default function Textbox(props) {
     textboxState,
     setTextboxState,
     textValue,
-    setTexValue,
+    setTextValue,
   } = useTextSettings()
 
   // const { addImage, addText } = useStageLoader()
 
 
   useEffect(() => {
-    if(textValue) {
+    if(props.textValue) {
       setTextboxState(true)
     }
-  }, [textValue])
+  }, [props.textValue])
 
   const toggleOpen = () => {
     textboxState ? setTextboxState(false) : setTextboxState(true)
@@ -68,7 +68,11 @@ export default function Textbox(props) {
   }
 
   const saveText = (event) => {
-    console.log(props.textValue)
+    props.addText(event.target.value)
+  }
+
+  const handleTextChange = (e) => {
+    props.setTextValue(e.target.value)
   }
 
   return (      
@@ -92,9 +96,10 @@ export default function Textbox(props) {
         value={props.textValue}
         onChange={props.setTextValue}
       /> */}
-      <textarea id='textbox' value={textValue}/>
+      <textarea id='textbox' value={props.textValue} onChange={handleTextChange}/>
       <div>
-        <Button onClick={saveText}>Click to save</Button>
+        <button value={props.textValue} onClick={saveText}>save text</button>
+        {/* <Button onClick={saveText} dataset-id={props.textValue}>Click to save</Button> */}
         <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
           Font Size
         </Button>

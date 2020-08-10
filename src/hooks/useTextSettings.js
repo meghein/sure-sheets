@@ -10,7 +10,7 @@ export default function useTextSettings() {
     textboxState,
     setTextboxState,
     textValue,
-    setTextValue
+    setTextValue,
   }
   
 }

@@ -20,6 +20,7 @@ export default function Right(props) {
         setFill={props.setFill}
         textboxState={props.textboxState}
         setTextboxState={props.setTextboxState}
+        addText={props.addText}
       />
         
       <Imports 

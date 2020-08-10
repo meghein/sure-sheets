@@ -1,9 +1,18 @@
 import React from 'react'
 import './Imports.scss'
+import useTextSettings from '../../hooks/useTextSettings'
+
 // import useStageLoader from '../../hooks/useStageLoader'
 
 export default function Imports(props) {
   // const { addImage, addText } = useStageLoader()
+
+  const {
+    textboxState,
+    setTextboxState,
+    textValue,
+    setTextValue,
+  } = useTextSettings()
 
   function buildTesseractClippings(clippings) {
     const tempArr = []
@@ -30,6 +39,8 @@ export default function Imports(props) {
  
   function handleTextClick(e) {
     props.setSelected(e.target.value)
+    setTextValue(e.target.value)
+    console.log(textValue)
     props.addText(e.target.value)
   }
 
