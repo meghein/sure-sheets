@@ -3,7 +3,7 @@ import './App.scss';
 
 
 import useDragandDrop from '../hooks/useDragAndDrop';
-import stageLoader from '../helpers/stageLoader'
+import useStageLoader from '../hooks/useStageLoader'
 
 import NavBar from './Home/NavBar';
 // import Splash from './Home/Splash';
@@ -28,9 +28,11 @@ export default function App() {
   const [fontSize, setFontSize] = useState(16);
   const [fill, setFill] = useState('black');
 
-  const [clippingHistory, setClippingHistory] = useState([]);
+  const [textboxState, setTextboxState] = useState(false)
 
-  const [currentStage, setCurrentStage] = useState([]);
+  const [canvasItems, setCanvasItems] = useState([]); // leave this one
+
+  const [currentStage, setCurrentStage] = useState(['Intro']);
 
   const [authenticated, setAuthenticated] = useState(false)
 
@@ -46,14 +48,13 @@ export default function App() {
     onDragStart,
     onDragOver,
     onDrop,
-  } = useDragandDrop(clippingHistory, setClippingHistory);
+  } = useDragandDrop(canvasItems, setCanvasItems);
 
   const {
     loadTemplate,
     addImage,
     addText,
-    // handleUndo,
-  } = stageLoader(clippingHistory, setClippingHistory, currentStage, setCurrentStage)
+  } = useStageLoader(canvasItems, setCanvasItems)
 
 
   function addClipping(newImport) {
@@ -104,8 +105,10 @@ export default function App() {
           addImage={addImage}
           // addText={addText}
           // handleUndo={handleUndo}
-          clippingHistory={clippingHistory}
-          setClippingHistory={setClippingHistory}
+          canvasItems={canvasItems}
+          setCanvasItems={setCanvasItems}
+
+          setTextboxState={setTextboxState}
         />
         <Right 
           clippings={clippings}
@@ -123,6 +126,10 @@ export default function App() {
           onDragStart={onDragStart}
           onDrop={onDrop}
           onDragOver={onDragOver}
+          textboxState={textboxState}
+          setTextboxState={setTextboxState}
+          canvasItems={canvasItems}
+          setCanvasItems={setCanvasItems}
           // handleUndo={handleUndo}
         />
       </div>

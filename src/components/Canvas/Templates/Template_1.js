@@ -3,7 +3,7 @@ import {Stage, Layer, Rect} from 'react-konva'
 import Clippings from '../Clippings'
 // import Konva from 'konva'
 
-export default forwardRef(function Template_2(props, stageRef) {
+export default forwardRef(function Template_1(props, stageRef) {
   return (
     <Stage
       width={794}
@@ -173,12 +173,14 @@ export default forwardRef(function Template_2(props, stageRef) {
         />
         
         <Clippings
-          clippingHistory={props.clippingHistory}
-          setClippingHistory={props.setClippingHistory}
-          fontSize={props.fontSize}
-          fill={props.fill}
+          canvasItems={props.canvasItems}
+          setCanvasItems={props.setCanvasItems}
+          // fontSize={props.fontSize}
+          // fill={props.fill}
           selectId={props.selectedId}
           selectShape={props.selectShape}
+          // setTextboxState={props.setTextboxState}
+
           
         />
       </Layer>

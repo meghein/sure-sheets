@@ -18,6 +18,8 @@ export default function Right(props) {
         fill={props.fill}
         setFontSize={props.setFontSize}
         setFill={props.setFill}
+        textboxState={props.textboxState}
+        setTextboxState={props.setTextboxState}
       />
         
       <Imports 

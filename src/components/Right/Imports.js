@@ -1,7 +1,10 @@
 import React from 'react'
 import './Imports.scss'
+// import useStageLoader from '../../hooks/useStageLoader'
 
 export default function Imports(props) {
+  // const { addImage, addText } = useStageLoader()
+
   function buildTesseractClippings(clippings) {
     const tempArr = []
     clippings.forEach((clipping) => {
