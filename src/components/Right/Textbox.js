@@ -47,7 +47,6 @@ export default function Textbox(props) {
     const sizes = {Title: 36, Heading: 28, Subheading: 22, Body: 16}
 
     for (const size in sizes) {
-      console.log("size", size, "sizes[size]:", sizes[size])
       if(event.currentTarget.dataset.id === size) {
         setFontSize(sizes[size])
       }

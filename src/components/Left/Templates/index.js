@@ -15,7 +15,6 @@ export default function Templates(props) {
   };
   const handleClose = (e) => {
     setAnchorEl(null)
-    console.log("dataset", e.currentTarget.dataset.id);
     props.setCurrentStage(e.currentTarget.dataset.id)
   }
 
