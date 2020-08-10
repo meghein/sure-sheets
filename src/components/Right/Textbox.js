@@ -16,7 +16,6 @@ export default function Textbox(props) {
 
   const {
     textboxState, setTextboxState,
-    textValue, setTextValue,
     fontSize, setFontSize,
     colour, setColour,
     activeFontFamily, setActiveFontFamily,

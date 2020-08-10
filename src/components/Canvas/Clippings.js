@@ -1,18 +1,9 @@
-import React, { Fragment, useEffect } from 'react'
-import useStageLoader from '../../hooks/useStageLoader'
-
+import React, { Fragment } from 'react'
 import NewText from './NewText'
 import NewImage from './NewImage'
 
 
 export default function Clippings(props) {
-  // const { canvasItems, setCanvasItems } = useStageLoader()
-
-  useEffect(() => {
-    console.log("canvas items", props.canvasItems)
-  }, [props.canvasItems])
-
-
   return (
     <Fragment>
       {props.canvasItems.map((item, index) => {
@@ -23,7 +14,7 @@ export default function Clippings(props) {
           shapeProps={item}
           isSelected={item.id === props.selectedId}
           onSelect={() => {
-            props.selectShape(item.id);
+            return props.selectShape(item.id);
           }}
           onChange={newAttrs => {
             const temp = [...props.canvasItems]

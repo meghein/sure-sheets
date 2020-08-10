@@ -11,19 +11,12 @@ export default function Left(props) {
       <Files 
         newImport={props.newImport}
         setNewImport={props.setNewImport}
-        addClipping={props.addClipping}
+        clippings={props.clippings}
+        setClippings={props.setClippings}
       />
       <Templates
         setCurrentStage={props.setCurrentStage}
       />
-      {/* <Toolbar
-        imagesData={props.imagesData}
-        onDragStart={props.onDragStart}
-        onDrop={props.onDrop}
-        onDragOver={props.onDragOver}
-        textValue={props.textValue}
-        setTextValue={props.setTextValue}
-      /> */}
     </div>
   )
 }
