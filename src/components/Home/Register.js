@@ -38,9 +38,16 @@ export default function Register(props) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(register)
-    })
-      .then(response => {
-        console.log("response", response.json())
+    }).then(response =>
+      response.json().then(data => ({
+        data: data,
+        status: response.status
+      }, props.setCurrentUser(data))
+      ))
+      .then(res => {
+        props.setAuthenticated(true)
+        props.handleClose(true)
+        //reset form....
       })
       .catch(err => console.log("err", err))
   }
@@ -56,6 +63,7 @@ export default function Register(props) {
 
     
   return (
+    !props.authenticated &&
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={props.classes.paper}>

@@ -60,11 +60,13 @@ export default function Login(props) {
       response.json().then(data => ({
         data: data,
         status: response.status
-      })
+      }, props.setCurrentUser(data))
       ))
       .then(res => {
         props.setAuthenticated(true)
         props.handleClose(true)
+        //props.setCurrentUser(res.json(data))
+        //console.log(props.currentUser)
         //reset form....
       })
         // .then(response => {

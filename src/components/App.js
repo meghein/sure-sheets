@@ -34,6 +34,8 @@ export default function App() {
 
   const [authenticated, setAuthenticated] = useState(false)
 
+  const [currentUser, setCurrentUser] = useState("");
+
   const chatbotToggle = () => {
     console.log(`CHAT TOGGLED ${chatOpen}`)
     chatOpen ? setChatOpen(false) : setChatOpen(true)
@@ -73,6 +75,8 @@ export default function App() {
       <NavBar 
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
       />
       {chatOpen ? 
         <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}/> : null
