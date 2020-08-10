@@ -1,8 +1,10 @@
 import { useRef } from 'react';
+import useStageLoader from './useStageLoader'
 
-export default function useDragAndDrop(clippingHistory, setClippingHistory) {
+export default function useDragAndDrop() {
   const dragItem = useRef();
   const stageRef = useRef();
+  const { canvasItems, setCanvasItems } = useStageLoader()
 
   // const newImage = new window.Image()
   // newImage.src = "/images/NERv05SMALLColor.png" // => eventually this will be a clipping url
@@ -26,14 +28,14 @@ export default function useDragAndDrop(clippingHistory, setClippingHistory) {
     stageRef.current.setPointersPositions(e)
 
     console.log("point positions", stageRef.current.getPointersPositions())
-    const tempState = [...clippingHistory];
+    const tempState = [...canvasItems];
     tempState.push({
       x: stageRef.current.getPointersPositions()[0].x,
       y: stageRef.current.getPointersPositions()[0].y,
       src: dragItem.current
     });
-    setClippingHistory(tempState)
-    console.log("drop", clippingHistory)
+    setCanvasItems(tempState)
+    console.log("drop", canvasItems)
   }
 
   return {

@@ -18,6 +18,9 @@ export default function Right(props) {
         fill={props.fill}
         setFontSize={props.setFontSize}
         setFill={props.setFill}
+        textboxState={props.textboxState}
+        setTextboxState={props.setTextboxState}
+        addText={props.addText}
       />
         
       <Imports 
@@ -25,6 +28,8 @@ export default function Right(props) {
         setSelected={props.setSelected}
         addImage={props.addImage}
         addText={props.addText}
+        textValue={props.textValue}
+        setTextValue={props.setTextValue}
 
         onDragStart={props.onDragStart}
         onDrop={props.onDrop}

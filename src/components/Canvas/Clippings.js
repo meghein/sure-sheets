@@ -1,12 +1,21 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
+import useStageLoader from '../../hooks/useStageLoader'
 
 import NewText from './NewText'
 import NewImage from './NewImage'
 
+
 export default function Clippings(props) {
+  // const { canvasItems, setCanvasItems } = useStageLoader()
+
+  useEffect(() => {
+    console.log("canvas items", props.canvasItems)
+  }, [props.canvasItems])
+
+
   return (
     <Fragment>
-      {props.clippingHistory.map((item, index) => {
+      {props.canvasItems.map((item, index) => {
         if(item.src) {
           return <NewImage
           key={`image-${index}`}
@@ -17,15 +26,21 @@ export default function Clippings(props) {
             props.selectShape(item.id);
           }}
           onChange={newAttrs => {
-            const temp = [...props.clippingHistory]
+            const temp = [...props.canvasItems]
             temp[index] = newAttrs;
-            props.setClippingHistory(temp);
+            props.setCanvasItems(temp);
           }}
           />
         }
         if(item.text) {
-          return <NewText key={`text-${index}`} text={item.text} fontSize={props.fontSize}
-          fill={props.fill}/>
+          return (
+          <NewText
+            key={`text-${index}`}
+            setTextboxState={props.setTextboxState}
+            text={item.text}
+            fontSize={props.fontSize}
+            fill={props.fill}
+          />)
         }
       })}
     </Fragment>
