@@ -11,8 +11,8 @@ export default forwardRef(function Template1(props, stageRef) {
 
   return (
     <Stage
-      width={794}
-      height={1123}
+      width={850}
+      height={1100}
       ref={stageRef}
       onMouseDown={props.checkDeselect}
       onTouchStart={props.checkDeselect}
