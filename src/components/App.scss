@@ -1,15 +1,27 @@
 @import "../styles/variables.scss";
 
+body {
+  height: 100%;
+  // background: rgb(122,137,194);
+  background: linear-gradient(0deg, rgba(122,137,194,1) 0%, rgba(227,215,255,1) 100%);
+}
+
 .App {
   text-align: center;
 }
 
 .main {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  // grid-template-columns: 20% 60% 20%;
+  // grid-template-rows: 100%;
+  // gap: 1px 1px;
+  // grid-template-areas: "left | canvas | right";
+}
 
-    // grid-template-columns: 20% 60% 20%;
-    // grid-template-rows: 100%;
-    // gap: 1px 1px;
-    // grid-template-areas: "left | canvas | right";
+.navBar {
+background: rgb(99,107,97);
+background: linear-gradient(180deg, #72788D 10%, #72788D 100%);
+padding-bottom: 5px;
 }

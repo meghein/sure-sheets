@@ -5,11 +5,14 @@
   // grid-area: canvas;
   justify-content: center;
   align-self: center;
+  margin-top: 20px;
   margin-left: $sidebar-width;
-  width: 794px;
-  height: 1123px;
-  background-color: burlywood;
-  border: 2px solid red;
+  margin-right: $sidebar-width;
+  width: 850px;
+  height: 1100px;
+  border: 3px solid #72788D;
+  box-shadow: 0px 0px 5px 5px #FFFCD6;
   // z-index: -10;
+  background-color: #E3D7FF;  
 }
 
