@@ -175,8 +175,8 @@ export default forwardRef(function Template_1(props, stageRef) {
         <Clippings
           canvasItems={props.canvasItems}
           setCanvasItems={props.setCanvasItems}
-          // fontSize={props.fontSize}
-          // fill={props.fill}
+          fontSize={props.fontSize}
+          fill={props.fill}
           selectId={props.selectedId}
           selectShape={props.selectShape}
           // setTextboxState={props.setTextboxState}

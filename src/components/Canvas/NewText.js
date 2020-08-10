@@ -26,8 +26,8 @@ export default function NewText(props) {
   return (
     < Text
       text={props.text}
-      // fontSize={props.fontSize}
-      // fill={props.fill}
+      fontSize={props.fontSize}
+      fill={props.fill}
       width={300}
       onClick={openTextArea}
       draggable

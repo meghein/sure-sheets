@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import ReactQuill from 'react-quill';
+import ReactQuill from 'react-quill';
 import { Button, IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import Menu from '@material-ui/core/Menu';
@@ -10,7 +10,7 @@ import './Right.scss'
 import useTextSettings from '../../hooks/useTextSettings'
 // import useStageLoader from '../../hooks/useStageLoader'
 
-// import 'react-quill/dist/quill.bubble.css';
+import 'react-quill/dist/quill.bubble.css';
 
 
 export default function Textbox(props) {
@@ -69,6 +69,8 @@ export default function Textbox(props) {
 
   const saveText = (event) => {
     props.addText(event.target.value)
+    setTextboxState(false)
+    props.setTextValue('')
   }
 
   const handleTextChange = (e) => {

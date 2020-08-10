@@ -28,6 +28,8 @@ export default function Right(props) {
         setSelected={props.setSelected}
         addImage={props.addImage}
         addText={props.addText}
+        textValue={props.textValue}
+        setTextValue={props.setTextValue}
 
         onDragStart={props.onDragStart}
         onDrop={props.onDrop}
