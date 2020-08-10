@@ -13,7 +13,6 @@ export default function Files(props) {
 
   return (
     <div>     
-      {/* <Templates /> */}
       <UploadModal 
         addClipping={props.addClipping}
         imageURL={imageURL}
@@ -23,19 +22,6 @@ export default function Files(props) {
         setLoadTess={setLoadTess}
         loadTess={loadTess}
       />
-      <CloudinaryWidget 
-        addClipping={props.addClipping}
-        imageURL={imageURL}
-        setImageURL={setImageURL}
-        loading={loading}
-        setLoading={setLoading}
-        setLoadTess={setLoadTess}
-      />
-      {loadTess && 
-      <Tesseract
-        imageURL={imageURL}
-        addClipping={props.addClipping}
-      />}
     </div>
   )
 }

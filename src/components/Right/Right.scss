@@ -1,16 +1,18 @@
 @import "../../styles/variables.scss";
 
 .right {
-  // grid-area: right;
   position: absolute;
   right: 0;
   height: 100%;
   width: $sidebar-width;
-  border: 1px solid red;
+  border: 2px solid #72788D;
+  border-top: 0px;
+  padding-top: 5px;
+  z-index: 20;
 }
 
 .text-container {
-  // margin-right: $sidebar-width;
+  margin-right: $sidebar-width;
   position: absolute;
   right: 100%;
   margin-top: -32px;

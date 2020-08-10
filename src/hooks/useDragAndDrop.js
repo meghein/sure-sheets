@@ -1,10 +1,9 @@
 import { useRef } from 'react';
 import useStageLoader from './useStageLoader'
 
-export default function useDragAndDrop() {
+export default function useDragAndDrop(canvasItems, setCanvasItems) {
   const dragItem = useRef();
   const stageRef = useRef();
-  const { canvasItems, setCanvasItems } = useStageLoader()
 
   // const newImage = new window.Image()
   // newImage.src = "/images/NERv05SMALLColor.png" // => eventually this will be a clipping url
