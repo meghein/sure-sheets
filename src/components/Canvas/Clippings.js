@@ -38,8 +38,10 @@ export default function Clippings(props) {
             key={`text-${index}`}
             setTextboxState={props.setTextboxState}
             text={item.text}
-            fontSize={props.fontSize}
-            fill={props.fill}
+            fontSize={item.fontSize}
+            fill={item.colour}
+            fontFamily={item.activeFontFamily}
+            align={item.align}
           />)
         }
       })}

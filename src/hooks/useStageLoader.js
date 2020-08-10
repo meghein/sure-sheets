@@ -20,12 +20,16 @@ export default function useStageLoader(canvasItems, setCanvasItems) {
     setCanvasItems(tempState)
   };
 
-  function addText(text) {
+  function addText(text, fontSize, Colour, fontFamily,  align) {
     const tempState = [...canvasItems];
     tempState.push({
-        x: window.innerWidth * Math.random(),
-        y: window.innerHeight * Math.random(),
-        text: text
+        // x: window.innerWidth * Math.random(),
+        // y: window.innerHeight * Math.random(),
+        text,
+        fontSize,
+        Colour,
+        fontFamily,
+        align,
       });
     setCanvasItems(tempState)
     // add if textbox state is true, set to false
