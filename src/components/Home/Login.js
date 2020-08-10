@@ -60,7 +60,8 @@ export default function Login(props) {
       response.json().then(data => ({
         data: data,
         status: response.status
-      }).then(data => props.setCurrentUser(data))))
+      }, props.setCurrentUser(data))
+      ))
       .then(res => {
         props.setAuthenticated(true)
         props.handleClose(true)
