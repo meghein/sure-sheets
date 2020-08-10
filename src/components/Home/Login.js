@@ -28,7 +28,7 @@ export default function Login(props) {
       </Typography>
     );
   }
-  
+
   //Pass it onto a query, where email and password = so and so
   //
   //
@@ -37,38 +37,50 @@ export default function Login(props) {
     password: ""
   });
 
-  
-  
+
+
   function handleChange(e) {
     console.log(e.target.value)
     setLogin(
-     {...login, [e.target.id]: e.target.value}
+      { ...login, [e.target.id]: e.target.value }
     );
   }
-  
+
   // const [error, setError] = useState("");
-  
+
   function onSubmitForm(e) {
     e.preventDefault();
     console.log("login", JSON.stringify(login))
-    
+
     fetch("http://localhost:8001/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(login)
-    })
-      .then(response => { 
-        console.log("response", response)
-        return response.json()
-      })
-      .then(() => {
+    }).then(response =>
+      response.json().then(data => ({
+        data: data,
+        status: response.status
+      }, props.setCurrentUser(data))
+      ))
+      .then(res => {
         props.setAuthenticated(true)
-        // reset form....
+        props.handleClose(true)
+        //props.setCurrentUser(res.json(data))
+        //console.log(props.currentUser)
+        //reset form....
       })
-      // .then((json) => {
-      //   console.log("json success", json)
+        // .then(response => {
+        //   console.log("response", response.json())
+        //   return response.json()
+        // })
+      // .then(() => {
+      //   props.setAuthenticated(true)
+      //   // reset form....
       // })
-      .catch(err => console.log("Hey this is an error", err))
+        // .then((json) => {
+        //   console.log("json success", json)
+        // })
+        .catch(err => console.log("Hey this is an error", err))
   }
 
   // useEffect(() =>{
@@ -76,74 +88,74 @@ export default function Login(props) {
   // }, []);
 
   return (
-    !props.authenticated && 
-      (<Container component="main" maxWidth="xs">
+    !props.authenticated &&
+    (<Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={props.classes.paper}>
         <Avatar className={props.classes.avatar}>
           <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Sign in
           </Typography>
-          <form className={props.classes.form} noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              onChange={handleChange}
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              onChange={handleChange}
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={props.classes.submit}
-              onClick={onSubmitForm}
-              // onclose={a function to disappear}
-            >
-              Sign In
+        <form className={props.classes.form} noValidate>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            onChange={handleChange}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            onChange={handleChange}
+            autoComplete="current-password"
+          />
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Remember me"
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={props.classes.submit}
+            onClick={onSubmitForm}
+          // onclose={a function to disappear}
+          >
+            Sign In
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
+          <Grid container>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
                         </Link>
-              </Grid>
-              <Grid item>
-                <Link onClick={() => props.toggleReg()} variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
             </Grid>
-          </form>
-        </div>
-        <Box mt={8}>
-          <Copyright />
-        </Box>
-      </Container>)
-      // authenticated && pass props to navbar to show user name.
+            <Grid item>
+              <Link onClick={() => props.toggleReg()} variant="body2">
+                {"Don't have an account? Sign Up"}
+              </Link>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+      <Box mt={8}>
+        <Copyright />
+      </Box>
+    </Container>)
+    // authenticated && pass props to navbar to show user name.
   )
 }

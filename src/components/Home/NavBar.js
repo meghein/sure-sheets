@@ -34,7 +34,9 @@ export default function ButtonAppBar(props) {
     const handleClose = () => {
     setOpen(false);
   };
-  
+  const handleLogout = () => {
+    props.setAuthenticated(false);
+  };
 
   return (
     <div className={classes.root}>
@@ -46,9 +48,9 @@ export default function ButtonAppBar(props) {
           <Typography variant="h6" className={classes.title}>
             Sure Sheets
           </Typography>
-          <LoginRegisterModal setAuthenticated={props.setAuthenticated} open={open} handleClose={handleClose} handleClickLoginOpen={handleClickLoginOpen} />
+          <LoginRegisterModal setAuthenticated={props.setAuthenticated} setCurrentUser={props.setCurrentUser} currentUser={props.currentUser} open={open} handleClose={handleClose} handleClickLoginOpen={handleClickLoginOpen} />
           {!props.authenticated && (<Button color="inherit" onClick={handleClickLoginOpen}>Sign In or Register</Button>)}
-          {/* {props.authenticated && ( another component with props.username...)} */}
+          {props.authenticated && (<><div>Logged In As {props.currentUser}</div> <Button color="inherit" onClick={handleLogout}>Logout</Button></>)}
         </Toolbar>
       </AppBar>
     </div>
