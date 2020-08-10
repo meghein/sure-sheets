@@ -3,29 +3,20 @@ import { Stage, Layer, Rect } from 'react-konva'
 import Clippings from '../Clippings'
 
 export default function Template_1(props) {
-
-  // const leftCol = 30;
-  // const rightCol = 620;
-  // const horizontalCenter = 275;
-  // const verticalCenter = 550;
-  // const fullWidth = 800;
-  // const thirdWidth = 300;
-  // const thinWidth = 150;
-  // const fullHeight = 1050;
-  // const shortHeight = 125;
-  // const headersHeight = 100;
-  // const tallHeight = 500;
-  // const tightToTop = 15;
-  // const topRowBox = 150;
-
+  function stageref(e) {
+    console.log("this is where I'm clicking:", stageRef.current.getPointersPositions(e))
+  }
 
   return (
     <Stage
-      width={850}
-      height={1100}
-      ref={props.stageRef}
+      width={794}
+      height={1123}
+      ref={stageRef}
       onMouseDown={props.checkDeselect}
       onTouchStart={props.checkDeselect}
+      onDrop={props.onDrop}
+      onDragOver={props.onDragOver}
+      onClick={stageref}
     >
       <Layer>
         <Rect

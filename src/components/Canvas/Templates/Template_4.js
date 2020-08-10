@@ -5,7 +5,6 @@ import Clippings from '../Clippings'
 
 
 export default forwardRef(function Template1(props, stageRef) {
-// make this match on the other templates
   function stageref(e) {
     console.log("this is where I'm clicking:", stageRef.current.getPointersPositions(e))
   }
@@ -15,7 +14,7 @@ export default forwardRef(function Template1(props, stageRef) {
     <Stage
       width={794}
       height={1123}
-      ref={stageRef}   //make it match this line too
+      ref={stageRef}
       onMouseDown={props.checkDeselect}
       onTouchStart={props.checkDeselect}
       onDrop={props.onDrop}
