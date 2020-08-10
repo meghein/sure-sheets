@@ -19,11 +19,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
-
-
-
 export default function ButtonAppBar(props) {
   const classes = useStyles();
   // For Login Modal

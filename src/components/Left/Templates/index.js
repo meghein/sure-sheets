@@ -33,7 +33,7 @@ export default function Templates(props) {
           TransitionComponent={Fade}
         >
           {templates.map((template, index) => (
-          <MenuItem onClick={handleClose} id={`template_${index + 1}`} data-id={template}> Template {index + 1}</MenuItem>
+          <MenuItem onClick={handleClose} key={index + 1} id={`template_${index + 1}`} data-id={template}> Template {index + 1}</MenuItem>
           ))}
         </Menu>
       </div>

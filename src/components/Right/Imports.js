@@ -18,10 +18,8 @@ export default function Imports(props) {
   
   const imageClippings = props.clippings
     .filter(clipping => typeof(clipping) === 'object' )
-    .map((clipping, index) => { return (clipping.image.src)})
-    // .map((clipping, index) => { return <img src={(clipping.image.src)} alt={index} key={index}/>})
+    .map((clipping) => { return (clipping.image.src)})
     
-
   function handleImageClick(e) {
     console.log("src", e.target.src)
     props.addImage(e.target.src)

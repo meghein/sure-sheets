@@ -84,12 +84,6 @@ export default function App() {
       <BotButton toggle={chatbotToggle}/>
       <div className="main">
         <Left
-          // imagesData={images}
-          // onDragStart={onDragStart}
-          // onDrop={onDrop}
-          // onDragOver={onDragOver}
-          // textValue={textValue}
-          // setTextValue={setTextValue}
           newImport={newImport}
           setNewImport={setNewImport}
           addClipping={addClipping}
@@ -99,7 +93,6 @@ export default function App() {
         {/* <Splash /> */}
         <Canvas
           stageRef={stageRef}
-          // imagesData={images}
           onDrop={onDrop}
           onDragOver={onDragOver}
           textValue={textValue}
