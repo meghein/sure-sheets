@@ -44,7 +44,7 @@ export default function Textbox(props) {
   
   const handleFontSize = (event) => {
     setFontSizeEl(null)
-    const sizes = {Title: 36, Heading: 28, Subheading: 22, Body: 16}
+    const sizes = {Title: 32, Heading: 26, Subheading: 20, Body: 14}
 
     for (const size in sizes) {
       if(event.currentTarget.dataset.id === size) {
