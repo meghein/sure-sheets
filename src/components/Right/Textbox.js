@@ -6,6 +6,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
 import { SwatchesPicker } from 'react-color';
+import FontPicker from "font-picker-react";
 import './Right.scss'
 import useTextSettings from '../../hooks/useTextSettings'
 // import useStageLoader from '../../hooks/useStageLoader'
@@ -19,14 +20,13 @@ export default function Textbox(props) {
   const isOpen = Boolean(anchorEl);
 
   const {
-    textboxState,
-    setTextboxState,
-    textValue,
-    setTextValue,
+    textboxState, setTextboxState,
+    textValue, setTextValue,
+    fontSize, setFontSize,
+    colour, setColour,
+    activeFontFamily, setActiveFontFamily,
+    align, setAlign
   } = useTextSettings()
-
-  // const { addImage, addText } = useStageLoader()
-
 
   useEffect(() => {
     if(props.textValue) {
@@ -49,26 +49,27 @@ export default function Textbox(props) {
   const handleClose = (event) => {
     setAnchorEl(null)
     if(event.currentTarget.dataset.id === "font-title") {
-      props.setFontSize(36)
+      setFontSize(36)
     }
     if(event.currentTarget.dataset.id === "font-heading") {
-      props.setFontSize(28)
+      setFontSize(28)
     }
     if(event.currentTarget.dataset.id === "font-subheading") {
-      props.setFontSize(22)
+      setFontSize(22)
     }
     if(event.currentTarget.dataset.id === "font-body") {
-      props.setFontSize(16)
+      setFontSize(16)
     }
   }
 
-  const handleColorChange = ({ hex }) => props.setFill(hex)
+  const handleColorChange = ({ hex }) => setColour(hex)
   const onTogglePicker = () => {
     pickerVisable ? setpickerVisable(false) : setpickerVisable(true)
   }
 
-  const saveText = (event) => {
-    props.addText(event.target.value)
+  const saveText = (e) => {
+    console.log(e.target.value, fontSize, colour, activeFontFamily, align)
+    props.addText(e.target.value, fontSize, colour, activeFontFamily, align)
     setTextboxState(false)
     props.setTextValue('')
   }
@@ -76,6 +77,15 @@ export default function Textbox(props) {
   const handleTextChange = (e) => {
     props.setTextValue(e.target.value)
   }
+
+  const changeFont = (e) => {
+    // console.log(e.family)
+    setActiveFontFamily(e.family)
+  }
+
+
+
+  // const 
 
   return (      
     <div>
@@ -87,20 +97,13 @@ export default function Textbox(props) {
         Edit or Add Text
       </Button>
         {textboxState && (
+      <div className="text-container">
           <div className="modal" id="modal">
             <IconButton aria-label="delete" className="close">
               <CloseIcon fontSize="large" onClick={close}/>
             </IconButton>
-            <div>
-      {/* <ReactQuill
-        id="quill"
-        theme="bubble"
-        value={props.textValue}
-        onChange={props.setTextValue}
-      /> */}
-      <textarea id='textbox' value={props.textValue} onChange={handleTextChange}/>
-      <div>
-        <button value={props.textValue} onClick={saveText}>save text</button>
+            <textarea className='textbox apply-font' fontFamily={activeFontFamily} value={props.textValue} onChange={handleTextChange}/>
+            <button value={props.textValue} onClick={saveText}>save text</button>
         {/* <Button onClick={saveText} dataset-id={props.textValue}>Click to save</Button> */}
         <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
           Font Size
@@ -130,15 +133,16 @@ export default function Textbox(props) {
             />
           </div>
         ) }
+        <FontPicker
+          apiKey="AIzaSyAJpDBzWJ44P71AnWYpqQYahsZCjY8-5MQ"
+          activeFontFamily={activeFontFamily}
+          onChange={changeFont}
+      />
       </div>
 
-      </div>
-
-    </div>
-          </div>
-          
+      </div>          
+        </div>
         )}
-        
     </div>  
   );
 

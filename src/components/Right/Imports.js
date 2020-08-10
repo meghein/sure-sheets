@@ -38,10 +38,10 @@ export default function Imports(props) {
   }
  
   function handleTextClick(e) {
-    props.setSelected(e.target.value)
+    // props.setSelected(e.target.value)
     props.setTextValue(e.target.value)
-    console.log("textval", props.textValue)
-    props.addText(e.target.value)
+    // console.log("textval", props.textValue)
+    // props.addText(e.target.value)
   }
 
   return (

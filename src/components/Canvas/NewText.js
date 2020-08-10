@@ -17,7 +17,7 @@ export default function NewText(props) {
   // }
 
   function openTextArea(e) {
-    // e.target.hide()
+    e.target.hide()
     console.log(e.target.fontSize)
     setTextboxState(true)
 
@@ -28,6 +28,8 @@ export default function NewText(props) {
       text={props.text}
       fontSize={props.fontSize}
       fill={props.fill}
+      fontFamily={props.fontFamily}
+      align={props.align}
       width={300}
       onClick={openTextArea}
       draggable
