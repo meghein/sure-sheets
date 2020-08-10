@@ -1,11 +1,10 @@
 import React, { forwardRef } from 'react'
-import {Stage, Layer, Rect} from 'react-konva'
+import { Stage, Layer, Rect } from 'react-konva'
 import Clippings from '../Clippings'
 // import Konva from 'konva'
 
 
 export default forwardRef(function Template1(props, stageRef) {
-
   function stageref(e) {
     console.log("this is where I'm clicking:", stageRef.current.getPointersPositions(e))
   }
