@@ -14,7 +14,7 @@
 }
 
 .left:hover {
-  box-shadow: 0px 8px 5px 5px #FFFCD6;
+  background: rgba(114, 120, 141, .4);
 }
 
 .MuiButton-outlinedPrimary {
@@ -31,7 +31,3 @@
   
 }
 
-.MuiAppBar-colorPrimary {
-  background-color: #72788D;
-  border: ridge 6px #162521;
-}

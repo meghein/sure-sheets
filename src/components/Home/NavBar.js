@@ -34,12 +34,9 @@ export default function ButtonAppBar(props) {
   };
 
   return (
-    <div className={classes.root}>
+    <div>
       <AppBar className="navBar" position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            LOGO
-          </IconButton>
           <Typography variant="h6" className={classes.title}>
             Sure Sheets
           </Typography>

@@ -84,7 +84,7 @@ export default function FullScreenDialog() {
         </AppBar>
         <PDFViewer>
           <Document>
-            <Page size="A4" style={styles.page}>
+            <Page size="8.5in x 11in" style={styles.page}>
                 <Image src={pdfUrl} syle={styles.image}/>
             </Page>
           </Document>
