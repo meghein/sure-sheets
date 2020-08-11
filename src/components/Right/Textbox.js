@@ -93,19 +93,19 @@ export default function Textbox(props) {
         Edit or Add Text
       </Button>
         {textboxState && (
-      <div className="text-container">
-        <div className="modal" id="modal">
-          <IconButton aria-label="delete" className="close">
-            <CloseIcon fontSize="large" onClick={close}/>
-          </IconButton>
-          <textarea
-            className='textbox apply-font'
-            fontFamily={activeFontFamily}
-            style={{fontSize: fontSize, color: colour, textAlign: align}}
-            value={props.textValue}
-            onChange={handleTextChange}
-          />
-          <button value={props.textValue} onClick={saveText}>save text</button>
+        <div className="text-container">
+          <div className="modal" id="modal">
+            <IconButton className="delete-button" aria-label="delete" className="close">
+              <CloseIcon fontSize="large" onClick={close}/>
+            </IconButton>
+            <textarea
+              className='textbox apply-font'
+              fontFamily={activeFontFamily}
+              style={{fontSize: fontSize, color: colour, textAlign: align}}
+              value={props.textValue}
+              onChange={handleTextChange}
+            />
+          <Button value={props.textValue} onClick={saveText}>save text</Button>
           <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleSizeClick}>
             Font Size
           </Button>

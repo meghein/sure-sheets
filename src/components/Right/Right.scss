@@ -1,5 +1,9 @@
 @import "../../styles/variables.scss";
 
+.right:hover {
+  background: rgba(114, 120, 141, .4);
+}
+
 .right {
   position: absolute;
   right: 0;
@@ -12,42 +16,34 @@
   z-index: 20;
   background: rgba(114, 120, 141, .3);
 
-.right:hover {
-  background: rgba(114, 120, 141, .4);
-}
-
-.text-container {
-  margin-right: $sidebar-width;
-  position: absolute;
-  right: 100%;
-  margin-top: -32px;
-  width: 400px;
-  height: 200px;
-  background-color: #ffffff;
-  border: 1px solid red;
-  z-index: 200;
-  .close {
+  .text-container {
+    margin-right: 15px;
     position: absolute;
     right: 100%;
     margin-top: -32px;
     width: 400px;
     height: 200px;
     background-color: #ffffff;
-    border: 1px solid red;
+    // border: 1px solid red;
     z-index: 200;
-    .close {
-      position: absolute;
-      background: inherit;
-      color: red;
-      top: -30px;
-      right: -30px;
   }
-    .textbox {
-      width: 380px;
-      height: 150px;
-      border: none;
-      outline: none;
-    }
+    
+  .close {
+    position: absolute;
+    right: 100%;
+    margin-top: -32px;
+    background: inherit;
+    color: red;
+    z-index: 200;
+    top: 10px;
+    right: -50px;
+  }
+
+  .textbox {
+    width: 380px;
+    height: 150px;
+    margin: 8px;
+    outline: none;
   }
   
   .ql-editor {
@@ -59,11 +55,12 @@
     display: none
   }
   
-  
+  .button {
+    background: blue;
+  }
   
   iframe {
-    height: 100vh !important;
-    
+    height: 100vh !important; 
   }
   
   .pdf-appBar{
@@ -72,3 +69,4 @@
     }
   }
 }
+  
