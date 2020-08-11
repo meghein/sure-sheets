@@ -6,17 +6,24 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import LoginRegisterModal from './LoginRegisterModal';
+import { spacing } from '@material-ui/system';
+
+import './Navbar.scss'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
+ 
   title: {
-    flexGrow: 1,
+    // flexGrow: 1,
+    // marginRight: theme.spacing(2),
   },
+  // login: {
+  //   flexGrow: 1,
+  //   marginLeft: theme.spacing(3)
+  // }
+
 }));
 
 export default function ButtonAppBar(props) {
@@ -37,13 +44,13 @@ export default function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar className="navBar" position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             LOGO
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          </IconButton> */}
+          <Typography variant="h6" ml="auto" className={classes.title}>
             Sure Sheets
           </Typography>
-          <LoginRegisterModal setAuthenticated={props.setAuthenticated} setCurrentUser={props.setCurrentUser} currentUser={props.currentUser} open={open} handleClose={handleClose} handleClickLoginOpen={handleClickLoginOpen} />
+          <LoginRegisterModal mr="auto" className={classes.login} setAuthenticated={props.setAuthenticated} setCurrentUser={props.setCurrentUser} currentUser={props.currentUser} open={open} handleClose={handleClose} handleClickLoginOpen={handleClickLoginOpen} />
           {!props.authenticated && (<Button color="inherit" onClick={handleClickLoginOpen}>Sign In or Register</Button>)}
           {props.authenticated && (<><div>Logged In As {props.currentUser}</div> <Button color="inherit" onClick={handleLogout}>Logout</Button></>)}
         </Toolbar>
