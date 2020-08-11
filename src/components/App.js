@@ -26,7 +26,7 @@ export default function App() {
 
   const [canvasItems, setCanvasItems] = useState([]); // leave this one
 
-  const [currentStage, setCurrentStage] = useState(['Intro']);
+  const [currentStage, setCurrentStage] = useState([]);
 
   const [authenticated, setAuthenticated] = useState(false)
 
@@ -84,6 +84,7 @@ export default function App() {
           onDrop={onDrop}
           onDragOver={onDragOver}
           currentStage={currentStage}
+          setCurrentStage={setCurrentStage}
           loadTemplate={loadTemplate}
           addImage={addImage}
           canvasItems={canvasItems}

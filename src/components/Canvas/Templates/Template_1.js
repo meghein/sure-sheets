@@ -1,17 +1,11 @@
 import React, { forwardRef } from 'react'
 import {Stage, Layer, Rect} from 'react-konva'
 import Clippings from '../Clippings'
-// import Konva from 'konva'
-
 
 export default forwardRef(function Template1(props, stageRef) {
   function stageref(e) {
     console.log("this is where I'm clicking:", stageRef.current.getPointersPositions(e))
-    // props.checkDeselect(e)
   }
-
-
-
   return (
     <Stage
       width={850}
@@ -50,7 +44,6 @@ export default forwardRef(function Template1(props, stageRef) {
         // draggable={true}
         />
 
-        
         <Rect
           x={275}
           y={35}
@@ -183,13 +176,8 @@ export default forwardRef(function Template1(props, stageRef) {
         <Clippings
           canvasItems={props.canvasItems}
           setCanvasItems={props.setCanvasItems}
-          // fontSize={props.fontSize}
-          // fill={props.fill}
           targetShape={props.targetShape}
-          setTargetShape={props.setTargetShape}
-          // setTextboxState={props.setTextboxState}
-
-          
+          setTargetShape={props.setTargetShape} 
         />
       </Layer>
     </Stage>
