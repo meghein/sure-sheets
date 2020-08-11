@@ -86,8 +86,7 @@ export default function Textbox(props) {
 
   return (      
     <div>
-      <Button
-        variant="contained"
+      <Button variant="outlined"
         color="primary"
         onClick={toggleOpen}
       >

@@ -64,9 +64,9 @@ export default function CustomizedDialogs(props) {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Upload text or image
-      </Button>
+      <href>
+        <img src="images/TESScolored.png" width="90%" background="none" alt="Tess, the helpful import bot" onClick={handleClickOpen} />
+      </href>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           Upload

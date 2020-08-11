@@ -10,6 +10,12 @@
   box-shadow: -4px 4px 5px 0px #8672B3;
   padding-top: 5px;
   z-index: 20;
+  background: rgba(114, 120, 141, .3);
+}
+
+.right:hover {
+  box-shadow: 0px 8px 5px 5px #FFFCD6;
+  width: $sidebar-width * 1.5;
 }
 
 .text-container {
