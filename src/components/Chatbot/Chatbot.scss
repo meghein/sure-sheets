@@ -7,6 +7,25 @@
   z-index: 9999;
 }
 
+.react-chatbot-kit-chat-message-container {
+  background: rgba(114, 120, 141, .1);
+}
+
+.react-chatbot-kit-chat-header {
+  background: rgba(245, 20, 67, .9);
+  color: white;
+  text-align: center;
+}
+
+.react-chatbot-kit-chat-bot-message {
+  color: #08403E;
+}
+
+.react-chatbot-kit-user-avatar-container {
+  background-color: #73e0a2;
+  border: 2px solid black;
+}
+
 .BotButton {
   position: fixed;
   bottom: 0.01vw;
