@@ -1,5 +1,4 @@
 @import "../../styles/variables.scss";
-
 .right {
   position: absolute;
   right: 0;
@@ -11,11 +10,9 @@
   padding-top: 5px;
   z-index: 20;
   background: rgba(114, 120, 141, .3);
-
 .right:hover {
   background: rgba(114, 120, 141, .4);
 }
-
 .text-container {
   margin-right: $sidebar-width;
   position: absolute;
@@ -26,7 +23,6 @@
   background-color: #ffffff;
   border: 1px solid red;
   z-index: 200;
-}
   .close {
     position: absolute;
     right: 100%;
