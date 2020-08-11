@@ -37,7 +37,6 @@ export default function ButtonAppBar(props) {
     <div>
       <AppBar className="navBar" position="static">
         <Toolbar>
-          
           <Typography variant="h6" className={classes.title}>
             Sure Sheets
           </Typography>
