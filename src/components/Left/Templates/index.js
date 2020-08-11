@@ -21,7 +21,7 @@ export default function Templates(props) {
 
   return (
       <div>
-        <Button variant="contained" color="primary" aria-controls="MuiButton-label" aria-haspopup="true" onClick={handleClick}>
+        <Button variant="outlined" color="primary" aria-controls="MuiButton-label" aria-haspopup="true" onClick={handleClick}>
           Choose a template
         </Button>
         <Menu
