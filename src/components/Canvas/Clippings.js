@@ -1,11 +1,9 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 import NewText from './NewText'
 import NewImage from './NewImage'
 
 
 export default function Clippings(props) {
-  // const [selected, setSelected] = useState(false)
-
   return (
     <Fragment>
       {props.canvasItems.map((item, index) => {
@@ -16,8 +14,8 @@ export default function Clippings(props) {
             item={item}
             shapeProps={item}
             isSelected={index === props.targetShape}
-            onSelect={(e) => {
-              props.setTargetShape(index);
+            onSelect={() => {
+              props.setTargetShape(index)
             }}
             onChange={newAttrs => {
               const temp = [...props.canvasItems]
@@ -30,13 +28,25 @@ export default function Clippings(props) {
         if(item.text) {
           return (
           <NewText
-            id={`text-${index}`}
-            setTextboxState={props.setTextboxState}
+            key={index}
             text={item.text}
             fontSize={item.fontSize}
-            fill={item.colour}
-            fontFamily={item.activeFontFamily}
+            fill={item.fill}
+            fontFamily={item.fontFamily}
             align={item.align}
+            setTextboxState={props.setTextboxState}
+            item={item}
+            shapeProps={item}
+            isSelected={index === props.targetShape}
+            onSelect={() => {
+              props.setTargetShape(index)
+            }}
+            onChange={newAttrs => {
+              const temp = [...props.canvasItems]
+              temp[index] = newAttrs;
+              props.setCanvasItems(temp);
+            }}
+            setTargetShape={props.setTargetShape}
           />)
         }
       })}

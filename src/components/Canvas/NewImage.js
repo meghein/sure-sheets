@@ -14,8 +14,6 @@ export default function UrlImage(props) {
     }
   }, [props.isSelected]);
 
-
-
   return (
     <Fragment>
       <Image
@@ -60,8 +58,6 @@ export default function UrlImage(props) {
             }
             return newBox;
           }}
-          borderEnabled={false}
-          anchorSize={3}
         />
       )}
     </Fragment>

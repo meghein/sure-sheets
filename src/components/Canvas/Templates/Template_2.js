@@ -10,8 +10,8 @@ export default forwardRef(function Template1(props, stageRef) {
 
   return (
     <Stage
-      width={794}
-      height={1123}
+      width={850}
+      height={1100}
       ref={stageRef}
       onMouseDown={props.checkDeselect}
       onTouchStart={props.checkDeselect}
@@ -266,19 +266,11 @@ export default forwardRef(function Template1(props, stageRef) {
           cornerRadius={10}
         // draggable={true}
         />
-
-
-
-
-
         <Clippings
           canvasItems={props.canvasItems}
           setCanvasItems={props.setCanvasItems}
-          fontSize={props.fontSize}
-          fill={props.fill}
           targetShape={props.targetShape}
           setTargetShape={props.setTargetShape}
-          
         />
       </Layer>
     </Stage>
