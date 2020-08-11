@@ -48,7 +48,7 @@ export default function ButtonAppBar(props) {
             Sure Sheets
           </Typography>
           <LoginRegisterModal mr="auto" className={classes.login} setAuthenticated={props.setAuthenticated} setCurrentUser={props.setCurrentUser} currentUser={props.currentUser} open={open} handleClose={handleClose} handleClickLoginOpen={handleClickLoginOpen} />
-          {!props.authenticated && (<Button color="inherit" onClick={handleClickLoginOpen}>Sign In or Register</Button>)}
+          {!props.authenticated && (<Button color="inherit" onClick={handleClickLoginOpen}>Login | Register</Button>)}
           {props.authenticated && (<><div>Logged In As {props.currentUser}</div> <Button color="inherit" onClick={handleLogout}>Logout</Button></>)}
         </Toolbar>
       </AppBar>
