@@ -13,7 +13,7 @@
 
 .react-chatbot-kit-chat-header {
   background: rgba(245, 20, 67, .9);
-  color: #AAF0D1;
+  color: white;
   text-align: center;
 }
 
@@ -21,6 +21,10 @@
   color: #08403E;
 }
 
+.react-chatbot-kit-user-avatar-container {
+  background-color: #73e0a2;
+  border: 2px solid black;
+}
 
 .BotButton {
   position: fixed;
