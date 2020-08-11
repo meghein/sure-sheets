@@ -24,7 +24,11 @@
     // border: 1px solid red;
     z-index: 200;
   }
-    
+  
+  // for editing the text input box
+  textarea {
+    background-color: #f1f1f0;
+  }
   .close {
     position: absolute;
     right: 100%;
@@ -42,6 +46,12 @@
     outline: none;
   }
   
+  .MuiButton-root {
+    color: white;
+    background-color: #72788D;
+    
+  }
+
   .ql-editor {
     height: 150px !important;
     font-size: 14px

@@ -105,7 +105,7 @@ export default function Textbox(props) {
               value={props.textValue}
               onChange={handleTextChange}
             />
-          <Button value={props.textValue} onClick={saveText}>save text</Button>
+          <Button value={props.textValue} onClick={saveText}>Save Text</Button>
           <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleSizeClick}>
             Font Size
           </Button>
