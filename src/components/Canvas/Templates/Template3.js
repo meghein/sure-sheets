@@ -25,12 +25,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={15}
           width={300}
           height={100}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -38,12 +33,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={175}
           width={300}
           height={500}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -51,12 +41,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={150}
           width={200}
           height={125}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -64,12 +49,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={290}
           width={200}
           height={125}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -77,12 +57,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={430}
           width={200}
           height={125}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -90,12 +65,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={570}
           width={200}
           height={125}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -103,12 +73,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={150}
           width={200}
           height={125}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -116,12 +81,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={290}
           width={200}
           height={125}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -129,12 +89,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={430}
           width={200}
           height={125}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -142,12 +97,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={570}
           width={200}
           height={125}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -155,12 +105,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={150}
           width={200}
           height={125}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -168,12 +113,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={740}
           width={300}
           height={200}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
 
         <Rect
@@ -181,12 +121,7 @@ export default forwardRef(function Template1(props, stageRef) {
           y={985}
           width={800}
           height={100}
-          fill={'white'}
-          shadowColor={'gray'}
-          stroke={'black'}
-          strokeWidth={4}
-          cornerRadius={10}
-        // draggable={true}
+          {...props.shapeProps}
         />
         <Clippings
           canvasItems={props.canvasItems}
