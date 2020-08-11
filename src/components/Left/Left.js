@@ -17,7 +17,10 @@ export default function Left(props) {
       <Templates
         setCurrentStage={props.setCurrentStage}
       />
-      <Colours />
+      <Colours
+        setCanvasColour={props.setCanvasColour}
+        setBoxColour={props.setBoxColour}
+      />
     </div>
   )
 }

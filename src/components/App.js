@@ -3,7 +3,8 @@ import './App.scss';
 
 
 import useDragandDrop from '../hooks/useDragAndDrop';
-import useStageLoader from '../hooks/useStageLoader'
+import useStageLoader from '../hooks/useStageLoader';
+import useStageColours from '../hooks/useStageColours';
 
 import NavBar from './Home/NavBar';
 // import Splash from './Home/Splash';
@@ -50,6 +51,13 @@ export default function App() {
     addText,
   } = useStageLoader(canvasItems, setCanvasItems)
 
+  const {
+    canvasColour,
+    setCanvasColour,
+    boxColour,
+    setBoxColour,
+  } = useStageColours()
+
   useEffect(() => {
     const tempClippings = [...clippings];
     tempClippings.push(newImport);
@@ -77,6 +85,8 @@ export default function App() {
           loadTemplate={loadTemplate}
           setCurrentStage={setCurrentStage}
           setClippings={setClippings}
+          setCanvasColour={setCanvasColour}
+          setBoxColour={setBoxColour}
         />
         {/* <Splash /> */}
         <Canvas
@@ -89,6 +99,8 @@ export default function App() {
           addImage={addImage}
           canvasItems={canvasItems}
           setCanvasItems={setCanvasItems}
+          canvasColour={canvasColour}
+          boxColour={boxColour}
         />
         <Right 
           clippings={clippings}

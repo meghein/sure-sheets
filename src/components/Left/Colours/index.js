@@ -1,40 +1,59 @@
 import React, { useState } from 'react';
-import { Button } from '@material-ui/core';
 import { SwatchesPicker } from 'react-color';
+import { Button, Menu, MenuItem, Fade } from '@material-ui/core';
 
-import useStageColours from '../../../hooks/useStageColours'
 
-export default function Colours() {
-  const [pickerVisable, setpickerVisable] = useState(false)
+export default function Colours(props) {
+  const [canvasEl, setCanvasEl] = useState(null);
+  const canvasIsOpen = Boolean(canvasEl);
+  const [boxEl, setBoxEl] = useState(null);
+  const boxIsOpen = Boolean(boxEl);
 
-  const { setCanvasColour, setBoxColour } = useStageColours()
+  const handleCanvasClick = (e) => {
+    setCanvasEl(e.currentTarget);
+  };
 
-  const handleCanvasChange = ({ hex }) => setCanvasColour(hex)
-
-  const handleBoxChange = ({ hex}) => setBoxColour(hex)
-
-  const onTogglePicker = () => {
-    pickerVisable ? setpickerVisable(false) : setpickerVisable(true)
+  const handleCanvasChange = ({ hex }) => {
+    setCanvasEl(null)
+    props.setCanvasColour(hex)
   }
+
+  const handleBoxClick = (e) => {
+    setBoxEl(e.currentTarget);
+  };
+
+  const handleBoxChange = ({ hex }) => {
+    setBoxEl(null)
+    props.setBoxColour(hex)}
 
   return (
     <div>
-      <Button onClick={ onTogglePicker }>
+      <Button aria-controls="fade-menu" aria-haspopup="true" onClick={ handleCanvasClick }>
         Background Colour
       </Button>
-      { pickerVisable && (
-        <div style={{ position: 'absolute' }}>
-          <SwatchesPicker onChangeComplete={ handleCanvasChange }/>
-        </div>
-      )}
-      <Button onClick={ onTogglePicker }>
+      <Menu
+        id="fade-menu"
+        anchorEl={canvasEl}
+        keepMounted
+        open={canvasIsOpen}
+        onClose={handleCanvasChange}
+        TransitionComponent={Fade}
+      >
+        <MenuItem onClick={ handleCanvasChange }> <SwatchesPicker onChangeComplete={ handleCanvasChange }/></MenuItem>
+      </Menu>
+      <Button aria-controls="fade-menu" aria-haspopup="true" onClick={ handleBoxClick }>
         Container Colour
       </Button>
-      { pickerVisable && (
-        <div style={{ position: 'absolute' }}>
-          <SwatchesPicker onChangeComplete={ handleBoxChange }/>
-        </div>
-      )}
+      <Menu
+        id="fade-menu"
+        anchorEl={boxEl}
+        keepMounted
+        open={boxIsOpen}
+        onClose={handleBoxChange}
+        TransitionComponent={Fade}
+      >
+        <MenuItem onClick={ handleBoxChange }> <SwatchesPicker onChangeComplete={ handleBoxChange }/></MenuItem>
+      </Menu>
     </div>  
   )
 }
