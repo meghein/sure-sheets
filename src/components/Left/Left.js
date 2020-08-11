@@ -3,7 +3,7 @@ import './Left.scss'
 
 import Files from './Files'
 import Templates from './Templates'
-// import Toolbar from './Toolbar'
+import Colours from './Colours'
 
 export default function Left(props) {
   return (
@@ -17,6 +17,7 @@ export default function Left(props) {
       <Templates
         setCurrentStage={props.setCurrentStage}
       />
+      <Colours />
     </div>
   )
 }

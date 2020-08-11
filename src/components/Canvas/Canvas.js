@@ -9,9 +9,14 @@ import Template3 from './Templates/Template_3'
 import Template4 from './Templates/Template_4'
 import Clippings from './Clippings'
 
+import useStageColours from '../../hooks/useStageColours'
+
+
 
 export default forwardRef(function Canvas(props, stageRef) {
   const [targetShape, setTargetShape] = useState(null);
+
+  const { canvasColour, boxColour } = useStageColours()
 
   const checkDeselect = e => {
     const clickedOnEmpty = e.target === e.target.getStage();
@@ -25,6 +30,16 @@ export default forwardRef(function Canvas(props, stageRef) {
     console.log("currentstage on load", props.currentStage)
   },[])
 
+  useEffect(() => {
+    // props.setCurrentStage('initial')
+    console.log("canvas colour", canvasColour)
+  },[canvasColour])
+
+  // node.setAttrs({
+  //   x: 5,
+  //   fill: 'red'
+  // });
+
 
   return (
     <>
@@ -33,6 +48,7 @@ export default forwardRef(function Canvas(props, stageRef) {
         id='canvas'
         onDrop={props.onDrop}
         onDragOver={props.onDragOver}
+        backgroundColor={canvasColour}
 
       >
         {props.currentStage === 'initial' &&
@@ -44,6 +60,7 @@ export default forwardRef(function Canvas(props, stageRef) {
               onTouchStart={checkDeselect}
               onDrop={props.onDrop}
               onDragOver={props.onDragOver}
+              c
             >
               <Layer>
                 <Rect
@@ -51,7 +68,7 @@ export default forwardRef(function Canvas(props, stageRef) {
                   y={35}
                   width={200}
                   height={100}
-                  fill={'white'}
+                  fill={boxColour}
                   shadowColor={'gray'}
                   stroke={'black'}
                   strokeWidth={4}
