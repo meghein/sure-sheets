@@ -13,6 +13,10 @@
   background: rgba(114, 120, 141, .3);
 }
 
+.right:hover {
+  box-shadow: 0px 10px 5px 5px #FFFCD6;
+}
+
 .text-container {
   margin-right: $sidebar-width;
   position: absolute;
