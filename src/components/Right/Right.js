@@ -19,14 +19,16 @@ export default function Right(props) {
       />
         
       <Imports 
-        clippings = {props.clippings}
+        clippings={props.clippings}
         addImage={props.addImage}
         addText={props.addText}
         setTextValue={setTextValue}
         onDragStart={props.onDragStart}
       />
 
-      <SaveToPDF/>
+      <SaveToPDF
+        canvasColour={props.canvasColour}
+      />
     </div>
   )
 }
