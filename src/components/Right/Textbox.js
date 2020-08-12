@@ -25,6 +25,7 @@ export default function Textbox(props) {
   useEffect(() => {
     if(props.textValue) {
       setTextboxState(true)
+      console.log(props.textValue)
     }
   }, [props.textValue])
 
@@ -79,8 +80,9 @@ export default function Textbox(props) {
 
   const saveText = (e) => {
     props.addText(e.target.value, fontSize, colour, activeFontFamily, align)
+    console.log(e.target.dataset.id)
     setTextboxState(false)
-    props.setTextValue('')
+    // props.setTextValue('')
   }
 
 
@@ -105,7 +107,7 @@ export default function Textbox(props) {
               value={props.textValue}
               onChange={handleTextChange}
             />
-          <Button value={props.textValue} onClick={saveText}>Save Text</Button>
+          <Button data-id={props.textValue} onClick={saveText}>Save Text</Button>
           <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleSizeClick}>
             Font Size
           </Button>
