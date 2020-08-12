@@ -117,7 +117,7 @@ export default function Register(props) {
           type="submit"
           fullWidth
           variant="contained"
-          color="primary"
+          background-color="rgb(74, 74, 74)"
           className={props.classes.submit}
           // onChange={e => setState(e.target.value)}
           onClick={onSubmitForm}
