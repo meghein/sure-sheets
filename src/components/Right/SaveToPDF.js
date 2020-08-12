@@ -43,7 +43,7 @@ export default function SaveToPDF(props) {
     data.append('upload_preset', 'xdtyzicm')
 
     const res = await fetch(
-      'https://api.cloudinary.com/v1_1/bryanpgomes/image/upload',
+      'https://api.cloudinary.com/v1_1/sure-sheets/image/upload',
       {
         method: 'POST',
         body: data
