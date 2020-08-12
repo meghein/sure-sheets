@@ -4,6 +4,8 @@ import NewImage from './NewImage'
 
 
 export default function Clippings(props) {
+  console.log("canvas items", props.canvasItems)
+
   return (
     <Fragment>
       {props.canvasItems.map((item, index) => {
@@ -31,8 +33,8 @@ export default function Clippings(props) {
             key={index}
             text={item.text}
             fontSize={item.fontSize}
-            fill={item.fill}
-            fontFamily={item.fontFamily}
+            fill={item.colour}
+            fontFamily={item.activeFontFamily}
             align={item.align}
             setTextboxState={props.setTextboxState}
             item={item}
