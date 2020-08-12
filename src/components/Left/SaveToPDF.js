@@ -4,9 +4,8 @@ import { PDFViewer, Page, Document, StyleSheet, Image } from '@react-pdf/rendere
 import { Button, Dialog, AppBar, Toolbar, IconButton, Typography, Slide } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles } from '@material-ui/core/styles';
-// import proxy from 'html2canvas-proxy'
 
-import './Right.scss'
+import './SaveToPDF.scss'
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -66,20 +65,18 @@ export default function SaveToPDF(props) {
       backgroundColor: props.canvasColour,
     },
     image: {
-      // objectFit: 'cover',
+      objectFit: 'cover',
   }
   });
   
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Publish
-      </Button>
+      <img id='publish' src='/images/printer.png' alt="Click here to turn your sheet in to a PDF!" onClick={handleClickOpen}/>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar className="pdf-appBar">
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
-              Your Beautiful Sure Sheet
+              Your sheet is the sheet!!
             </Typography>
             <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
               <CloseIcon />

@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+
 .right:hover {
   background: rgba(114, 120, 141, .4);
 }
@@ -82,20 +83,5 @@
     margin-top: 30px; 
     
   }
-  
-  .pdf-appBar{
-    .MuiAppBar-positionFixed {
-      position: fixed;
-    }
-  }
-}
-iframe {
-  height: 100% !important;
-  margin-top: 64px; 
-  #plugin {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-content: center;;
-  } 
+
 }

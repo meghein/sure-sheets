@@ -93,7 +93,7 @@ export default function CustomizedDialogs(props) {
 
   return (
     <div>
-      <img src="images/TESScolored.png" width="90%" background="none" alt="Tess, the helpful import bot" onClick={handleClickOpen} />
+      <img id="tess-uploader" src="images/TESScolored.png" width="90%" background="none" alt="Tess, the helpful import bot" onClick={handleClickOpen} />
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>  
         <DialogContent dividers className='upload-content'>
           <div className='upload-text'>{another && (
