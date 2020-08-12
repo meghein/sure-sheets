@@ -65,13 +65,13 @@
     background: blue;
   }
   
-  iframe {
-    height: 100vh !important; 
-  }
   
   .pdf-appBar{
     .MuiAppBar-positionFixed {
       position: relative;
     }
   }
+}
+iframe {
+  height: 100% !important; 
 }

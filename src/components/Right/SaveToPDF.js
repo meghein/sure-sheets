@@ -29,7 +29,7 @@ export default function FullScreenDialog() {
     
     const canvas = await html2canvas(input, {
         // useCORS: true,
-        taintTest: false,
+        taintTest: true,
         allowTaint: true
       });
       
@@ -61,6 +61,7 @@ export default function FullScreenDialog() {
     page: {
       backgroundColor: '#E4E4E4'
     },
+    // Mess with this?
     image: {
       objectFit: 'cover',
   }
@@ -84,8 +85,8 @@ export default function FullScreenDialog() {
         </AppBar>
         <PDFViewer>
           <Document>
-            <Page size="8.5in x 11in" style={styles.page}>
-                <Image src={pdfUrl} syle={styles.image}/>
+            <Page height="1100px" width="850px" style={styles.page}>
+                <Image src={pdfUrl} style={styles.image}/>
             </Page>
           </Document>
         </PDFViewer>                
