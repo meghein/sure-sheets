@@ -24,7 +24,7 @@ export default function NewText(props) {
   return (
     <Fragment>
       < Text
-        text={props.text}
+        text={props.item.text}
         fontSize={props.fontSize}
         fill={props.fill}
         fontFamily={props.fontFamily}

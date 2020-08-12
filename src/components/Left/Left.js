@@ -1,14 +1,14 @@
 import React from 'react'
 import './Left.scss'
 
-import Files from './Files'
+import Uploads from './Uploads'
 import Templates from './Templates'
 import Colours from './Colours'
 
 export default function Left(props) {
   return (
     <div className="left">
-      <Files 
+      <Uploads 
         newImport={props.newImport}
         setNewImport={props.setNewImport}
         clippings={props.clippings}

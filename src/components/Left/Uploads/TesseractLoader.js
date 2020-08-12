@@ -96,7 +96,8 @@ export default function CircularStatic(props) {
   console.log(progress)
   return (
     <>
-      {!props.loading && <CircularProgressWithLabel value={progress} />}
+      {/* {!props.loading && <CircularProgressWithLabel value={progress} />} */}
+      
     </>
   );
 }

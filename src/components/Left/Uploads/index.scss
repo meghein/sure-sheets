@@ -1,0 +1,36 @@
+.upload-content {
+  min-width: 300px;
+  min-height: 300px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // .upload-text {
+  //   flex-direction: column;
+  // }
+
+  h2 {
+    text-align: center;
+  }
+  
+  .MuiTypography-h6 {
+    font-family: 'Montserrat', sans-serif !important;
+  }
+  .uploaded-file {
+    // display: flex;
+    // flex-direction: column;
+    margin-left: 25%;
+    margin-right: 25%;
+
+  }
+  .upload-buttons .MuiButton-containedPrimary {
+    flex-direction: row !important;
+    align-content: space-between;
+    margin: 1em;
+    margin-top: 2em;
+    color: #fff;
+    background: linear-gradient(180deg, #72788D 10%, #72788D 100%);
+    border: none;
+    align-content: center;
+  } 
+}
