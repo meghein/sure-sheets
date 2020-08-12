@@ -6,6 +6,8 @@ import Fade from '@material-ui/core/Fade';
 
 const templates = ['Template 1', 'Template 2', 'Template 3', 'Template 4']
 
+const templatePhotos = ['Template1', 'Template2', 'Template3', 'Template4']
+
 export default function Templates(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -32,7 +34,7 @@ export default function Templates(props) {
           TransitionComponent={Fade}
         >
           {templates.map((template, index) => (
-          <MenuItem onClick={handleClose} key={index + 1} id={`template_${index + 1}`} data-id={template}> Template {index + 1}</MenuItem>
+            <MenuItem style={{ margin: "0px", width: '200px', backgroundColor: "rgb(227, 215, 255)" }} onClick={handleClose} id={`template_${index + 1}`} data-id={template}><img style={{ width: "100%", border: "1px solid #72788D"}} alt="help" src={`./images/${templatePhotos[index]}.png`}/></MenuItem>
           ))}
         </Menu>
       </div>
