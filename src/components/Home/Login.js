@@ -92,10 +92,10 @@ export default function Login(props) {
     (<Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={props.classes.paper}>
-        <Avatar className={props.classes.avatar}>
+        {/* <Avatar className={props.classes.avatar}>
           <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
+        </Avatar> */}
+        <Typography color="primary" component="h1" variant="h5">
           Sign in
           </Typography>
         <form className={props.classes.form} noValidate>
@@ -123,10 +123,10 @@ export default function Login(props) {
             onChange={handleChange}
             autoComplete="current-password"
           />
-          <FormControlLabel
+          {/* <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
-          />
+          /> */}
           <Button
             type="submit"
             fullWidth
@@ -139,11 +139,11 @@ export default function Login(props) {
             Sign In
             </Button>
           <Grid container>
-            <Grid item xs>
+            {/* <Grid item xs>
               <Link href="#" variant="body2">
                 Forgot password?
                         </Link>
-            </Grid>
+            </Grid> */}
             <Grid item>
               <Link onClick={() => props.toggleReg()} variant="body2">
                 {"Don't have an account? Sign Up"}

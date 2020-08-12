@@ -67,10 +67,10 @@ export default function Register(props) {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={props.classes.paper}>
-        <Avatar className={props.classes.avatar}>
+        {/* <Avatar className={props.classes.avatar}>
           <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
+        </Avatar> */}
+        <Typography color="primary" component="h1" variant="h5">
           Register
         </Typography>
         <form className={props.classes.form} noValidate>
@@ -109,10 +109,10 @@ export default function Register(props) {
           autoComplete="current-password"
           onChange={handleChange}
         />
-        <FormControlLabel
+        {/* <FormControlLabel
           control={<Checkbox value="allowExtraEmails" color="primary" />}
           label="I want to receive inspiration, marketing promotions and updates via email."
-        />
+        /> */}
         <Button
           type="submit"
           fullWidth
