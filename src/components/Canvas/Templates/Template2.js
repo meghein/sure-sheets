@@ -30,7 +30,7 @@ export default forwardRef(function Template1(props, stageRef) {
           stroke={'black'}
           strokeWidth={4}
           cornerRadius={10}
-          // draggable={true}
+          {...props.shapeProps}
         />
         
         <Rect
@@ -43,7 +43,7 @@ export default forwardRef(function Template1(props, stageRef) {
           stroke={'black'}
           strokeWidth={4}
           cornerRadius={10}
-          // draggable={true}
+          {...props.shapeProps}
           />
 
         <Rect
