@@ -90,10 +90,17 @@
   
   .pdf-appBar{
     .MuiAppBar-positionFixed {
-      position: relative;
+      position: fixed;
     }
   }
 }
 iframe {
-  height: 100% !important; 
+  height: 100% !important;
+  margin-top: 64px; 
+  #plugin {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    align-content: center;;
+  } 
 }
