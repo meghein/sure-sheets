@@ -45,7 +45,7 @@ export default function Imports(props) {
       {imageClippings.map((image, index) => (
         <div key={`image_${index}`}>
         <img
-          width="100%"
+          width="80%"
           alt={`clipping-${index}`}
           onClick={handleImageClick}
           src= {image}
