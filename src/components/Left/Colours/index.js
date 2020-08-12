@@ -27,7 +27,7 @@ export default function Colours(props) {
     props.setBoxColour(hex)}
 
   return (
-    <div>
+    <div className="colorOptions">
       <Button variant="outlined" color="primary" aria-controls="fade-menu" aria-haspopup="true" onClick={ handleCanvasClick }>
         Background Colour
       </Button>

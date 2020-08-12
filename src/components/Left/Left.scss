@@ -15,6 +15,15 @@
   padding-top: 5px;
   z-index: 20;
   background: rgba(114, 120, 141, .3);
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+    Button {
+      margin-top: 50px;
+      width: 80%;
+    }
+  ;
+
 
   .MuiButton-outlinedPrimary {
     padding: 5px;
@@ -48,4 +57,11 @@
 
 .MuiList-padding {
   padding: 0px !important;
+}
+
+.colorOptions {
+  // display: flex;
+  // height: 50%;
+  // flex-direction: column;
+  // justify-content: start;
 }
