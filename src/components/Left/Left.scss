@@ -40,9 +40,12 @@
   }
 }
 
-  .MuiButton-root {
-      color: white;
-      background-color: #72788D;
-      border: none;
-    }
-    
+.MuiButton-root {
+    color: white;
+    background-color: #72788D;
+    border: none;
+}
+
+.MuiList-padding {
+  padding: 0px !important;
+}
