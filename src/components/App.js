@@ -73,7 +73,7 @@ export default function App() {
   
   return (
     <div className="App">
-      {!initialLoad &&
+      {initialLoad &&
         <Splash
           authenticated={authenticated}
           setAuthenticated={setAuthenticated}
@@ -82,7 +82,7 @@ export default function App() {
           setInitialLoad={setInitialLoad}
         />
       }
-      {initialLoad && (
+      {!initialLoad && (
       <><NavBar 
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}

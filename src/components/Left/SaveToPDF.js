@@ -63,6 +63,8 @@ export default function SaveToPDF(props) {
   const styles = StyleSheet.create({
     page: {
       backgroundColor: props.canvasColour,
+      height: '1100px',
+      width: '850px'
     },
     image: {
       objectFit: 'cover',
@@ -85,7 +87,7 @@ export default function SaveToPDF(props) {
         </AppBar>
         <PDFViewer>
           <Document>
-            <Page height="1100px" width="850px" style={styles.page}>
+            <Page style={styles.page}>
                 <Image src={pdfUrl} style={styles.image}/>
             </Page>
           </Document>
