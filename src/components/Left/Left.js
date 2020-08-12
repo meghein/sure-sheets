@@ -21,6 +21,7 @@ export default function Left(props) {
         setCanvasColour={props.setCanvasColour}
         setBoxColour={props.setBoxColour}
       />
+      <img className="MrCan" src="./images/TrashCan.png" alt="It's Mr. Can, the place where unwanted clippings go." />
     </div>
   )
 }
