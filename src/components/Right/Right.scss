@@ -19,32 +19,61 @@
     right: 100%;
     margin-top: -32px;
     width: 400px;
-    height: 200px;
+    height: 220px;
     background-color: #ffffff;
-    // border: 1px solid red;
     z-index: 200;
+    textarea {
+      background-color: #f1f1f0;
+    }
+    .close {
+      position: absolute;
+      right: 100%;
+      margin-top: -32px;
+      background: inherit;
+      color: red;
+      z-index: 200;
+      top: 10px;
+      right: -50px;
+    }
+    button {
+      font-family: 'Montserrat', sans-serif;
+      
+    }
+    .custom-buttons {
+      display: flex;
+      justify-content: space-evenly;
+      align-content: center;
+
+      margin: 0;
+      width: inherit
+    }
+    .textbox {
+      width: 380px;
+      height: 150px;
+      margin: 8px;
+      outline: none;
+    }
+    .MuiButton-root {
+      font-size: 1em;
+      height: 30px;
+    }
+    
+    div[id^=font-picker]  {
+      width: 20%;
+      height: 80%;
+      background-color: #ffffff;
+      color: #000000;
+      background: none !important;
+      .dropdown-button {
+        background: none;
+      }
+      .dropdown-button:hover, .dropdown-button:focus {
+        background: none;
+      }
+    }
   }
   
   // for editing the text input box
-  textarea {
-    background-color: #f1f1f0;
-  }
-  .close {
-    position: absolute;
-    right: 100%;
-    margin-top: -32px;
-    background: inherit;
-    color: red;
-    z-index: 200;
-    top: 10px;
-    right: -50px;
-  }
-  .textbox {
-    width: 380px;
-    height: 150px;
-    margin: 8px;
-    outline: none;
-  }
   
   .MuiButton-root {
     color: white;
@@ -52,18 +81,11 @@
     
   }
 
-  .ql-editor {
-    height: 150px !important;
-    font-size: 14px
-  }
   
-  .ql-tooltip {
-    display: none
-  }
   
-  .button {
-    background: blue;
-  }
+  // .button {
+  //   background: blue;
+  // }
   
   
   .pdf-appBar{

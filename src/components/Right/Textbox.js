@@ -5,7 +5,9 @@ import { SwatchesPicker } from 'react-color';
 import FontPicker from "font-picker-react";
 import './Right.scss'
 import useTextSettings from '../../hooks/useTextSettings'
-// import useStageLoader from '../../hooks/useStageLoader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFont, faAlignLeft, faTextHeight, faPalette } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function Textbox(props) {
   const [fontSizeEl, setFontSizeEl] = useState(null);
@@ -107,9 +109,15 @@ export default function Textbox(props) {
               value={props.textValue}
               onChange={handleTextChange}
             />
-          <Button data-id={props.textValue} onClick={saveText}>Save Text</Button>
+          <div className="custom-buttons">
+          <FontPicker
+            className='font-picker'
+            apiKey="AIzaSyAJpDBzWJ44P71AnWYpqQYahsZCjY8-5MQ"
+            activeFontFamily={activeFontFamily}
+            onChange={handleFontFamily}
+          />
           <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleSizeClick}>
-            Font Size
+            <FontAwesomeIcon icon={faTextHeight}/>
           </Button>
           <Menu
             id="fade-menu"
@@ -124,7 +132,7 @@ export default function Textbox(props) {
           })}
           </Menu>
           <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleAlignClick}>
-            Text Alignment
+            <FontAwesomeIcon icon={faAlignLeft} />
           </Button>
           <Menu
             id="fade-menu"
@@ -140,19 +148,16 @@ export default function Textbox(props) {
           </Menu>
           <div>
           <Button onClick={ onTogglePicker }>
-            Font Colour
+            <FontAwesomeIcon icon={faPalette} />
           </Button>
           { pickerVisable && (
             <div style={{ position: 'absolute' }}>
               <SwatchesPicker onChangeComplete={ handleColorChange }/>
             </div>
           )}
-          <FontPicker
-            apiKey="AIzaSyAJpDBzWJ44P71AnWYpqQYahsZCjY8-5MQ"
-            activeFontFamily={activeFontFamily}
-            onChange={handleFontFamily}
-          />
           </div>
+          <button value={props.textValue} onClick={saveText}>Save Text</button>
+        </div>          
         </div>          
       </div>
       )}
