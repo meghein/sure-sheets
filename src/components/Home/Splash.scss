@@ -1,0 +1,38 @@
+.splash {
+  height:125vh;
+  h1 {
+    font-size: 3em;
+    font-family: 'Monoton', cursive;
+  }
+  h2 {
+  margin: auto;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+  
+  animation-iteration-count: 100;
+
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+  }
+  img {
+    width: 10%;
+  }
+  h3 {
+    margin: 1em;
+    margin-left: 4em;
+    margin-top: 4em;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+  }
+}

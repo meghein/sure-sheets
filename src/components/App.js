@@ -7,21 +7,16 @@ import useStageLoader from '../hooks/useStageLoader';
 import useStageColours from '../hooks/useStageColours';
 
 import NavBar from './Home/NavBar';
-// import Splash from './Home/Splash';
+import Splash from './Home/Splash';
 import Canvas from './Canvas/Canvas';
 import Left from './Left/Left';
 import Right from './Right/Right';
 
 // Chatbot feature imports
-import Chatbot from 'react-chatbot-kit';
-import ActionProvider from './Chatbot/ActionProvider';
-import MessageParser from './Chatbot/MessageParser';
-import config from './Chatbot/config';
-import './Chatbot/Chatbot.scss'
-import BotButton from './Chatbot/BotButton'
+import NERv05 from './Chatbot/NERv05';
 
 export default function App() {
-  const [chatOpen, setChatOpen] = useState(false);
+  
   const [clippings, setClippings] = useState(['This is a test text that is a bit longer for testing purposes']);
   const [newImport, setNewImport] = useState('');
 
@@ -33,10 +28,7 @@ export default function App() {
 
   const [currentUser, setCurrentUser] = useState("");
 
-  const chatbotToggle = () => {
-    console.log(`CHAT TOGGLED ${chatOpen}`)
-    chatOpen ? setChatOpen(false) : setChatOpen(true)
-  }
+  const [initialLoad, setInitialLoad] = useState(true)
 
   const {
     stageRef,
@@ -67,16 +59,23 @@ export default function App() {
   
   return (
     <div className="App">
-      <NavBar 
+      {initialLoad &&
+        <Splash
+          authenticated={authenticated}
+          setAuthenticated={setAuthenticated}
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
+          setInitialLoad={setInitialLoad}
+        />
+      }
+      {!initialLoad && (
+      <><NavBar 
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
       />
-      {chatOpen ? 
-        <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}/> : null
-      }
-      <BotButton toggle={chatbotToggle}/>
+        <NERv05 />
       <div className="main">
         <Left
           newImport={newImport}
@@ -88,7 +87,6 @@ export default function App() {
           setCanvasColour={setCanvasColour}
           setBoxColour={setBoxColour}
         />
-        {/* <Splash /> */}
         <Canvas
           stageRef={stageRef}
           onDrop={onDrop}
@@ -108,7 +106,7 @@ export default function App() {
           addText={addText}
           onDragStart={onDragStart}
         />
-      </div>
+      </div></>)}
     </div>
   )
 };
