@@ -39,20 +39,6 @@ export default function CloudinaryWidget(props) {
 
   return (
     <div>
-      <label htmlFor="icon-button-file">
-      <input
-        className="input"
-        accept="image/*"
-        id="icon-button-file"
-        type="file"
-        name="file"
-        placeholder="Upload an image"
-        onChange={uploadImage}
-      />
-        <IconButton color="primary" aria-label="upload picture" component="span">
-          <PhotoCamera />
-        </IconButton>
-      </label>
       {props.loading && <CircularProgress />}
       {props.imageURL && (
         <div>

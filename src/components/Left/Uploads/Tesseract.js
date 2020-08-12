@@ -26,8 +26,12 @@ export default function Tesseract(props) {
   }, [props.imageURL]);
 
   return (
-    <TesseractLoader
-      loading={loading}
-    />
+    // <TesseractLoader
+    //   loading={loading}
+    // />
+    <>
+    {loading &&
+    <img src='images/NERv05-spinning.gif' background="none" alt="Spinning NERv05"/>}
+    </>
   )
 }
