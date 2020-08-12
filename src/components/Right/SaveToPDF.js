@@ -66,7 +66,7 @@ export default function SaveToPDF(props) {
       backgroundColor: props.canvasColour,
     },
     image: {
-      objectFit: 'cover',
+      // objectFit: 'cover',
   }
   });
   

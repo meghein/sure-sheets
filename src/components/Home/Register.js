@@ -47,7 +47,7 @@ export default function Register(props) {
       .then(res => {
         props.setAuthenticated(true)
         props.handleClose(true)
-        //reset form....
+        props.setInitialLoad(false)
       })
       .catch(err => console.log("err", err))
   }

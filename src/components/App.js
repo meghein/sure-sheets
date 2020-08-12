@@ -74,6 +74,7 @@ export default function App() {
         setAuthenticated={setAuthenticated}
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
+        setInitialLoad={setInitialLoad}
       />
         <NERv05 />
       <div className="main">

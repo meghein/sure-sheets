@@ -20,6 +20,7 @@ export default function ButtonAppBar(props) {
   };
   const handleLogout = () => {
     props.setAuthenticated(false);
+    props.setInitialLoad(true);
   };
 
   return (
@@ -29,7 +30,16 @@ export default function ButtonAppBar(props) {
           <Typography variant="h6" ml="auto" className="title">
             Sure Sheets
           </Typography>
-          <LoginRegisterModal mr="auto" className="login" setAuthenticated={props.setAuthenticated} setCurrentUser={props.setCurrentUser} currentUser={props.currentUser} open={open} handleClose={handleClose} handleClickLoginOpen={handleClickLoginOpen} />
+          <LoginRegisterModal
+            mr="auto"
+            className="login"
+            setAuthenticated={props.setAuthenticated}
+            setCurrentUser={props.setCurrentUser}
+            currentUser={props.currentUser}
+            open={open} handleClose={handleClose}
+            handleClickLoginOpen={handleClickLoginOpen}
+            setInitialLoad={props.setInitialLoad}
+          />
           {!props.authenticated && (<Button color="inherit" onClick={handleClickLoginOpen}>Login | Register</Button>)}
           {props.authenticated && (<><div>Logged In As {props.currentUser}</div> <Button color="inherit" onClick={handleLogout}>Logout</Button></>)}
         </Toolbar>

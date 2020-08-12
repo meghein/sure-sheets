@@ -28,16 +28,10 @@ export default function Login(props) {
       </Typography>
     );
   }
-
-  //Pass it onto a query, where email and password = so and so
-  //
-  //
   const [login, setLogin] = useState({
     email: "",
     password: ""
   });
-
-
 
   function handleChange(e) {
     console.log(e.target.value)
@@ -45,8 +39,6 @@ export default function Login(props) {
       { ...login, [e.target.id]: e.target.value }
     );
   }
-
-  // const [error, setError] = useState("");
 
   function onSubmitForm(e) {
     e.preventDefault();
@@ -65,36 +57,17 @@ export default function Login(props) {
       .then(res => {
         props.setAuthenticated(true)
         props.handleClose(true)
-        //props.setCurrentUser(res.json(data))
-        //console.log(props.currentUser)
-        //reset form....
-      })
-        // .then(response => {
-        //   console.log("response", response.json())
-        //   return response.json()
-        // })
-      // .then(() => {
-      //   props.setAuthenticated(true)
-      //   // reset form....
-      // })
-        // .then((json) => {
-        //   console.log("json success", json)
-        // })
-        .catch(err => console.log("Hey this is an error", err))
-  }
+        props.setInitialLoad(false)
 
-  // useEffect(() =>{
-  //   onSubmitForm();
-  // }, []);
+      })
+      .catch(err => console.log("Hey this is an error", err))
+  }
 
   return (
     !props.authenticated &&
     (<Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={props.classes.paper}>
-        {/* <Avatar className={props.classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar> */}
         <Typography color="primary" component="h1" variant="h5">
           Sign in
           </Typography>
@@ -123,10 +96,6 @@ export default function Login(props) {
             onChange={handleChange}
             autoComplete="current-password"
           />
-          {/* <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          /> */}
           <Button
             type="submit"
             fullWidth
@@ -134,16 +103,10 @@ export default function Login(props) {
             color="primary"
             className={props.classes.submit}
             onClick={onSubmitForm}
-          // onclose={a function to disappear}
           >
             Sign In
             </Button>
           <Grid container>
-            {/* <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-                        </Link>
-            </Grid> */}
             <Grid item>
               <Link onClick={() => props.toggleReg()} variant="body2">
                 {"Don't have an account? Sign Up"}
@@ -156,6 +119,5 @@ export default function Login(props) {
         <Copyright />
       </Box>
     </Container>)
-    // authenticated && pass props to navbar to show user name.
   )
 }
