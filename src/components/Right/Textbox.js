@@ -84,6 +84,7 @@ export default function Textbox(props) {
     props.addText(e.target.value, fontSize, colour, activeFontFamily, align)
     console.log(e.target.dataset.id)
     setTextboxState(false)
+    props.setTextValue('')
     // props.setTextValue('')
   }
 

@@ -1,0 +1,27 @@
+header {
+  color: #fff;
+  background-color:#72788d !important;
+  font-family: 'Montserrat', sans-serif !important;
+  text-align: center;
+  font-size: 24px
+}
+
+.pdf-appBar{
+  .MuiAppBar-positionFixed {
+    position: fixed;
+  }
+}
+
+iframe {
+  height: 100% !important;
+  margin-top: 64px; 
+  background: linear-gradient(0deg, rgba(122,137,194,1) 0%, rgba(227,215,255,1) 100%) !important;
+  #plugin {
+    margin-top: 0 !important;
+  } 
+}
+
+#publish {
+  margin-top: 30px;
+  width: 100px;
+}

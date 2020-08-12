@@ -3,8 +3,6 @@ import './Right.scss'
 
 import Imports from './Imports'
 import Textbox from './Textbox';
-import SaveToPDF from './SaveToPDF'
-
 
 export default function Right(props) {
   const [textValue, setTextValue] = useState('')
@@ -24,10 +22,6 @@ export default function Right(props) {
         addText={props.addText}
         setTextValue={setTextValue}
         onDragStart={props.onDragStart}
-      />
-
-      <SaveToPDF
-        canvasColour={props.canvasColour}
       />
     </div>
   )

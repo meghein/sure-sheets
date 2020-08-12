@@ -33,7 +33,7 @@ export default function CloudinaryWidget(props) {
   function imageClipping() {
     const importedClipping = new window.Image()
     importedClipping.src = props.imageURL
-    console.log(importedClipping)
+    console.log("imageclipping", importedClipping)
     props.addClipping({image: importedClipping})
   }
 
