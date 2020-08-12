@@ -28,7 +28,7 @@ export default function Colours(props) {
 
   return (
     <div>
-      <Button aria-controls="fade-menu" aria-haspopup="true" onClick={ handleCanvasClick }>
+      <Button variant="outlined" color="primary" aria-controls="fade-menu" aria-haspopup="true" onClick={ handleCanvasClick }>
         Background Colour
       </Button>
       <Menu
@@ -41,7 +41,7 @@ export default function Colours(props) {
       >
         <MenuItem onClick={ handleCanvasChange }> <SwatchesPicker onChangeComplete={ handleCanvasChange }/></MenuItem>
       </Menu>
-      <Button aria-controls="fade-menu" aria-haspopup="true" onClick={ handleBoxClick }>
+      <Button variant="outlined" color="primary" aria-controls="fade-menu" aria-haspopup="true" onClick={ handleBoxClick }>
         Container Colour
       </Button>
       <Menu

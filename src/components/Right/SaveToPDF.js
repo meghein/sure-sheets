@@ -34,6 +34,13 @@ export default function FullScreenDialog() {
       });
       
     const imgData = canvas.toDataURL('image/png');
+    // window.open(imgData)
+    //Images get passed into proxy server first
+    //Pass those images into html2canva
+    //Replace data.append imgData with proxy.
+    // img = img.replace('data:image/png')
+    // processImg(img)
+
     const data = new FormData()
     data.append('file', imgData)
     data.append('upload_preset', 'flvjwbbo')
