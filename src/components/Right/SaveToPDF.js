@@ -29,21 +29,21 @@ export default function SaveToPDF(props) {
     const input = document.getElementById('canvas');
 
     const canvas = await html2canvas(input, {
-        useCORS: true,
+        // useCORS: true,
         taintTest: true,
         allowTaint: true,
-        proxy: "http://localhost:8001/",
-        logging: true
+        // proxy: "http://localhost:8001/",
+        // logging: true
       });
       
-    const imgData = canvas.toDataURL('image/png;base64');
+    const imgData = canvas.toDataURL('image/png');
 
     const data = new FormData()
     data.append('file', imgData)
     data.append('upload_preset', 'xdtyzicm')
 
     const res = await fetch(
-      'https://api.cloudinary.com/v1_1/bryanpgomes/image/upload',
+      ' https://api.cloudinary.com/v1_1/sure-sheets/image/upload',
       {
         method: 'POST',
         body: data
@@ -63,9 +63,8 @@ export default function SaveToPDF(props) {
   
   const styles = StyleSheet.create({
     page: {
-      backgroundColor: props.canvasColour
+      backgroundColor: props.canvasColour,
     },
-    // Mess with this?
     image: {
       objectFit: 'cover',
   }
