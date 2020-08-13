@@ -16,7 +16,6 @@ export default function NewText(props) {
   
 
   const openTextArea = (e) => {
-    // e.target.hide()
     setTextboxState(true)
     props.onSelect()
   }
@@ -24,6 +23,7 @@ export default function NewText(props) {
   return (
     <Fragment>
       < Text
+        id={props.key}
         text={props.text}
         fontSize={props.fontSize}
         fill={props.fill}

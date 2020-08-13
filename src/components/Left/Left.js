@@ -7,6 +7,13 @@ import Colours from './Colours'
 import SaveToPDF from './SaveToPDF'
 
 export default function Left(props) {
+
+  function deleteItem() {
+    const tempItems = [...props.canvasItems];
+    const filteredArr = tempItems.filter(item => item !== tempItems[props.targetShape])
+    props.setCanvasItems(filteredArr);
+  }
+
   return (
     <div className="left">
       <Uploads 
@@ -25,7 +32,7 @@ export default function Left(props) {
       <SaveToPDF
         canvasColour={props.canvasColour}
       />
-      <img className="MrCan" src="./images/TrashCan.png" alt="It's Mr. Can, the place where unwanted clippings go." />
+      <img className="MrCan" src="./images/TrashCan.png" alt="It's Mr. Can, the place where unwanted clippings go." onClick={deleteItem}/>
     </div>
   )
 }

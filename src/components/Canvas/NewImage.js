@@ -17,6 +17,7 @@ export default function UrlImage(props) {
   return (
     <Fragment>
       <Image
+        id={props.key}
         image={img}
         x={props.item.x}
         y={props.item.y}

@@ -16,7 +16,8 @@ export default function Clippings(props) {
             item={item}
             shapeProps={item}
             isSelected={index === props.targetShape}
-            onSelect={() => {
+            onSelect={(e) => {
+              console.log("target", e.target)
               props.setTargetShape(index)
             }}
             onChange={newAttrs => {
