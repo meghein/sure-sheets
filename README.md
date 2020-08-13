@@ -44,7 +44,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  
 ## Final Product
 Here is a quick overview of some of Sure Sheets’ functionality:
- 
+!["Overview of SureSheets"](https://github.com/meghein/sure-sheets/blob/feature/css_signin-signup/docs/gifs/SureSheetsOverview1.gif)
+!["Overview of Editing Text"](https://github.com/meghein/sure-sheets/blob/feature/css_signin-signup/docs/gifs/SureSheetsOverview2.gif)
+
 ## Getting Started
  
 - Install all dependencies (using the 'npm install' command).
