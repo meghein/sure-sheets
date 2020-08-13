@@ -1,7 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import './App.scss';
 
-
 import useDragandDrop from '../hooks/useDragAndDrop';
 import useStageLoader from '../hooks/useStageLoader';
 import useStageColours from '../hooks/useStageColours';
@@ -11,16 +10,14 @@ import Splash from './Home/Splash';
 import Canvas from './Canvas/Canvas';
 import Left from './Left/Left';
 import Right from './Right/Right';
-
-// Chatbot feature imports
 import NERv05 from './Chatbot/NERv05';
 
 export default function App() {
   
-  const [clippings, setClippings] = useState(['This textually active sheet is absolutely the sheet.', 'NERv05 reporting for duty!', 'TESS is here to help!', ]);
+  const [clippings, setClippings] = useState(['This textually active sheet is absolutely the sheet.']);
   const [newImport, setNewImport] = useState('');
 
-  const [canvasItems, setCanvasItems] = useState([]); // leave this one
+  const [canvasItems, setCanvasItems] = useState([]);
 
   const [currentStage, setCurrentStage] = useState([]);
 
@@ -29,6 +26,9 @@ export default function App() {
   const [currentUser, setCurrentUser] = useState("");
 
   const [initialLoad, setInitialLoad] = useState(true)
+
+  const [targetShape, setTargetShape] = useState(null);
+
 
   const {
     stageRef,
@@ -58,8 +58,7 @@ export default function App() {
 
   useEffect(() => {
     const NERv05 = new window.Image()
-    NERv05.src = "/images/NERv05SMALLColor.png"
-
+    NERv05.src = "/images/NERv05HalfSizeColor.png"
 
     const tess = new window.Image()
     tess.src = "/images/TESSSmall.png"
@@ -67,7 +66,6 @@ export default function App() {
     const tempClippings = [...clippings];
     tempClippings.push({image: NERv05}, {image: tess});
     setClippings(tempClippings);
-    console.log("clippings with robots", clippings)
   }, [])
 
   
@@ -96,12 +94,16 @@ export default function App() {
           newImport={newImport}
           setNewImport={setNewImport}
           clippings={clippings}
+          canvasItems={canvasItems}
+          setCanvasItems={setCanvasItems}
           loadTemplate={loadTemplate}
           setCurrentStage={setCurrentStage}
           setClippings={setClippings}
           setCanvasColour={setCanvasColour}
           canvasColour={canvasColour}
           setBoxColour={setBoxColour}
+          targetShape={targetShape}
+          setTargetShape={setTargetShape}
         />
         <Canvas
           stageRef={stageRef}
@@ -115,6 +117,8 @@ export default function App() {
           setCanvasItems={setCanvasItems}
           canvasColour={canvasColour}
           boxColour={boxColour}
+          targetShape={targetShape}
+          setTargetShape={setTargetShape}
         />
         <Right 
           clippings={clippings}

@@ -8,14 +8,11 @@ import Template3 from './Templates/Template3'
 import Template4 from './Templates/Template4'
 
 export default forwardRef(function Canvas(props, stageRef) {
-  const [targetShape, setTargetShape] = useState(null);
+
 
   const checkDeselect = e => {
-    const clickedOnEmpty = e.target === e.target.getStage();
-    // console.log(e.target)
-    console.log(e.target)
-    if (clickedOnEmpty) {
-      setTargetShape(null);
+    if (e.target === e.target.getStage() || e.target.hasName("container")) {
+      props.setTargetShape(null);
     }
   };
 
@@ -25,6 +22,7 @@ export default forwardRef(function Canvas(props, stageRef) {
   },[])
 
   const shapeProps = {
+    name: 'container',
     fill: props.boxColour,
     shadowColor: 'gray',
     stroke:'black',
@@ -50,8 +48,8 @@ export default forwardRef(function Canvas(props, stageRef) {
             checkDeselect={checkDeselect}
             canvasItems={props.canvasItems}
             setCanvasItems={props.setCanvasItems}
-            targetShape={targetShape}
-            setTargetShape={setTargetShape}
+            targetShape={props.targetShape}
+            setTargetShape={props.setTargetShape}
             onDrop={props.onDrop}
             onDragOver={props.onDragOver}
             fill={props.boxColour}
@@ -64,8 +62,8 @@ export default forwardRef(function Canvas(props, stageRef) {
             checkDeselect={checkDeselect}
             canvasItems={props.canvasItems}
             setCanvasItems={props.setCanvasItems}
-            targetShape={targetShape}
-            setTargetShape={setTargetShape}
+            targetShape={props.targetShape}
+            setTargetShape={props.setTargetShape}
             onDrop={props.onDrop}
             onDragOver={props.onDragOver}
             fill={props.boxColour}
@@ -78,8 +76,8 @@ export default forwardRef(function Canvas(props, stageRef) {
             checkDeselect={checkDeselect}
             canvasItems={props.canvasItems}
             setCanvasItems={props.setCanvasItems}
-            targetShape={targetShape}
-            setTargetShape={setTargetShape}
+            targetShape={props.targetShape}
+            setTargetShape={props.setTargetShape}
             onDrop={props.onDrop}
             onDragOver={props.onDragOver}
             fill={props.boxColour}
@@ -92,8 +90,8 @@ export default forwardRef(function Canvas(props, stageRef) {
             checkDeselect={checkDeselect}
             canvasItems={props.canvasItems}
             setCanvasItems={props.setCanvasItems}
-            targetShape={targetShape}
-            setTargetShape={setTargetShape}
+            targetShape={props.targetShape}
+            setTargetShape={props.setTargetShape}
             onDrop={props.onDrop}
             onDragOver={props.onDragOver}
             fill={props.boxColour}
@@ -106,8 +104,8 @@ export default forwardRef(function Canvas(props, stageRef) {
             checkDeselect={checkDeselect}
             canvasItems={props.canvasItems}
             setCanvasItems={props.setCanvasItems}
-            targetShape={targetShape}
-            setTargetShape={setTargetShape}
+            targetShape={props.targetShape}
+            setTargetShape={props.setTargetShape}
             onDrop={props.onDrop}
             onDragOver={props.onDragOver}
             fill={props.boxColour}
