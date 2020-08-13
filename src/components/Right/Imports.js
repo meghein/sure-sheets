@@ -8,7 +8,7 @@ export default function Imports(props) {
     clippings.forEach((clipping) => {
       if((typeof(clipping) !== 'object') && (clipping !== '')) {
         tempArr.push({
-          title: `${clipping.slice(0, 18)}...`,
+          title: `${clipping.slice(0, 30)}...`,
           text: clipping,
         })
       }

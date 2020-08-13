@@ -19,10 +19,12 @@ export default function Splash(props) {
 
   return (
     <div className="splash">
-      <h1>- Sure  Sheets- </h1>
-      <h2 className="NERv05-script"> Hi! I'm a NERv05 - at your service! Click me to get started. </h2>
-      <img src='images/NERv05TheNervousRobot.png' alt="Welcome! I'm NERv05 - at your service" onClick={handleClickLoginOpen}/>
-      <h3>In this modern, virus-ridden age, many of us are learning using the internet, via Zoom, online textbooks, or any other number of learning tools. A common strategy for keeping track of knowledge that comes at you too quickly is to take a screenshot, but how many of us ever come back to those fact-stuffed-screencaps? Enter SureSheets. Using Tesseract OCR, KonvaJS, Cloudinary, and a number of other neat-o open-source products, SureSheets allows users to capture language from any image and reorganize it into a beautiful, infographic style cheatsheet for use in studying, referencing, or just decorating your house/phone screen/desktop background with 100% pure learning. If you have any questions about the product, feel free to ask NERv05, our chatbot--he can put you on the right track. </h3>
+      <h1> S u r e  S h e e t s </h1>
+      <h2 className="NERv05-script"> Hi! I'm NERv05 — at your service! Click me to get started. </h2>
+      <img src='images/NERv05TheNervousRobot75size.png' alt="Welcome! I'm NERv05 - at your service" onClick={handleClickLoginOpen}/>
+      <h3 className="topH3">There's more to learning than just taking screenshots.</h3>
+      <h3>These bots will help you show your sheet. </h3>
+      
       {openLogin && (
         <LoginRegisterModal
           mr="auto"
@@ -35,6 +37,7 @@ export default function Splash(props) {
           handleClickLoginOpen={handleClickLoginOpen}
           setInitialLoad={props.setInitialLoad}
         />)}
+      <h5>Oh, you're a curious one. Was a waving robot not enough to capture your attention? He's beckoning you. I mean, he is assuming that you haven't let him say his piece a hundred times.</h5>
     </div>
   )
 }

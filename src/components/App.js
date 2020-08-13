@@ -17,7 +17,7 @@ import NERv05 from './Chatbot/NERv05';
 
 export default function App() {
   
-  const [clippings, setClippings] = useState(['This is a test text that is a bit longer for testing purposes']);
+  const [clippings, setClippings] = useState(['This textually active sheet is absolutely the sheet.', 'NERv05 reporting for duty!', 'TESS is here to help!', ]);
   const [newImport, setNewImport] = useState('');
 
   const [canvasItems, setCanvasItems] = useState([]); // leave this one
@@ -56,10 +56,24 @@ export default function App() {
     setClippings(tempClippings);
   }, [newImport]);
 
+  useEffect(() => {
+    const NERv05 = new window.Image()
+    NERv05.src = "/images/NERv05SMALLColor.png"
+
+
+    const tess = new window.Image()
+    tess.src = "/images/TESSSmall.png"
+
+    const tempClippings = [...clippings];
+    tempClippings.push({image: NERv05}, {image: tess});
+    setClippings(tempClippings);
+    console.log("clippings with robots", clippings)
+  }, [])
+
   
   return (
     <div className="App">
-      {!initialLoad &&
+      {initialLoad &&
         <Splash
           authenticated={authenticated}
           setAuthenticated={setAuthenticated}
@@ -68,7 +82,7 @@ export default function App() {
           setInitialLoad={setInitialLoad}
         />
       }
-      {initialLoad && (
+      {!initialLoad && (
       <><NavBar 
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
@@ -86,6 +100,7 @@ export default function App() {
           setCurrentStage={setCurrentStage}
           setClippings={setClippings}
           setCanvasColour={setCanvasColour}
+          canvasColour={canvasColour}
           setBoxColour={setBoxColour}
         />
         <Canvas
@@ -106,7 +121,6 @@ export default function App() {
           addImage={addImage}
           addText={addText}
           onDragStart={onDragStart}
-          canvasColour={canvasColour}
         />
       </div></>)}
     </div>

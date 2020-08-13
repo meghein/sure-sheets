@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+
 .right:hover {
   background: rgba(114, 120, 141, .4);
 }
@@ -18,8 +19,12 @@
     position: absolute;
     right: 100%;
     margin-top: -32px;
-    width: 400px;
-    height: 220px;
+    min-width: 400px;
+    min-height: 220px;
+    max-width: 800px;
+    max-height: 800px;
+    border-radius: 5px;
+    padding: 10px;
 
     background-color: #ffffff;
     z-index: 200;
@@ -38,6 +43,7 @@
     }
     button {
       font-family: 'Montserrat', sans-serif;
+      margin: 0;
       
     }
     .custom-buttons {
@@ -49,10 +55,13 @@
       width: inherit
     }
     .textbox {
-      width: 380px;
-      height: 150px;
+      min-width: 380px;
+      min-height: 150px;
       margin: 8px;
       outline: none;
+      border-radius: 5px;
+      max-width: 750px;
+      max-height: 750px;
     }
     .MuiButton-root {
       font-size: 1em;
@@ -60,7 +69,7 @@
     }
     
     div[id^=font-picker]  {
-      width: 20%;
+      width: 30%;
       height: 80%;
       background-color: #ffffff;
       color: #000000;
@@ -79,29 +88,7 @@
   .MuiButton-root {
     color: white;
     background-color: #72788D;
+    margin-top: 30px; 
     
   }
-
-  
-  
-  // .button {
-  //   background: blue;
-  // }
-  
-  
-  .pdf-appBar{
-    .MuiAppBar-positionFixed {
-      position: fixed;
-    }
-  }
-}
-iframe {
-  height: 100% !important;
-  margin-top: 64px; 
-  #plugin {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-content: center;;
-  } 
 }

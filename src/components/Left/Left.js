@@ -4,6 +4,7 @@ import './Left.scss'
 import Uploads from './Uploads'
 import Templates from './Templates'
 import Colours from './Colours'
+import SaveToPDF from './SaveToPDF'
 
 export default function Left(props) {
   return (
@@ -20,6 +21,9 @@ export default function Left(props) {
       <Colours
         setCanvasColour={props.setCanvasColour}
         setBoxColour={props.setBoxColour}
+      />
+      <SaveToPDF
+        canvasColour={props.canvasColour}
       />
       <img className="MrCan" src="./images/TrashCan.png" alt="It's Mr. Can, the place where unwanted clippings go." />
     </div>

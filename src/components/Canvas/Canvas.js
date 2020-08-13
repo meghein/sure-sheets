@@ -12,6 +12,7 @@ export default forwardRef(function Canvas(props, stageRef) {
 
   const checkDeselect = e => {
     const clickedOnEmpty = e.target === e.target.getStage();
+    // console.log(e.target)
     console.log(e.target)
     if (clickedOnEmpty) {
       setTargetShape(null);

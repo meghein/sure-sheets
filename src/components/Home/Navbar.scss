@@ -11,10 +11,20 @@
     font-size: 1.5em;
     font-family: 'Monoton', cursive !important;
     // color: #F51443 !important
-
   }
 }
 
+.username-logout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin: 5px;
+
+  button {
+    margin-left:10px;
+  }
+}
 
 // font-family: 'Londrina Outline', cursive;
 // font-family: 'Monoton', cursive;
