@@ -100,7 +100,7 @@ export default function Login(props) {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            background-color="rgb(74, 74, 74)"
             className={props.classes.submit}
             onClick={onSubmitForm}
           >

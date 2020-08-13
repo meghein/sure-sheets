@@ -1,68 +1,56 @@
+## Sure Sheets
+ 
+Sure Sheets is a system for taking your underutilized screenshots and capturing that all-important textual data for use in an infographic-styled sheet. Whether you’re trying to study or just trying to keep track of those meeting minutes from a lazy Friday afternoon, you can count on NERv05 and TESS to help you organize your work.
+ 
+Created by Meg Hein, Bryan Gomes, and Charlie Hayes in conjunction with Lighthouse Labs.
+ 
+Sure Sheets provides you with two bots and some templates. TESS, our language bot, will extract language and help you import pictures (should you need them) into your sheet, while NERv05, our chatbot, waits ready to help guide you through the rest of our straightforward creation process. Click through our templates to choose one to your liking, import your elements, maybe change up some colors if you like, and make something you can be proud to show off--even if it’s just there for your own personal reference and studying needs.
+ 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ 
+## Functionality
+- Import pictures and text
+- Arrange images, change their size
+- Create sheets from a variety of 4 different templates
+- Style their sheet with different colours, font styles, and sizes
+- Export sheets as PDF's and share
+ 
+## Dependencies
+- Fortawesome/fontawesome-svg-core: ^1.2.30,
+- Fortawesome/free-solid-svg-icons: ^5.14.0,
+- Fortawesome/react-fontawesome: ^0.1.11,
+- Material-ui/core: ^4.11.0,
+- Material-ui/icons: ^4.9.1,
+- Material-ui/styles: ^4.10.0,
+- React-pdf/renderer: ^1.6.10,
+- Classnames: ^2.2.6,
+- Cloudinary-react: ^1.6.6,
+- Font-picker-react: ^3.5.2,
+- Html2canvas: ^1.0.0-rc.6,
+- Html2canvas-proxy: ^1.0.1,
+- Jspdf: ^2.0.0,
+- Jspdf-html2canvas: ^1.2.3,
+- Konva: ^7.0.4,
+- Node-sass: ^4.14.1,
+- React: ^16.13.1,
+- React-chatbot-kit: ^1.0.5,
+- React-color: ^2.18.1,
+- React-dom: ^16.13.1,
+- React-konva: ^16.13.0-5,
+- React-pdf: ^4.2.0,
+- React-scripts: 3.4.1,
+- Tesseract.js: ^2.1.1,
+- Use-image: ^1.0.6
+ 
+## Final Product
+Here is a quick overview of some of Sure Sheets’ functionality:
+!["Overview of SureSheets"](https://github.com/meghein/sure-sheets/blob/feature/css_signin-signup/docs/gifs/SureSheetsOverview1.gif)
+!["Overview of Editing Text"](https://github.com/meghein/sure-sheets/blob/feature/css_signin-signup/docs/gifs/SureSheetsOverview2.gif)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Getting Started
+ 
+- Install all dependencies (using the 'npm install' command).
+- Be sure to install the server as well at https://github.com/senhorgomes/Sure_Sheets_server/ and have it running in the background.
+- Run the local server using the 'npm start' command in your terminal of choice.
+- Direct your browser to http://localhost/3000.
+- Enjoy the site! Don't take notes, take sheets!
