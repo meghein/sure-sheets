@@ -16,7 +16,7 @@
   animation: typewriter 4s steps(44) 1s 1 normal both,
              blinkTextCursor 500ms steps(44) infinite normal;
   
-  animation-iteration-count: 100;
+  animation-iteration-count: infinite;
 
   @keyframes typewriter{
     from{width: 0;}
