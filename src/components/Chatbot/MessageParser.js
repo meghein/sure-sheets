@@ -6,6 +6,7 @@ class MessageParser {
   parse(message) {
     const lowerCaseMessage = message.toLowerCase()
 
+
     if (lowerCaseMessage.includes("hello") ||
       lowerCaseMessage.includes("hi")
     ) {
@@ -33,6 +34,14 @@ class MessageParser {
       this.actionProvider.loveMessage()
     }
 
+    if (lowerCaseMessage.includes("presentation")) {
+      this.actionProvider.presentation()
+    }
+
+    if (lowerCaseMessage.includes("jobs")) {
+      this.actionProvider.jobs()
+    }
+
     if (lowerCaseMessage.includes("upload") || 
       lowerCaseMessage.includes("add") || 
       lowerCaseMessage.includes("import") ||
@@ -49,10 +58,19 @@ class MessageParser {
     }
 
     if (lowerCaseMessage.includes("export") ||
-      lowerCaseMessage.includes("save")
+      lowerCaseMessage.includes("save") ||
+      lowerCaseMessage.includes("print")
     ) {
       this.actionProvider.exports()
     }
+
+    if (lowerCaseMessage.includes("delete") ||
+      lowerCaseMessage.includes("remove") ||
+      lowerCaseMessage.includes("cut")
+    ) {
+      this.actionProvider.exports()
+    }
+
 
     if (lowerCaseMessage.includes("favorite") ||
       lowerCaseMessage.includes("favourite")
