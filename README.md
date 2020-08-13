@@ -1,20 +1,20 @@
 ## Sure Sheets
-
-A system for taking those unwanted screenshots and capturing that all-important textual data for use in an infographic styled sheet that you can proudly say kept your hopes and dreams of remembering that lecture (or meeting) alive.
-
-Created by Meg Hein, Bryan Gomes and Charlie Hayes in conjuction with Lighthouse Labs.
-
-We provide you with two bots and some templates. Tess, our language bot, will extract language and help you import pictures (should you need them) into your sheet, while NERv05, our chatbot, waits ready to help guide you through the process. Click through our templates to choose one to your liking, import your elements, maybe change up some colors if you like, and make something you can be proud to show off, even if it’s just there for your reference and studying needs.
-
+ 
+Sure Sheets is a system for taking your underutilized screenshots and capturing that all-important textual data for use in an infographic-styled sheet. Whether you’re trying to study or just trying to keep track of those meeting minutes from a lazy Friday afternoon, you can count on NERv05 and TESS to help you organize your work.
+ 
+Created by Meg Hein, Bryan Gomes, and Charlie Hayes in conjunction with Lighthouse Labs.
+ 
+Sure Sheets provides you with two bots and some templates. TESS, our language bot, will extract language and help you import pictures (should you need them) into your sheet, while NERv05, our chatbot, waits ready to help guide you through the rest of our straightforward creation process. Click through our templates to choose one to your liking, import your elements, maybe change up some colors if you like, and make something you can be proud to show off--even if it’s just there for your own personal reference and studying needs.
+ 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+ 
 ## Functionality
 - Import pictures and text
 - Arrange images, change their size
 - Create sheets from a variety of 4 different templates
 - Style their sheet with different colours, font styles, and sizes
 - Export sheets as PDF's and share
-
+ 
 ## Dependencies
 - Fortawesome/fontawesome-svg-core: ^1.2.30,
 - Fortawesome/free-solid-svg-icons: ^5.14.0,
@@ -41,14 +41,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - React-scripts: 3.4.1,
 - Tesseract.js: ^2.1.1,
 - Use-image: ^1.0.6
-
+ 
 ## Final Product
-Here is a quick overview of some functionality
-
+Here is a quick overview of some of Sure Sheets’ functionality:
+ 
 ## Getting Started
-
+ 
 - Install all dependencies (using the 'npm install' command).
-- Be sure to install the server as well at https://github.com/senhorgomes/Sure_Sheets_server/ and have it running in the background
+- Be sure to install the server as well at https://github.com/senhorgomes/Sure_Sheets_server/ and have it running in the background.
 - Run the local server using the 'npm start' command in your terminal of choice.
 - Direct your browser to http://localhost/3000.
 - Enjoy the site! Don't take notes, take sheets!
