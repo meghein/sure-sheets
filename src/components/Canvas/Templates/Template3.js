@@ -4,10 +4,6 @@ import Clippings from '../Clippings'
 
 
 export default forwardRef(function Template1(props, stageRef) {
-  function stageref(e) {
-    console.log("this is where I'm clicking:", stageRef.current.getPointersPositions(e))
-  }
-
   return (
     <Stage
       width={850}
@@ -17,7 +13,6 @@ export default forwardRef(function Template1(props, stageRef) {
       onTouchStart={props.checkDeselect}
       onDrop={props.onDrop}
       onDragOver={props.onDragOver}
-      onClick={stageref}
     >
       <Layer>
         <Rect
