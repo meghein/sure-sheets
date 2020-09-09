@@ -1,20 +1,15 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
 import LoginRegisterModal from './LoginRegisterModal';
-
 import './Navbar.scss'
 
 export default function ButtonAppBar(props) {
   // For Login Modal
-  const [open, setOpen] = React.useState(false);
-    const handleClickLoginOpen = () => {
+  const [open, setOpen] = useState(false);
+  const handleClickLoginOpen = () => {
     setOpen(true);
   };
-    const handleClose = () => {
+  const handleClose = () => {
     setOpen(false);
   };
   const handleLogout = () => {
