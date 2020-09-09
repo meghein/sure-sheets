@@ -15,8 +15,7 @@ const config = {
     createChatBotMessage(`Have we met? I'm ${botName}, and I'm also a little forgetful... sorry about that. I'm here to help as best I can.`),
     createChatBotMessage(`Do any of these options help?`, {
       widget: "navOptions",
-    }),
-    
+    }), 
   ],
   
   customComponents: {
@@ -59,10 +58,7 @@ const config = {
       widgetName: "whyLinks",
       widgetFunc: (props) => <LinkList {...props} />,
       props: {
-
-        // 
-          // Edit these links once we have appropriate info to show!!
-        // 
+        // Edit these links once we have appropriate info to show!!
         options: [
           {
             text: "Why should I make a cheat sheet?",
@@ -85,26 +81,7 @@ const config = {
         ],
       },
     },
-      
-      
-      // // Any props you want the widget to receive on render
-      // props: {},
-      // // Any piece of state defined in the state object that you want to pass down to this widget
-      // mapStateToProps: [
-      //   "selectedFlightId",
-      //   "selectedFlight",
-      // ],
-    
   ],
-
-
-  // // Defines an object that will be injected into the chatbot state, you can use this state in widgets for example
-  // state: {
-  //   // airports: [],
-  //   // flightType: "",
-  //   // selectedFlightId: "",
-  //   // selectedFlight: null,
-  // },
-
 };
+
 export default config
