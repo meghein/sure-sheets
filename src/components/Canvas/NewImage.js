@@ -2,7 +2,7 @@ import React, {useRef, useEffect, Fragment} from 'react'
 import { Image, Transformer } from 'react-konva';
 import useImage from 'use-image';
 
-export default function UrlImage(props) {
+export default function NewImage(props) {
   const shapeRef = useRef();
   const trRef = useRef();
   const [img] = useImage(props.item.src);

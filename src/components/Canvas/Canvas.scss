@@ -8,8 +8,7 @@
   margin-right: $sidebar-width;
   width: 850px;
   height: 1100px;
-}
-
-.canvas:hover {
-  box-shadow: 0px 0px 5px 5px #FFFCD6;
+  :hover {
+    box-shadow: 0px 0px 5px 5px #FFFCD6;
+  }
 }
