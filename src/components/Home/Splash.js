@@ -4,26 +4,27 @@ import LoginRegisterModal from './LoginRegisterModal'
 
 export default function Splash(props) {
   const [openLogin, setOpenLogin] = useState(false)
-
   const [open, setOpen] = useState(false);
-    const handleClickLoginOpen = () => {
+
+  const handleClickLoginOpen = () => {
     setOpenLogin(true)
     setOpen(true);
   };
-    const handleClose = () => {
+  const handleClose = () => {
     setOpen(false);
-  };
-  const handleLogout = () => {
-    props.setAuthenticated(false);
   };
 
   return (
     <div className="splash">
       <h1> S u r e  S h e e t s </h1>
       <h2 className="NERv05-script"> Hi! I'm NERv05 — at your service! Click me to get started. </h2>
-      <img src='images/NERv05TheNervousRobot75size.png' alt="Welcome! I'm NERv05 - at your service" onClick={handleClickLoginOpen}/>
+      <img
+        src='images/NERv05TheNervousRobot75size.png'
+        alt="Welcome! I'm NERv05 - at your service"
+        onClick={handleClickLoginOpen}
+      />
       <h3 className="topH3">There's more to learning than just taking screenshots.</h3>
-      <h3>These bots will help you show your sheet. </h3>
+      <h3>We'll help you show your sheet. </h3>
       
       {openLogin && (
         <LoginRegisterModal
