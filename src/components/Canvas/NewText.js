@@ -29,7 +29,6 @@ export default function NewText(props) {
         fill={props.fill}
         fontFamily={props.fontFamily}
         align={props.align}
-        // width={300}
         onClick={openTextArea}
         onTap={props.onSelect}
         ref={shapeRef}

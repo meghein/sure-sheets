@@ -1,15 +1,10 @@
 import React from 'react';
 
-
-
-function BotButton(props) {
-
+export default function BotButton(props) {
   return (
     <div className="BotButton" onClick={props.toggle}>
-      <img src="/images/NERv05SMALLColor.png" alt="It appears to be a very nervous robot, but you can ask him questions if you need to."></img>
+      <img src="/images/NERv05SMALL.png" alt="It appears to be a very nervous robot, but you can ask him questions if you need to."></img>
     </div>
   );
 }
-
-export default BotButton;
 

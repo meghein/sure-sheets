@@ -1,21 +1,7 @@
 import React, { useState } from 'react';
-import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container} from '@material-ui/core'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import { Button, CssBaseline, TextField, Link, Grid, Typography, Container} from '@material-ui/core'
 
 export default function Register(props) {
-  function Copyright() {
-    return (
-      <Typography variant="body2" color="textSecondary" align="center">
-        {'Copyright © '}
-        <Link color="inherit" href="https://material-ui.com/">
-          Your Website
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  }
-  
   const [register, setRegister] = useState({
     name: "",
     email: "",
@@ -28,7 +14,6 @@ export default function Register(props) {
      {...register, [e.target.id]: e.target.value}
     );
   }
-
   
   function onSubmitForm(e) {
     e.preventDefault();
@@ -44,32 +29,19 @@ export default function Register(props) {
         status: response.status
       }, props.setCurrentUser(data))
       ))
-      .then(res => {
+      .then(response => {
         props.setAuthenticated(true)
         props.handleClose(true)
         props.setInitialLoad(false)
       })
       .catch(err => console.log("err", err))
   }
-
-  
-  
-    // function test(e) {
-    //   e.preventDefault()
-    //   console.log("id", e.target.id)
-    //   console.log("id", e.target.id)
-    //   console.log("register",register)
-    // }
-
     
   return (
     !props.authenticated &&
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={props.classes.paper}>
-        {/* <Avatar className={props.classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar> */}
         <Typography color="primary" component="h1" variant="h5">
           Register
         </Typography>
@@ -109,17 +81,12 @@ export default function Register(props) {
           autoComplete="current-password"
           onChange={handleChange}
         />
-        {/* <FormControlLabel
-          control={<Checkbox value="allowExtraEmails" color="primary" />}
-          label="I want to receive inspiration, marketing promotions and updates via email."
-        /> */}
         <Button
           type="submit"
           fullWidth
           variant="contained"
           background-color="rgb(74, 74, 74)"
           className={props.classes.submit}
-          // onChange={e => setState(e.target.value)}
           onClick={onSubmitForm}
         >
           Sign Up
@@ -133,9 +100,6 @@ export default function Register(props) {
           </Grid>
         </form>
       </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
     </Container>
   );
 }

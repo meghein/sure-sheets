@@ -1,4 +1,4 @@
-import React, {useState, forwardRef, useEffect} from 'react';
+import React, {forwardRef, useEffect, Fragment} from 'react';
 import './Canvas.scss';
 
 import Initial from './Templates/Initial'
@@ -7,8 +7,7 @@ import Template2 from './Templates/Template2'
 import Template3 from './Templates/Template3'
 import Template4 from './Templates/Template4'
 
-export default forwardRef(function Canvas(props, stageRef) {
-
+export default forwardRef(function Canvas(props) {
 
   const checkDeselect = e => {
     if (e.target === e.target.getStage() || e.target.hasName("container")) {
@@ -18,7 +17,6 @@ export default forwardRef(function Canvas(props, stageRef) {
 
   useEffect(() => {
     props.setCurrentStage('initial')
-    console.log("currentstage on load", props.currentStage)
   },[])
 
   const shapeProps = {
@@ -28,12 +26,10 @@ export default forwardRef(function Canvas(props, stageRef) {
     stroke:'black',
     strokeWidth:4,
     cornerRadius:10,
-    // draggable: true,
   }
 
-
   return (
-    <>
+    <Fragment>
       <div
         className='canvas' 
         id='canvas'
@@ -113,6 +109,6 @@ export default forwardRef(function Canvas(props, stageRef) {
           />
         }
       </div>
-    </>
+    </Fragment>
   )
 })

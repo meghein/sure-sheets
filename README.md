@@ -16,31 +16,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Export sheets as PDF's and share
  
 ## Dependencies
-- Fortawesome/fontawesome-svg-core: ^1.2.30,
-- Fortawesome/free-solid-svg-icons: ^5.14.0,
-- Fortawesome/react-fontawesome: ^0.1.11,
-- Material-ui/core: ^4.11.0,
-- Material-ui/icons: ^4.9.1,
-- Material-ui/styles: ^4.10.0,
+- Material-ui: ^4.11.0,
 - React-pdf/renderer: ^1.6.10,
 - Classnames: ^2.2.6,
 - Cloudinary-react: ^1.6.6,
 - Font-picker-react: ^3.5.2,
 - Html2canvas: ^1.0.0-rc.6,
-- Html2canvas-proxy: ^1.0.1,
 - Jspdf: ^2.0.0,
 - Jspdf-html2canvas: ^1.2.3,
 - Konva: ^7.0.4,
 - Node-sass: ^4.14.1,
 - React: ^16.13.1,
 - React-chatbot-kit: ^1.0.5,
-- React-color: ^2.18.1,
-- React-dom: ^16.13.1,
-- React-konva: ^16.13.0-5,
-- React-pdf: ^4.2.0,
-- React-scripts: 3.4.1,
 - Tesseract.js: ^2.1.1,
-- Use-image: ^1.0.6
  
 ## Final Product
 Here is a quick overview of some of Sure Sheets’ functionality:

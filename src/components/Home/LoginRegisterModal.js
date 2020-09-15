@@ -1,13 +1,10 @@
-import React from 'react';
-
+import React, { useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
 import Modal from '@material-ui/core/Modal';
 import Login from './Login'
 import Register from './Register'
 
 // These styles apply to both Login and Register:
-
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
@@ -30,18 +27,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 export default function LoginRegisterModal(props) {
   const classes = useStyles();
-  const {open, handleClose} = props;
-  const [openReg, setOpenReg] = React.useState(false);
+  const [openReg, setOpenReg] = useState(false);
   const toggleReg = () => {
     openReg ? setOpenReg(false) : setOpenReg(true);
   };
   return (
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={props.open}
+        onClose={props.handleClose}
         aria-labelledby="login-registration"
         aria-describedby="open-login-registration-modal"
         >

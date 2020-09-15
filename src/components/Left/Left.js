@@ -1,10 +1,9 @@
 import React from 'react'
-import './Left.scss'
-
 import Uploads from './Uploads'
 import Templates from './Templates'
 import Colours from './Colours'
 import SaveToPDF from './SaveToPDF'
+import './Left.scss'
 
 export default function Left(props) {
 
@@ -32,7 +31,12 @@ export default function Left(props) {
       <SaveToPDF
         canvasColour={props.canvasColour}
       />
-      <img className="MrCan" src="./images/TrashCan.png" alt="It's Mr. Can, the place where unwanted clippings go." onClick={deleteItem}/>
+      <img
+        className="MrCan"
+        src="./images/TrashCan.png"
+        alt="It's Mr. Can, the place where unwanted clippings go."
+        onClick={deleteItem}
+      />
     </div>
   )
 }
