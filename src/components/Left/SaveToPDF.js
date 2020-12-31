@@ -1,7 +1,7 @@
 import React, { useState, forwardRef } from 'react';
 import html2canvas from 'html2canvas';
 import { PDFViewer, Page, Document, StyleSheet, Image } from '@react-pdf/renderer';
-import { Button, Dialog, AppBar, Toolbar, IconButton, Typography, Slide } from '@material-ui/core';
+import { Dialog, AppBar, Toolbar, IconButton, Typography, Slide } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -28,21 +28,18 @@ export default function SaveToPDF(props) {
     const input = document.getElementById('canvas');
 
     const canvas = await html2canvas(input, {
-        // useCORS: true,
         taintTest: true,
         allowTaint: true,
-        // proxy: "http://localhost:8001/",
-        // logging: true
       });
       
     const imgData = canvas.toDataURL('image/png');
 
     const data = new FormData()
     data.append('file', imgData)
-    data.append('upload_preset', 'xdtyzicm')
+    data.append('upload_preset', process.env.REACT_APP_PRESET)
 
     const res = await fetch(
-      ' https://api.cloudinary.com/v1_1/sure-sheets/image/upload',
+      process.env.REACT_APP_CLOUDINARY,
       {
         method: 'POST',
         body: data
