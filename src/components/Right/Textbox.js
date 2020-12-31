@@ -113,7 +113,7 @@ export default function Textbox(props) {
           <div className="custom-buttons">
           <FontPicker
             className='font-picker'
-            apiKey="AIzaSyAJpDBzWJ44P71AnWYpqQYahsZCjY8-5MQ"
+            apiKey={process.env.REACT_APP_FONT_PICKER_API}
             activeFontFamily={activeFontFamily}
             onChange={handleFontFamily}
           />
