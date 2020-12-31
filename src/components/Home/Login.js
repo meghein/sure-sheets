@@ -81,9 +81,13 @@ export default function Login(props) {
             </Button>
           <Grid container>
             <Grid item>
-              <Link onClick={() => props.toggleReg()} variant="body2">
+              {/* <Link onClick={() => props.toggleReg()} variant="body2">
                 {"Don't have an account? Sign Up"}
+              </Link> */}
+              <Link onClick={() => props.setInitialLoad(false)} variant="body2" >
+                {"Sign in as guest"}
               </Link>
+
             </Grid>
           </Grid>
         </form>
