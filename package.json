@@ -17,7 +17,7 @@
     "font-picker-react": "^3.5.2",
     "html2canvas": "^1.0.0-rc.6",
     "konva": "^7.0.4",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-chatbot-kit": "^1.0.5",
     "react-color": "^2.18.1",
