@@ -24,7 +24,7 @@
     "react-dom": "^16.13.1",
     "react-konva": "^16.13.0-5",
     "react-pdf": "^4.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "tesseract.js": "^2.1.1",
     "use-image": "^1.0.6"
   },
